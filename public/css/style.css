@@ -1,0 +1,24 @@
+/* formulario*/
+input[type="file"] {
+    display: none;
+}
+#crear-gorra-form{
+    width: 340px; 
+    border: 2px solid rgb(0,0,0,0.2);
+}
+.custom-file-upload {
+    transition: 0.5s all;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.custom-file-upload:hover {
+    transition: 0.5s all;
+    background-color: #a0a0a0;
+}
+.admin-1{
+    background: url('../../img/betsob/fondo_admin.jpg') no-repeat center/cover;
+}
