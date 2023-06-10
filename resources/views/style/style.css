@@ -1,4 +1,10 @@
 /* formulario*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 input[type="file"] {
     display: none;
 }
@@ -49,22 +55,22 @@ input[type="file"] {
 	border-bottom:1px solid #ddd;
 }
 
-.form_wrapper form{
+.form_wrapper.div {
 	display:none;
 	background:#fff;
 }
-form.active{
+.form_wrapper .active{
 	display:block;
 }
 
-form.login{
+.form_wrapper .login{
 	width:350px;
     margin-bottom: 20px;
 }
-form.register{
+.form_wrapper  .register{
 	width:350px;
 }
-form.forgot_password{
+.form_wrapper  .forgot_password{
 	width:300px;
 }
 

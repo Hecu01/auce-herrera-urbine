@@ -1,13 +1,13 @@
 //the form wrapper (includes all forms)
 var $form_wrapper = $('#form_wrapper'),
 //the current form is the one with class "active"
-$currentForm = $form_wrapper.children('form.active'),
+$currentForm = $form_wrapper.children('div.active'),
 //the switch form links
 $linkform = $form_wrapper.find('.linkform');
 
 
 							
-$form_wrapper.children('form').each(function(i){
+$form_wrapper.children('div').each(function(i){
 	var $theForm	= $(this);
 	//solve the inline display none problem when using fadeIn/fadeOut
 	if(!$theForm.hasClass('active'))
@@ -29,7 +29,7 @@ $linkform.bind('click',function(e){
 		//remove class "active" from current form
 		$currentForm.removeClass('active');
 		//new current form
-		$currentForm= $form_wrapper.children('form.'+target);
+		$currentForm= $form_wrapper.children('div.'+target);
 		//animate the wrapper
 		$form_wrapper.stop().animate({
             width	: $currentForm.data('width') + 'px',
