@@ -4,7 +4,12 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
-
+.responsive-desing{
+	display: none;
+}
+.desktop-desing{
+	display: flex;
+}
 input[type="file"] {
     display: none;
 }
@@ -34,17 +39,12 @@ input[type="file"] {
 
 
 .form_wrapper{
+	background: #fff;
     
-	background:#fff;
-	border:1px solid #ddd;
 	margin:0 auto;
     
     margin-bottom: 20px;
-	width:350px;
 	font-size:16px;
-	-moz-box-shadow:1px 1px 7px #ccc;
-	-webkit-box-shadow:1px 1px 7px #ccc;
-	box-shadow:1px 1px 7px #ccc;
 }
 
 .form_wrapper h3{
@@ -55,24 +55,16 @@ input[type="file"] {
 	border-bottom:1px solid #ddd;
 }
 
-.form_wrapper.div {
+.form_wrapper .not-display {
 	display:none;
 	background:#fff;
 }
+
 .form_wrapper .active{
 	display:block;
 }
 
-.form_wrapper .login{
-	width:350px;
-    margin-bottom: 20px;
-}
-.form_wrapper  .register{
-	width:350px;
-}
-.form_wrapper  .forgot_password{
-	width:300px;
-}
+
 
 
 
@@ -159,4 +151,20 @@ input[type="file"] {
     margin-left: 10px;
     font-weight: bold;
     color: #cce7f5;
+}
+.en-comun{
+	background-color: #fff;
+	width: 355px;
+	border: 1px solid #dddddd;
+}
+@media(max-width: 400px){
+	.desktop-desing{
+		display: none;
+	}
+	.responsive-desing{
+		display: block;
+	}
+	.en-comun{
+		width: 330px;
+	}
 }
