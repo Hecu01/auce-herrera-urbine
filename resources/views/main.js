@@ -62,11 +62,6 @@ $form_wrapper.find('input[type="submit"]')
 
 
 
-
-
-
-
-
 $linkform.bind('click',function(e){
 	
 });

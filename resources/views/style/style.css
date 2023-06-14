@@ -38,16 +38,18 @@ input[type="file"] {
 /*----------- JQUERY PRUEBAS -----------*/
 
 
+
+
 .form_wrapper{
 	background: #fff;
-    
+	width: 355px;
 	margin:0 auto;
     
     margin-bottom: 20px;
 	font-size:16px;
 }
 
-.form_wrapper h3{
+.form_wrapper header{
 	padding:20px 30px 20px 30px;
 	background-color:#444;
 	color:#fff;
@@ -152,6 +154,7 @@ input[type="file"] {
     font-weight: bold;
     color: #cce7f5;
 }
+
 .en-comun{
 	background-color: #fff;
 	width: 355px;
@@ -164,7 +167,7 @@ input[type="file"] {
 	.responsive-desing{
 		display: block;
 	}
-	.en-comun{
+	.en-comun, .form_wrapper{
 		width: 330px;
 	}
 }
