@@ -14,6 +14,7 @@
         </blockquote>
     </div>
     <div class="bottom">
+
         <a href="#" rel="register0" class="btn btn-primary linkform m-4">
             Comenzar
             <i class="fa-solid fa-arrow-right"></i>

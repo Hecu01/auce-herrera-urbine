@@ -24,63 +24,42 @@
 
          <form id="form_wrapper" class="form_wrapper">
 
-            <!-- Primer primer formulario 1X-->
-            <div class="login en-comun not-display" >
-               <?php include('partials/1_primer_primer_formulario.php');?>
-           </div>
+            <!-- Bienvenida 1_primer_primer...-->
+            @include('partials/1_primer_primer_formulario')
 
-            <!-- Primer formulario 2X-->
-            <div class="register0 active en-comun ">
-               <?php include('partials/2_primer_formulario.php');?>
-            </div>
-            <!-- Segundo formulario 3X-->
-            <div class="register1 not-display en-comun">
-               <?php include('partials/3_segundo_formulario.php');?>
-            </div>
+            <!-- Datos personales [1/4] 2_primer...-->
+            @include('partials/2_primer_formulario')
 
-            <!-- Tercer formulario 4X-->
-            <div class="register2 not-display en-comun" >
-               <?php include('partials/4_tercer_formulario.php');?>
-            </div>
+            <!-- Datos personales [2/4] 3_segund...-->
+            @include('partials/3_segundo_formulario')
 
-            <!-- Cuarto formulario 5X-->
-            <div class="register3 not-display en-comun">
-               <?php include('partials/5_cuarto_formulario.php');?>
-            </div>
+            <!-- Datos personales [3/4] 4_terc...-->   
+            @include('partials/4_tercer_formulario')
 
-            <!-- Explicacion1 6X-->
-            <div class="register4 en-comun not-display" >
-               <?php include('partials/6_explicacion1.php');?>
-            </div>
+            <!-- Datos personales [4/4] 5_cuart...-->   
+            @include('partials/5_cuarto_formulario')
 
-            <!-- Quinto formulario formulario 7X-->
-            <div class="register5 not-display en-comun">
-               <?php include('partials/7_quinto_formulario.php');?>
-            </div>     
+            <!-- Explicacion1 6_expl..-->
+            @include('partials/6_explicacion1')
 
-            <!-- pregunta otro estudio n°1--- 8X-->
-            <div class="pregunta1 en-comun not-display" >
-               <?php include('partials/8_preg_otro_estudio1.php');?>
-            </div>
-            <!-- si estudio1 9X-->
-            <div class="si-otro-estudio1 en-comun not-display" >
-               <?php include('partials/9_estudio_ad1.php');?>
-            </div> 
+            <!-- Datos académicos [1/1] 7_quint...-->         
+            @include('partials/7_quinto_formulario')
+            
+            <!-- Ya casi terminamos... 8_preg_otr...-->      
+            @include('partials/8_preg_otro_estudio1')
 
-            <!-- pregunta otro estudio n°2--- 10X-->
-            <div class="pregunta2 en-comun not-display">
-               <?php include('partials/10_preg_otro_estudio2.php');?> 
-            </div> 
+            <!-- Ya casi terminamos... 9_estudio_ad1...-->   
+            @include('partials/9_estudio_ad1')
 
-            <!-- si estudio2 11-->
-            <div class="si-otro-estudio2 en-comun not-display">
-               <?php include('partials/11_estudio_ad2.php');?> 
-            </div>
+            <!-- Ya casi terminamos... 10_preg_otr...-->      
+            @include('partials/10_preg_otro_estudio2')
+            
+            <!-- Ya casi terminamos... 11_estudio_ad2...-->   
+            @include('partials/11_estudio_ad2')
 
-            <!-- lo ultimo_ad_1_2 12-->
-            <div class="lo-ultimo-ad-1-2 en-comun not-display">
-               <?php include('partials/12_lo_ultimo_ad_1_2.php');?> 
-            </div>
+            <!-- Ya casi terminamos... 12_estudio_ad_1_2...-->   
+            @include('partials/12_lo_ultimo_ad_1_2')
+
          </form>
       </div>
       <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
