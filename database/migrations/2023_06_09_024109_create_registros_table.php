@@ -3,6 +3,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 return new class extends Migration
 {
     /**
@@ -21,7 +22,7 @@ return new class extends Migration
             $table->integer('cuil');
             $table->string('domicilio',100);
             $table->string('barrio',100);
-            $table->string('ciudad',100);
+            $table->string('ciudad',100); //saaf.org.ar (Cargas tu curriculum ahi, mostras tus habilidade)
             $table->string('provincia',100);
             $table->integer('cod_postal');
             $table->date('fec_nac');
@@ -61,6 +62,13 @@ return new class extends Migration
             $table->boolean('partida_nac_ok');
 
             $table->timestamps();
+
+
+            $table->foreign('carrera')
+            ->references('id')
+            ->on('carreras')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
     // idea: hacer un nav, en datos personales, en forma de pestaña, que diga
@@ -73,4 +81,31 @@ return new class extends Migration
     {
         Schema::dropIfExists('registro');
     }
+
+
+
+    return new class extends Migration
+    {
+    /**
+    * Run the migrations.
+    */
+    public function up(): void
+    {
+    //
+    Schema::table('registros', function(Blueprint $table){
+
+    });
+    }
+
+    /**
+    * Reverse the migrations.
+    */
+    public function down(): void
+    {
+    //
+    schema::table('registros',function(Blueprint $table){
+    $table->dropForeign('registros_carreras_foreign');
+    });
+    }
+    };
 };
