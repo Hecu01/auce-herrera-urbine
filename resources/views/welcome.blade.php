@@ -24,7 +24,7 @@
 
          <form id="form_wrapper" class="form_wrapper">
 
-            <!-- Bienvenida 1_primer_primer...-->
+            <!-- Bienvenida 1_primer_primer [ACTIVE]...-->
             @include('partials/1_primer_primer_formulario')
 
             <!-- Datos personales [1/4] 2_primer...-->
@@ -45,7 +45,7 @@
             <!-- Datos académicos [1/1] 7_quint...-->         
             @include('partials/7_quinto_formulario')
             
-            <!-- Ya casi terminamos... 8_preg_otr...-->      
+            <!-- Ya casi terminamos... 8_preg_otr ...-->      
             @include('partials/8_preg_otro_estudio1')
 
             <!-- Ya casi terminamos... 9_estudio_ad1...-->   
@@ -57,8 +57,17 @@
             <!-- Ya casi terminamos... 11_estudio_ad2...-->   
             @include('partials/11_estudio_ad2')
 
-            <!-- Ya casi terminamos... 12_estudio_ad_1_2...-->   
-            @include('partials/12_lo_ultimo_ad_1_2')
+            <!-- Ya casi terminamos... 12_datos_lab_con_2_estudios...-->   
+            @include('partials/12_datos_lab_con_2_estudios')
+            
+            <!-- Ya casi terminamos... 13_datos_lab_sin_estudios...-->   
+            @include('partials/13_datos_lab_sin_estudios')
+            
+            <!-- Ya casi terminamos... 13_datos_lab_sin_estudios [ACTIVE]...-->   
+            @include('partials/14_datos_lab_con_1_estudio')
+
+            <!-- Ya casi terminamos... 13_datos_lab_sin_estudios...-->   
+            @include('partials/15_finalizando_la_inscripcion')
 
          </form>
       </div>

@@ -39,7 +39,7 @@
             Atras
         </a>
 
-        <a href="#" rel="lo-ultimo-ad-1-2" class="btn btn-success linkform my-4">
+        <a href="#" rel="datos-laborales-con-2-estudios-adicionales" class="btn btn-success linkform my-4">
             Siguiente
             <i class="fa-solid fa-arrow-right"></i>
         </a>

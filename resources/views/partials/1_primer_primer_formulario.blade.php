@@ -1,4 +1,4 @@
-<div class="login en-comun active" >
+<div class="login en-comun not-display" >
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4 >
             Bienvenida 

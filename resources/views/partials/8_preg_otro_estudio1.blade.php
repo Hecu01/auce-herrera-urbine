@@ -22,7 +22,7 @@
                 <a href="#" rel="si-otro-estudio1" class="btn btn-success linkform mx-1">
                     Sí
                 </a>
-                <a href="#" rel="ud_trabaja" class="btn btn-danger linkform">
+                <a href="#" rel="datos-laborales-sin-estudios-adicionales" class="btn btn-danger linkform">
                     No
                 </a>                       
             </div>
