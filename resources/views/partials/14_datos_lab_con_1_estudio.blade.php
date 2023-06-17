@@ -1,4 +1,4 @@
-<div class="datos-laborales-con-1-estudios-adicionales active en-comun">
+<div class="datos-laborales-con-1-estudios-adicionales not-display en-comun">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative; padding: 20px 24px 20px 18px ">
         <h4 >
             Lo último... 

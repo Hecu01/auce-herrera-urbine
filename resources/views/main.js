@@ -1,3 +1,4 @@
+
 //the form wrapper (includes all forms)
 var $form_wrapper = $('#form_wrapper'),
 //the current form is the one with class "active"
@@ -23,6 +24,10 @@ setWrapperWidth();
 
 
 $linkform.bind('click',function(e){
+    // let nombres, apellidos;
+    // nombres = $("#nombres").val();
+    // apellidos = $("#apellidos").val();
+    // if ()
 	var $link	= $(this);
 	var target	= $link.attr('rel');
 	$currentForm.fadeOut(400,function(){

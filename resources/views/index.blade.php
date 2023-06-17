@@ -16,7 +16,7 @@
       <link rel="stylesheet" href="style/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    </head>
-   <body style="background-color: #00000079; ">
+   <body>
       
       <div class="container">
          <!-- <h1>formulario de Inscripcion</h1> -->
@@ -63,10 +63,10 @@
             <!-- Ya casi terminamos... 13_datos_lab_sin_estudios...-->   
             @include('partials/13_datos_lab_sin_estudios')
             
-            <!-- Ya casi terminamos... 13_datos_lab_sin_estudios [ACTIVE]...-->   
+            <!-- Ya casi terminamos... 14_datos_lab_con_1_estudio [ACTIVE]...-->   
             @include('partials/14_datos_lab_con_1_estudio')
 
-            <!-- Ya casi terminamos... 13_datos_lab_sin_estudios...-->   
+            <!-- Ya casi terminamos... 15_datos_lab_sin_estudios...-->   
             @include('partials/15_finalizando_la_inscripcion')
 
          </form>

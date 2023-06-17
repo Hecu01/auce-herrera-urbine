@@ -69,43 +69,17 @@ return new class extends Migration
             ->on('carreras')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+            $table->dropForeign('registros_carreras_foreign');
         });
     }
     // idea: hacer un nav, en datos personales, en forma de pestaña, que diga
     // "Datos personales" "datos académicos" "finalizar"
-
+    
     /**
-    * Reverse the migrations.
-    */
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::dropIfExists('registro');
     }
-
-
-
-    return new class extends Migration
-    {
-    /**
-    * Run the migrations.
-    */
-    public function up(): void
-    {
-    //
-    Schema::table('registros', function(Blueprint $table){
-
-    });
-    }
-
-    /**
-    * Reverse the migrations.
-    */
-    public function down(): void
-    {
-    //
-    schema::table('registros',function(Blueprint $table){
-    $table->dropForeign('registros_carreras_foreign');
-    });
-    }
-    };
 };

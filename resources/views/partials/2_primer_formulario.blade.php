@@ -1,4 +1,4 @@
-<div class="register0 not-display en-comun ">
+<div class="register0 active en-comun ">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4 >
             Datos personales [1/4] 
@@ -32,9 +32,10 @@
         </div>
         
         <h5 class="mt-3 mx-2">Datos personales</h5>
+
         <div class="d-flex mt-2 ">
             <div class="mx-1">
-                <input required class="form-control" id="nombres" placeholder="Nombres (*)" type="text" >
+                <input required class="form-control" id="nombres" placeholder="Nombres (*)" name="nombre_aspirante" type="text" >
             </div>
             <div class="mx-1">
                 <input required class="form-control mb-2" id="apellidos" placeholder="Apellidos (*)" type="text" >
@@ -98,11 +99,11 @@
         </div>
     </div>
     <div class="bottom">
-        
-        <a href="#" rel="register1" class="btn btn-success linkform m-4">
+        <a href="#" rel="register1" class="btn btn-success linkform m-4" >
             Siguiente
             <i class="fa-solid fa-arrow-right"></i>
         </a>
+
         <div class="clear"></div>
     </div>
 </div>
