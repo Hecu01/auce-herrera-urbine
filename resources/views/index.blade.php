@@ -16,13 +16,13 @@
       <link rel="stylesheet" href="style/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    </head>
-   <body>
+   <body style="background: rgba(0, 0, 0, 0.363)">
       
       <div class="container">
          <!-- <h1>formulario de Inscripcion</h1> -->
          <br>
 
-         <form id="form_wrapper" class="form_wrapper">
+         <form id="form_wrapper" class="form_wrapper needs-validation" >
 
             <!-- Bienvenida 1_primer_primer [ACTIVE]...-->
             @include('partials/1_primer_primer_formulario')
@@ -30,8 +30,15 @@
             <!-- Datos personales [1/4] 2_primer...-->
             @include('partials/2_primer_formulario')
 
+            
+            
             <!-- Datos personales [2/4] 3_segund...-->
             @include('partials/3_segundo_formulario')
+
+            <!-- Datos personales [2/4] 3_segund...-->
+            @include('partials/3_1_segundo_formulario')
+
+
 
             <!-- Datos personales [3/4] 4_terc...-->   
             @include('partials/4_tercer_formulario')

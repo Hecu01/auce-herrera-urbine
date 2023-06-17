@@ -1,4 +1,4 @@
-<div class="register0 active en-comun ">
+<div class="register0 not-display en-comun ">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4 >
             Datos personales [1/4] 
@@ -12,6 +12,7 @@
             <span class="progress-bar-text">0%</span>
         </div>
     </div>
+    
     <div class="mx-3">
         <div class="" style="display: flex; justify-content: space-between; align-items:center;">
             
@@ -30,79 +31,66 @@
             
             
         </div>
-        
-        <h5 class="mt-3 mx-2">Datos personales</h5>
 
+
+        <h5 class="mt-3 mx-2">Datos personales</h5>
         <div class="d-flex mt-2 ">
-            <div class="mx-1">
-                <input required class="form-control" id="nombres" placeholder="Nombres (*)" name="nombre_aspirante" type="text" >
+            <div class="form-floating mb-2 mx-1" >
+                <input type="text" class="form-control" id="nombres" required placeholder="name@example.com">
+                <label for="nombres" >Nombres (*)</label>
             </div>
-            <div class="mx-1">
-                <input required class="form-control mb-2" id="apellidos" placeholder="Apellidos (*)" type="text" >
+            <div class="form-floating mb-2 mx-1" >
+                <input type="text" class="form-control" id="apellidos" required placeholder="name@example.com">
+                <label for="apellidos" >Apellidos (*)</label>
             </div>
         </div>
         
         <div class="d-flex justify-content-center my-3 mt-1 " style="width:100%;">
-            <div class="mx-1  " style="width:100%;">
-                
-                <select name="" id=" "class="form-control ">
-                    <option value="" selected hidden>Elija estado civil </option>
-                    <option value="">Soltero/a</option>
-                    <option value="">Casado/a</option>>
-                    <option value="">Viudo/a</option>
-                    <option value="">Divorciado/a</option>
-                    
+
+            <div class="form-floating mx-1" style="width: 50%">
+                <select class="form-select" id="estado-civil" required aria-label="Floating label select example">
+                    <option value="" selected hidden>Seleccione</option>
+                    <option value="soltero/a">Soltero/a</option>
+                    <option value="casado/a">Casado/a</option>>
+                    <option value="viudo/a">Viudo/a</option>
+                    <option value="divorciado/a">Divorciado/a</option>
                 </select>
-                
+                <label for="estado-civil">Estado civil</label>
             </div>
-            <div class="mx-1 " style="width:100%;">
-                
-                <select name="" id="sexo" class="form-control" >
-                    <option value="" selected hidden>Elija su sexo</option>
-                    <option value="" >Masculino</option>
-                    <option value="" >Femenino</option>
+
+
+            <div class="form-floating mx-1" style="width: 50%">
+                <select class="form-select" id="sexo" required aria-label="Floating label select example">
+                    <option value="" selected hidden>Seleccione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
                 </select>
-                
+                <label for="sexo">Elija su sexo</label>
             </div>
+
         </div>
         
         <div class="mt-10 d-flex" style="width:100%;">
-            <div class="mx-1">
-                
-                <input required class="form-control " style="width:100%;" type="number" placeholder="DNI (*)">
+
+            <div class="form-floating mb-2 mx-1" >
+                <input type="number" class="form-control numeric-input" required id="dni" placeholder="DNI">
+                <label for="dni" >DNI (*)</label>
             </div>
+
             
-            <div class="mx-1">
-                
-                <input required class="form-control " style="width:100%;" type="number" placeholder="CUIL (*)">
-                
+            <div class="form-floating mb-2 mx-1" >
+                <input type="number" class="form-control numeric-input" required id="cuil" placeholder="Cuil">
+                <label for="cuil" >Cuil (*)</label>
             </div>
             
         </div>
         
-        <div class="mt-3 desktop-desing" style="width:100%;">
-            <div class="mx-1">
-                <label for="calendario" style="width:100%;"class="d-block mt-2">Fecha Nacimiento</label>
-            </div>
-            <div class="mx-1"  style="width:55%;" >
-                <input required type="date" name="" class="form-control" id="calendario">
-            </div>
-        </div> 
-
-        <div class="mt-3 responsive-desing" style=" width:100%;">
-            <div class="mx-2">
-                <label for="calendario" >Fecha Nacimiento</label>
-            </div>
-            <div class="mx-1"  >
-                <input required type="date" name="" class="form-control" id="calendario" placeholder="inserte nacimiento">
-            </div>
-        </div>
     </div>
     <div class="bottom">
-        <a href="#" rel="register1" class="btn btn-success linkform m-4" >
+        <button href="#" id="myButton" disabled rel="register1" class="btn btn-success linkform m-4" >
             Siguiente
             <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        </button>
 
         <div class="clear"></div>
     </div>

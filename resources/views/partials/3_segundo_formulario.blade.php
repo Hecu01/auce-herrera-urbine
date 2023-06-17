@@ -16,33 +16,32 @@
     </div>
     <div class="mx-4">
 
-        <h5>Datos de nacimiento</h5>
-        <div class="mb-2">
-            <input required type="text" name="" class="form-control" placeholder="Ciudad donde naciste" >
-
-            <input required type="text" name="" class="form-control my-2" placeholder="Provincia donde naciste">
+        <h5>Datos de nacimiento</h5>    
         
-            <input required type="text" class="form-control" name="nacionalidad" placeholder="País donde naciste">
+        
+        <div class="mt-2">
+            <div class="form-floating mb-2 mx-1" >
+                <input type="text" class="form-control" id="ciudad_nac"  placeholder="name@example.com">
+                <label for="ciudad_nac" >Ciudad donde naciste (*)</label>
+            </div>
+            <div class="form-floating mb-2 mx-1" >
+                <input type="text" class="form-control" id="provincia_nac" placeholder="name@example.com">
+                <label for="provincia_nac" >Provincia donde naciste (*)</label>
+            </div>
+            <div class="form-floating mb-2 mx-1" >
+                <input type="text" class="form-control" id="pais_nac" placeholder="name@example.com">
+                <label for="pais_nac" >País donde naciste (*)</label>
+            </div>
+        </div>
+
+        <div class="form-floating mb-2 mx-1" >
+            <input type="date" class="form-control" id="fecha_nac" placeholder="name@example.com">
+            <label for="fecha_nac" >Fecha de nacimiento (*)</label>
         </div>
 
 
 
-        <h5>Datos de residencia</h5>
-        <div class="mx-2 mb-2 d-flex justify-content-center">
-            <input required type="text" class="mx-2 col-6" placeholder="Domicilio"><br>
-            <input required type="text" class="mx-2 col-6 " placeholder="Barrio">
-        </div>
-        <div class="mx-2 mb-2 d-flex justify-content-center">
-            <input required type="text" class="mx-2 col-6" placeholder="Ciudad"><br>
-            <input required type="text" class="mx-2 col-6 " placeholder="Provincia">
-        </div>
 
-
-        <div>
-
-
-            <input required type="text" class="form-control" placeholder="Código Postal">
-        </div>
 
 
     </div>
@@ -54,10 +53,10 @@
             Atras
         </a>
 
-        <a href="#" rel="register2" class="btn btn-success linkform my-4">
+        <button disabled href="#" rel="register1-1" id="myButton2" class="btn btn-success linkform my-4">
             Siguiente
             <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        </button>
         <div class="clear"></div>
     </div>
 </div>

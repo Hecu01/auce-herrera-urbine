@@ -63,7 +63,7 @@
     </div>
 
     <div class="bottom">
-        <a href="#" rel="register1" class="btn btn-primary linkform mx-2 my-4">
+        <a href="#" rel="register1-1" class="btn btn-primary linkform mx-2 my-4">
             
             <i class="fa-solid fa-arrow-left"></i>
             Atras

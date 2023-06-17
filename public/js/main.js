@@ -1,3 +1,63 @@
+var numericInputs = document.querySelectorAll('.numeric-input');
+
+numericInputs.forEach(function(input) {
+  input.addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, '');
+  });
+});
+
+
+
+
+$(document).ready(function() {
+    // Agrega un evento 'input' a cada campo de entrada
+    $("#foto-aspirante, #nombres, #apellidos, #estado-civil, #sexo, #dni, #cuil").on("input", validar_form1);
+    $("#ciudad_nac, #provincia_nac, #pais_nac, #fecha_nac").on("input", validar_form2);
+    $("#ciudad_nac, #provincia_nac, #pais_nac, #fecha_nac").on("input", validar_form3);
+});
+
+
+
+  
+// Función para verificar si todos los campos están llenos
+function validar_form1() {
+    var foto_aspirante = $("#foto-aspirante").val();
+    var nombres = $("#nombres").val();
+    var apellidos = $("#apellidos").val();
+    var estado_civil = $("#estado-civil").val();
+    var sexo = $("#sexo").val();
+    var dni = $("#dni").val();
+    var cuil = $("#cuil").val();        
+    
+    if (foto_aspirante !== "" && nombres.length >= 3 && apellidos.length >= 3 && estado_civil !== "" && sexo !== "" && dni.length >= 8 && cuil.length >= 11) {
+      $("#myButton").prop("disabled", false); // Habilita el botón
+    } else {
+      $("#myButton").prop("disabled", true); // Deshabilita el botón
+    }
+    
+}
+
+function validar_form2() {
+
+    var ciudad_nac = $("#ciudad_nac").val();
+    var provincia_nac = $("#provincia_nac").val();
+    var pais_nac = $("#pais_nac").val();
+    var fecha_nac = $("#fecha_nac").val();
+    
+    
+    if (ciudad_nac !== "" && provincia_nac.length >= 3 && pais_nac.length >= 3 && fecha_nac.length >= 3) {
+      $("#myButton2").prop("disabled", false); // Habilita el botón
+    } else {
+      $("#myButton2").prop("disabled", true); // Deshabilita el botón
+    }
+    
+}
+  
+
+
+
+
+
 //the form wrapper (includes all forms)
 var $form_wrapper = $('#form_wrapper'),
 //the current form is the one with class "active"
@@ -23,6 +83,10 @@ setWrapperWidth();
 
 
 $linkform.bind('click',function(e){
+    // let nombres, apellidos;
+    // nombres = $("#nombres").val();
+    // apellidos = $("#apellidos").val();
+
 	var $link	= $(this);
 	var target	= $link.attr('rel');
 	$currentForm.fadeOut(400,function(){
