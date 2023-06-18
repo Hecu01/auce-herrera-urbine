@@ -1,7 +1,7 @@
 <div class="register0 not-display en-comun ">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4 >
-            Datos personales [1/4] 
+            Datos personales [1/5] 
         </h4>
         <div class="" style="position: relative;">
             <img src="img/logo1.png" alt="logo isft38" style="position: absolute; right: -17px; width: 45px; bottom:-15px">
@@ -14,7 +14,7 @@
     </div>
     
     <div class="mx-3">
-        <div class="" style="display: flex; justify-content: space-between; align-items:center;">
+        <div class="" style="display: flex; justify-content: space-between; align-items:center; position: relative;">
             
             <label class="custom-file-upload" style="text-align:center; margin:0px 30px; margin-right:20px;">
                 <input type="file" id="foto-aspirante" class="btn btn-secondary" name="gorra" onchange="previewImage(event, '#imgPreview')" required>
@@ -27,6 +27,7 @@
                     
                 </a>
             </div>
+            <span style="font-size: 0.67em;position: absolute; left:15.4em;top: 12.2em; color:grey;text-align:center" >Foto 4x4 de el/la aspirante</span>
             
             
             
@@ -73,13 +74,13 @@
         <div class="mt-10 d-flex" style="width:100%;">
 
             <div class="form-floating mb-2 mx-1" >
-                <input type="number" class="form-control numeric-input" required id="dni" placeholder="DNI">
+                <input type="text" class="form-control numeric-input" required id="dni" placeholder="DNI">
                 <label for="dni" >DNI (*)</label>
             </div>
 
             
             <div class="form-floating mb-2 mx-1" >
-                <input type="number" class="form-control numeric-input" required id="cuil" placeholder="Cuil">
+                <input type="text" class="form-control numeric-input" required id="cuil" placeholder="Cuil">
                 <label for="cuil" >Cuil (*)</label>
             </div>
             
@@ -87,7 +88,7 @@
         
     </div>
     <div class="bottom">
-        <button href="#" id="myButton" disabled rel="register1" class="btn btn-success linkform m-4" >
+        <button href="#" id="myButton" rel="register1" class="btn btn-success linkform m-4" >
             Siguiente
             <i class="fa-solid fa-arrow-right"></i>
         </button>

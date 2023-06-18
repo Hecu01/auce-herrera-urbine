@@ -1,59 +1,56 @@
 <div class="register2 not-display en-comun" >
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4>
-            Datos personales [3/4] 
+            Datos personales [4/5] 
         </h4>
         <div class="" style="position: relative;">
             <img src="img/logo1.png" alt="logo isft38" style="position: absolute; right: -17px; width: 45px; bottom:-15px">
         </div>
     </header>
     <div class="progress" style="width: 90%; margin: auto; margin-bottom: 10px; height: 20px;">                        
-        <div class="progress-bar" style="width:50%; ">
-            <span class="progress-bar-text">50%</span>
+        <div class="progress-bar" style="width:60%; ">
+            <span class="progress-bar-text">60%</span>
         </div>
     </div>
     <div class="mx-4">
 
-        <h5>Correo personal</h5>
-        <div class="mb-3">
-            <div class="mb-1">
-                <label for="">Ingrese su correo</label><br>
-                <input required type="email" name="" class="form-control" placeholder="example@outlook.com" >
+        <h4>Correo personal</h4>
+        <div class="mt-2 ">
+            <div class="form-floating mb-2 " >
+                <input type="email" class="form-control"  id="correo"  placeholder="name@example.com">
+                <label for="domicilio" >Correo electrónico (*)</label>
             </div>
-            <div class="">
-                <label for="">Vuelva a ingresar su correo</label><br>
-                <input required type="email" name="" class="form-control" placeholder="example@outlook.com" >
+            <div class="form-floating mb-2 " >
+                <input type="email" class="form-control" id="correo_de_nuevo" placeholder="name@example.com">
+                <label for="barrio" >Correo electrónico nuevamente (*)</label>
             </div>
-
         </div>
 
 
-        <h5>Contacto</h5>
+
+        <h4>Contacto</h4>
         <div class="mb-2">
             <div class="d-flex mt-2 ">
-                <div class="mx-1">
-                    <label for="">Celular (*)</label>
-                    <input required class="form-control" id="nombres" type="text" >
+                <div class="form-floating mb-0 mx-1" >
+                    <input type="text" class="form-control" required id="celular"  placeholder="name@example.com">
+                    <label for="domicilio" >Celular (*)</label>
                 </div>
-                <div class="mx-1">
-                    <label for="">Tel Fijo</label>
-                    <input required class="form-control mb-2" id="apellidos" type="text" >
+                <div class="form-floating mb-0 mx-1" >
+                    <input type="text" class="form-control" id="tel_fijo" placeholder="name@example.com">
+                    <label for="barrio" >Tel fijo</label>
                 </div>
             </div>
-            
             <div class="d-flex mt-2 ">
-                <div class="mx-1">
-                    
-                    <label for="">Tel Alternativo</label>
-                    <input required class="form-control" id="nombres" type="text" >
+                <div class="form-floating mb-2 mx-1" >
+                    <input type="text" class="form-control" required id="tel_alternativo"  placeholder="name@example.com">
+                    <label for="domicilio" >Tel Alternativo</label>
                 </div>
-                <div class="mx-1">
-                    <label for="">Pertenece a...</label>
-                    <input required class="form-control mb-2" id="apellidos" type="text" >
+                <div class="form-floating mb-2 mx-1" >
+                    <input type="text" class="form-control" id="tel_altern_pert" placeholder="Ej: mamá, papá, abuela.">
+                    <label for="barrio" >Le pertenece a...</label>
                 </div>
             </div>
-
-
+            <p style="font-size:0.75em; color:grey; line-height:16px; text-align:justify"> El télofono alternativo es para usar en casos de urgencia, se recomienda insertarlo, por ejemplo, que sea el número de un pariente en quien contar en dicha situación.</p>
 
         </div>
 
@@ -69,10 +66,10 @@
             Atras
         </a>
 
-        <a href="#" rel="register3" class="btn btn-success linkform my-4">
+        <button id="myButton4" rel="register3" class="btn btn-success linkform my-4">
             Siguiente
             <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        </button>
         <div class="clear"></div>
     </div>
 </div>

@@ -10,52 +10,89 @@ numericInputs.forEach(function(input) {
 
 
 $(document).ready(function() {
-    // Agrega un evento 'input' a cada campo de entrada
-    $("#foto-aspirante, #nombres, #apellidos, #estado-civil, #sexo, #dni, #cuil").on("input", validar_form1);
-    $("#ciudad_nac, #provincia_nac, #pais_nac, #fecha_nac").on("input", validar_form2);
-    $("#ciudad_nac, #provincia_nac, #pais_nac, #fecha_nac").on("input", validar_form3);
+  // botones desactivados
+  $("#myButton").prop("disabled", true);
+  $("#myButton2").prop("disabled", true);
+  $("#myButton3").prop("disabled", true);
+  $("#myButton4").prop("disabled", true);
+  $("#myButton5").prop("disabled", true);
+  $("#myButton6").prop("disabled", true);
+
+  // Agrega un evento 'input' a cada campo de entrada
+  // Datos a validar
+  $("#foto-aspirante, #nombres, #apellidos, #estado-civil, #sexo, #dni, #cuil").on("input", validar_form1);
+  $("#ciudad_nac, #provincia_nac, #pais_nac, #fecha_nac").on("input", validar_form2);
+  $("#domicilio, #barrio, #ciudad, #provincia, #codigo_postal").on("input", validar_form3);
+  $("#correo, #correo_de_nuevo, #celular").on("input", validar_form4);
+  $("#carrera_a_estudiar").on("input", validar_form5);
 });
 
-
-
-  
 // Función para verificar si todos los campos están llenos
 function validar_form1() {
-    var foto_aspirante = $("#foto-aspirante").val();
-    var nombres = $("#nombres").val();
-    var apellidos = $("#apellidos").val();
-    var estado_civil = $("#estado-civil").val();
-    var sexo = $("#sexo").val();
-    var dni = $("#dni").val();
-    var cuil = $("#cuil").val();        
-    
-    if (foto_aspirante !== "" && nombres.length >= 3 && apellidos.length >= 3 && estado_civil !== "" && sexo !== "" && dni.length >= 8 && cuil.length >= 11) {
-      $("#myButton").prop("disabled", false); // Habilita el botón
-    } else {
-      $("#myButton").prop("disabled", true); // Deshabilita el botón
-    }
-    
-}
+  var foto_aspirante = $("#foto-aspirante").val();
+  var nombres = $("#nombres").val();
+  var apellidos = $("#apellidos").val();
+  var estado_civil = $("#estado-civil").val();
+  var sexo = $("#sexo").val();
+  var dni = $("#dni").val();
+  var cuil = $("#cuil").val();        
 
-function validar_form2() {
-
-    var ciudad_nac = $("#ciudad_nac").val();
-    var provincia_nac = $("#provincia_nac").val();
-    var pais_nac = $("#pais_nac").val();
-    var fecha_nac = $("#fecha_nac").val();
-    
-    
-    if (ciudad_nac !== "" && provincia_nac.length >= 3 && pais_nac.length >= 3 && fecha_nac.length >= 3) {
-      $("#myButton2").prop("disabled", false); // Habilita el botón
-    } else {
-      $("#myButton2").prop("disabled", true); // Deshabilita el botón
-    }
-    
-}
+  if (foto_aspirante !== "" && nombres.length >= 3 && apellidos.length >= 3 && estado_civil !== "" && sexo !== "" && dni.length >= 8 && cuil.length >= 11) {
+    $("#myButton").prop("disabled", false); // Habilita el botón
+  } else {
+    $("#myButton").prop("disabled", true); // Deshabilita el botón
+  }
   
-
-
-
+}
+function validar_form2() {
+  var ciudad_nac = $("#ciudad_nac").val();
+  var provincia_nac = $("#provincia_nac").val();
+  var pais_nac = $("#pais_nac").val();
+  var fecha_nac = $("#fecha_nac").val();
+  
+  if (ciudad_nac !== "" && provincia_nac.length >= 3 && pais_nac.length >= 3 && fecha_nac.length >= 3) {
+    $("#myButton2").prop("disabled", false); // Habilita el botón
+  } else {
+    $("#myButton2").prop("disabled", true); // Deshabilita el botón
+  }
+  
+}
+function validar_form3() {
+  var domicilio = $("#domicilio").val();
+  var barrio = $("#barrio").val();
+  var ciudad = $("#ciudad").val();
+  var provincia = $("#provincia").val();
+  var codigo_postal = $("#codigo_postal").val();
+  
+  if (domicilio.length >= 3 && barrio.length >= 3 &&  ciudad.length >= 3 &&  provincia.length >= 3 &&  codigo_postal.length >= 1) {
+    $("#myButton3").prop("disabled", false); // Habilita el botón
+  } else {
+    $("#myButton3").prop("disabled", true); // Deshabilita el botón
+  }
+  
+}
+function validar_form4() {
+  var correo = $("#correo").val();
+  var correo_de_nuevo = $("#correo_de_nuevo").val();
+  var celular = $("#celular").val();
+  
+  if (celular.length >= 9 && correo_de_nuevo === correo) {
+    $("#myButton4").prop("disabled", false); // Habilita el botón
+  } else {
+    $("#myButton4").prop("disabled", true); // Deshabilita el botón
+  }
+  
+}
+function validar_form5() {
+  var carrera_a_estudiar = $("#carrera_a_estudiar").val();
+  
+  if (carrera_a_estudiar.length !== "") {
+    $("#myButton5").prop("disabled", false); // Habilita el botón
+  } else {
+    $("#myButton5").prop("disabled", true); // Deshabilita el botón
+  }
+  
+}
 
 
 //the form wrapper (includes all forms)

@@ -14,7 +14,8 @@
     </div>
     <div class="mx-3">
         <blockquote>
-            <strong>DATOS PERSONALES</strong> finalizados. 4/4
+            Finalizaste los 
+            <strong>DATOS PERSONALES</strong>. 5/5
         </blockquote>
         <blockquote>
             Terminamos la primer parte de la inscripción, ahora seguiremos con los <strong>DATOS ACADÉMICOS</strong>                            

@@ -36,7 +36,7 @@
             @include('partials/3_segundo_formulario')
 
             <!-- Datos personales [2/4] 3_segund...-->
-            @include('partials/3_1_segundo_formulario')
+            @include("partials/3'_segundo_formulario")
 
 
 

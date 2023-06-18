@@ -2,7 +2,7 @@
 <div class="register1 not-display en-comun">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4 >
-            Datos personales [2/4] 
+            Datos personales [2/5] 
         </h4>
         <div class="" style="position: relative;">
             <img src="img/logo1.png" alt="logo isft38" style="position: absolute; right: -17px; width: 45px; bottom:-15px">
@@ -10,8 +10,8 @@
     </header>
 
     <div class="progress" style="width: 90%; margin: auto; margin-bottom: 10px; height: 20px;">                        
-        <div class="progress-bar" style="width:25%; ">
-            <span class="progress-bar-text">25%</span>
+        <div class="progress-bar" style="width:20%; ">
+            <span class="progress-bar-text">20%</span>
         </div>
     </div>
     <div class="mx-4">
@@ -53,7 +53,7 @@
             Atras
         </a>
 
-        <button disabled href="#" rel="register1-1" id="myButton2" class="btn btn-success linkform my-4">
+        <button href="#" rel="register1-1" id="myButton2" class="btn btn-success linkform my-4">
             Siguiente
             <i class="fa-solid fa-arrow-right"></i>
         </button>

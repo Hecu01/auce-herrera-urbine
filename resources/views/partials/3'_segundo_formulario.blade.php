@@ -1,8 +1,7 @@
-
 <div class="register1-1 not-display en-comun">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4 >
-            Datos personales [3/?] 
+            Datos personales [3/5] 
         </h4>
         <div class="" style="position: relative;">
             <img src="img/logo1.png" alt="logo isft38" style="position: absolute; right: -17px; width: 45px; bottom:-15px">
@@ -10,8 +9,8 @@
     </header>
 
     <div class="progress" style="width: 90%; margin: auto; margin-bottom: 10px; height: 20px;">                        
-        <div class="progress-bar" style="width:25%; ">
-            <span class="progress-bar-text">25%</span>
+        <div class="progress-bar" style="width:40%; ">
+            <span class="progress-bar-text">40%</span>
         </div>
     </div>
     <div class="mx-3">
@@ -47,7 +46,7 @@
 
 
         <div class="form-floating mb-2 mx-1" >
-            <input type="number" class="form-control numeric-input" id="codigo_postal" required placeholder="name@example.com">
+            <input type="text" class="form-control numeric-input" id="codigo_postal" required placeholder="name@example.com">
             <label for="codigo_postal" >Codigo postal (*)</label>
         </div>
 
@@ -63,7 +62,7 @@
             Atras
         </a>
 
-        <button href="#" id="myButton3"  class="btn btn-success  my-4">
+        <button href="#" id="myButton3"  rel="register2" class="btn btn-success linkform my-4">
             Siguiente
             <i class="fa-solid fa-arrow-right"></i>
         </button>

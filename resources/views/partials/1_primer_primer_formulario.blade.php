@@ -10,8 +10,12 @@
 
     <div class="mx-3">
         <blockquote>
-            Le damos la bienvenida al formulario de inscripción del ISFT 38 barrio Somisa. Para comenzar, empezaremos con sus <br><strong>DATOS PERSONALES</strong>.
+            Le damos la bienvenida al formulario de inscripción del ISFT 38 barrio Somisa. 
         </blockquote>
+        <blockquote>
+            Los campos que tienen (*) significan que son de carácter obligatorio (el resto no). Los datos ingresados son de declaración jurada, la falsificación de los mismos imposibilitará la inscripción del aspirante.
+        </blockquote>
+        Para comenzar, empezaremos con sus <br><strong>DATOS PERSONALES</strong>.
     </div>
     <div class="bottom">
 
