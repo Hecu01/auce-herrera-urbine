@@ -1,11 +1,11 @@
 
-<div class="register5 not-display en-comun">
+<div class="register5 active en-comun">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative; padding: 20px 24px 20px 18px ">
         <h4 >
             Datos académicos [1/1] 
         </h4>
         <div class="" style="position: relative;">
-            <img src="img/logo1.png" alt="logo isft38" style="position: absolute; right: -5px; width: 45px; bottom:-15px">
+            <img src="img/logo1.png"  alt="logo isft38"  draggable="false" style="position: absolute; right: -5px; width: 45px; bottom:-15px">
         </div>
     </header>
     <div class="progress" style="width: 90%; margin: auto; margin-bottom: 10px; height: 20px;">                        
@@ -14,25 +14,34 @@
         </div>
     </div>
     <div class="mx-4">
-        <h5>Datos académicos</h5>
+        <h5 class="mx-1">Datos académicos</h5>
         <div class="mt-10" style="width:100%;">
-            <div class="mx-1">
-                <label for="">Titulo secundario (*)</label>
-                <input required class="form-control "  type="text"  >
-            </div>
-            <div class="mx-1">
-                <label for="">Escuela de egreso (*)</label>
-                <input required class="form-control "  type="text"  >
-            </div>
 
-            <div class="mx-1">
-                <label for="">Año de egreso (*)</label>
-                <input required class="form-control " style="width:100%" type="text"  >
+            <div class=" ">
+                <div class="form-floating mb-2 " >
+                    <input type="text" class="form-control"  id="titulo_secundario"  placeholder="name@example.com">
+                    <label for="domicilio" >Titulo secundario (*)</label>
+                </div>
             </div>
-            <div class="mx-1">
-                <label for="">Egresado en la ciudad de... (*)</label>
-                <input required class="form-control "  type="text"  placeholder="Ejemplo: San Nicolás, ramallo, etc.">
+            <div class="">
+                <div class="form-floating mb-2 " >
+                    <input type="text" class="form-control" id="escuela_egreso" placeholder="name@example.com">
+                    <label for="barrio" >Escuela de egreso (*)</label>
+                </div>
             </div>
+            <div class="">
+                <div class="form-floating mb-2 " >
+                    <input type="text" class="form-control numeric-input" id="año_egreso" placeholder="name@example.com">
+                    <label for="barrio" >Año Egreso (*)</label>
+                </div>
+            </div>
+            <div class="">
+                <div class="form-floating mb-2 " >
+                    <input type="text" class="form-control" id="ciudad_egreso" placeholder="name@example.com">
+                    <label for="barrio" >Egresado en la ciudad de... (*)</label>
+                </div>
+            </div>
+            
         </div>
     </div>
     <div class="bottom">
@@ -40,10 +49,10 @@
             <i class="fa-solid fa-arrow-left"></i>
             Atras
         </a>
-        <a href="#" rel="pregunta1" class="btn btn-success linkform my-4">
+        <button id="myButton6" href="#" rel="pregunta1" class="btn btn-success linkform my-4">
             Siguiente
             <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        </button>
         <div class="clear"></div>
         <!-- <p style="color:#fff">Navegación en la inscripción.</p>
         <div class="d-flex bg-secondary">

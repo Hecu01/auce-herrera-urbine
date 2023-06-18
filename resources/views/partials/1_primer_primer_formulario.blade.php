@@ -1,10 +1,10 @@
-<div class="login en-comun active" >
+<div class="login en-comun not-display" >
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4 >
             Bienvenida 
         </h4>
         <div class="" style="position: relative;">
-            <img src="img/logo1.png" alt="logo isft38" style="position: absolute; right: -5px; width: 45px; bottom:-15px">
+            <img src="img/logo1.png" alt="logo isft38"  draggable="false" style="position: absolute; right: -5px; width: 45px; bottom:-15px">
         </div>
     </header>
 

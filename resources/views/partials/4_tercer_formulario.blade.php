@@ -4,7 +4,7 @@
             Datos personales [4/5] 
         </h4>
         <div class="" style="position: relative;">
-            <img src="img/logo1.png" alt="logo isft38" style="position: absolute; right: -17px; width: 45px; bottom:-15px">
+            <img src="img/logo1.png" alt="logo isft38"  draggable="false" style="position: absolute; right: -17px; width: 45px; bottom:-15px">
         </div>
     </header>
     <div class="progress" style="width: 90%; margin: auto; margin-bottom: 10px; height: 20px;">                        
@@ -32,17 +32,17 @@
         <div class="mb-2">
             <div class="d-flex mt-2 ">
                 <div class="form-floating mb-0 mx-1" >
-                    <input type="text" class="form-control" required id="celular"  placeholder="name@example.com">
+                    <input type="text" class="form-control numeric-input" required id="celular"  placeholder="name@example.com">
                     <label for="domicilio" >Celular (*)</label>
                 </div>
                 <div class="form-floating mb-0 mx-1" >
-                    <input type="text" class="form-control" id="tel_fijo" placeholder="name@example.com">
+                    <input type="text" class="form-control numeric-input" id="tel_fijo" placeholder="name@example.com">
                     <label for="barrio" >Tel fijo</label>
                 </div>
             </div>
             <div class="d-flex mt-2 ">
                 <div class="form-floating mb-2 mx-1" >
-                    <input type="text" class="form-control" required id="tel_alternativo"  placeholder="name@example.com">
+                    <input type="text" class="form-control numeric-input" required id="tel_alternativo"  placeholder="name@example.com">
                     <label for="domicilio" >Tel Alternativo</label>
                 </div>
                 <div class="form-floating mb-2 mx-1" >

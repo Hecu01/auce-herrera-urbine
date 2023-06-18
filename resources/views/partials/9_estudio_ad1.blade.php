@@ -4,12 +4,12 @@
             Ya casi terminamos 
         </h4>
         <div class="" style="position: relative;">
-            <img src="img/logo1.png" alt="logo isft38" style="position: absolute; right: -5px; width: 45px; bottom:-15px">
+            <img src="img/logo1.png" alt="logo isft38"  draggable="false" style="position: absolute; right: -5px; width: 45px; bottom:-15px">
         </div>
     </header>
 
     <h4 style="text-align: center;">
-        Otro estudio: 1
+        Estudios adicionales: 1
     </h4>
     <div class="mx-3 d-flex justify-content-center">
 

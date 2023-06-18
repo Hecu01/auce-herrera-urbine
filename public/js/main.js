@@ -25,6 +25,7 @@ $(document).ready(function() {
   $("#domicilio, #barrio, #ciudad, #provincia, #codigo_postal").on("input", validar_form3);
   $("#correo, #correo_de_nuevo, #celular").on("input", validar_form4);
   $("#carrera_a_estudiar").on("input", validar_form5);
+  $("#titulo_secundario, #escuela_egreso, #año_egreso, #ciudad_egreso").on("input", validar_form6);
 });
 
 // Función para verificar si todos los campos están llenos
@@ -86,14 +87,26 @@ function validar_form4() {
 function validar_form5() {
   var carrera_a_estudiar = $("#carrera_a_estudiar").val();
   
-  if (carrera_a_estudiar.length !== "") {
+  if (carrera_a_estudiar !== "Default") {
     $("#myButton5").prop("disabled", false); // Habilita el botón
   } else {
     $("#myButton5").prop("disabled", true); // Deshabilita el botón
   }
   
 }
-
+function validar_form6() {
+  var titulo_secundario = $("#titulo_secundario").val();
+  var escuela_egreso = $("#escuela_egreso").val();
+  var año_egreso = $("#año_egreso").val();
+  var ciudad_egreso = $("#ciudad_egreso").val();
+  
+  if (titulo_secundario.length >= 4 && escuela_egreso.length >= 4 &&  año_egreso.length >= 4 &&  ciudad_egreso.length >= 4) {
+    $("#myButton6").prop("disabled", false); // Habilita el botón
+  } else {
+    $("#myButton6").prop("disabled", true); // Deshabilita el botón
+  }
+  
+}
 
 //the form wrapper (includes all forms)
 var $form_wrapper = $('#form_wrapper'),

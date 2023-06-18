@@ -4,7 +4,7 @@
             Datos personales [5/5] 
         </h4>
         <div class="" style="position: relative;">
-            <img src="img/logo1.png" alt="logo isft38" style="position: absolute; right: -17px; width: 45px; bottom:-15px">
+            <img src="img/logo1.png" alt="logo isft38"  draggable="false" style="position: absolute; right: -17px; width: 45px; bottom:-15px">
         </div>
     </header>
     <div class="progress" style="width: 90%; margin: auto; margin-bottom: 10px; height: 20px;">                        
@@ -52,7 +52,7 @@
             <h5>Seleccione la carrera a estudiar</h5>
             <div class="form-floating " >
                 <select class="form-select" id="carrera_a_estudiar" required aria-label="Floating label select example">
-                    <option value=""selected hidden>Elija la carrera</option>
+                    <option value="Default" selected >Elija la carrera</option>
                     <option value="Analista de sistemas">Tec. sup. en Analista de sistemas</option>
                     <option value="RR. HH.">Tec. sup. en Administración de Recursos Humanos</option>
                     <option value="SIC">Tec. sup. en Sistemas de información contable</option>

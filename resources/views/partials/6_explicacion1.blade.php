@@ -1,10 +1,10 @@
 <div class="register4 en-comun not-display" >
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
-        <h4 >
+        <h4>
             Explicación 
         </h4>
         <div class="" style="position: relative;">
-            <img src="img/logo1.png" alt="logo isft38" style="position: absolute; right: -5px; width: 45px; bottom:-15px">
+            <img src="img/logo1.png" alt="logo isft38"  draggable="false" style="position: absolute; right: -5px; width: 45px; bottom:-15px">
         </div>
     </header>
     <div class="progress" style="width: 90%; margin: auto; margin-bottom: 10px; height: 20px;">                        
