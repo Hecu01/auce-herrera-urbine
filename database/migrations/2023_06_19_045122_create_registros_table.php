@@ -1,19 +1,19 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-
 return new class extends Migration
 {
     /**
-    * Run the migrations.
-    */
+     * Run the migrations.
+     */
     public function up(): void
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('dni');
+            $table->integer('dni')->unique();
             $table->unsignedBigInteger('carrera')->unsigned();
             $table->string('nombre',100);
             $table->string('apellido',100);
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('cuil');
             $table->string('domicilio',100);
             $table->string('barrio',100);
-            $table->string('ciudad',100); //saaf.org.ar (Cargas tu curriculum ahi, mostras tus habilidade)
+            $table->string('ciudad',100);
             $table->string('provincia',100);
             $table->integer('cod_postal');
             $table->date('fec_nac');
@@ -62,24 +62,14 @@ return new class extends Migration
             $table->boolean('partida_nac_ok');
 
             $table->timestamps();
-
-
-            $table->foreign('carrera')
-            ->references('id')
-            ->on('carreras')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-            $table->dropForeign('registros_carreras_foreign');
         });
     }
-    // idea: hacer un nav, en datos personales, en forma de pestaña, que diga
-    // "Datos personales" "datos académicos" "finalizar"
-    
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('registro');
+        Schema::dropIfExists('registros');
     }
 };

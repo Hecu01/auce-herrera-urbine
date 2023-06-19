@@ -4,8 +4,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>Laravel</title>
-
+      <title>ISFT 38 - INSCRIPCION</title>
+      <link rel="shortcut icon" type="image/png" href="{{ asset('/img/logo1.png') }}">
       <!-- Fonts -->
       <link rel="preconnect" href="https://fonts.bunny.net">
       <meta name="author" content="3° Año Análisis de Sistemas">
@@ -27,23 +27,23 @@
             <!-- Bienvenida 1_primer_primer [ACTIVE]...-->
             @include('partials/1_primer_primer_formulario')
 
-            <!-- Datos personales [1/4] 2_primer...-->
+            <!-- Datos personales [1/5] 2_primer...-->
             @include('partials/2_primer_formulario')
 
             
             
-            <!-- Datos personales [2/4] 3_segund...-->
+            <!-- Datos personales [2/5] 3_segund...-->
             @include('partials/3_segundo_formulario')
 
-            <!-- Datos personales [2/4] 3_segund...-->
+            <!-- Datos personales [3/5] 3_segund...-->
             @include("partials/3'_segundo_formulario")
 
 
 
-            <!-- Datos personales [3/4] 4_terc...-->   
+            <!-- Datos personales [4/5] 4_terc...-->   
             @include('partials/4_tercer_formulario')
 
-            <!-- Datos personales [4/4] 5_cuart...-->   
+            <!-- Datos personales [5/5] 5_cuart...-->   
             @include('partials/5_cuarto_formulario')
 
             <!-- Explicacion1 6_expl..-->
