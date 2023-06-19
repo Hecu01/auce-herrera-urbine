@@ -1,5 +1,5 @@
 
-<div class="register5 active en-comun">
+<div class="register5 not-display en-comun">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative; padding: 20px 24px 20px 18px ">
         <h4 >
             Datos académicos [1/1] 
