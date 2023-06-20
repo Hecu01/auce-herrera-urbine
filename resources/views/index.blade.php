@@ -77,6 +77,28 @@
             @include('partials/15_finalizando_la_inscripcion')
 
          </form>
+         <div class="container section-principal d-flex py-5 justify-content-center">
+	
+            <form class="g-3 align-items-center my-3 mr-3 p-3 col-4" id="crear-gorra-form" action="{{route('cargar_carrera')}}"  enctype="multipart/form-data" method="POST" style="background: #fff; box-shadow: 0px 0px 3px #000">
+               @csrf
+               <h2 style="text-align: center; font-family:sans-serif">Agregar Carrera</h2>
+
+               <div class="col-12">
+                  <div class="">
+                     <input type="text" class="form-control" name="carrera" id="inlineFormInputGroupUsername" placeholder="Nombre carrera" required>
+                     <input type="text" class="form-control my-2" name="años_duracion" id="inlineFormInputGroupUsername" placeholder="Duracion carrera" required>
+                     <input type="text" class="form-control my-2" name="resolucion" id="inlineFormInputGroupUsername" placeholder="Resolucón carrera" required>
+                     <textarea name="descripcion" class="my-2" id="" cols="29" rows="3" placeholder="Descripcion"></textarea>
+                     <textarea name="asignaturas" class="my-2" id="" cols="29" rows="3" ></textarea>
+                  </div>
+               </div>
+               <button class="btn btn-primary" type="submit">Cargar carrera</button>
+            </form>
+   
+ 
+      
+            
+         </div>
       </div>
       <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
       <script src="https://unpkg.com/scrollreveal"></script>
