@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('carreras', function (Blueprint $table) {
             $table->id();
-            $table->string('carrera',100);
+            $table->string('carrera',100)->unique();
             $table->integer('años_duracion');    
-            $table->string('resolucion',15);    
-            $table->string('descripcion');  
-            $table->string('asignaturas');
+            $table->string('resolucion', 55);    
+            $table->string('descripcion', 1300);  
             $table->timestamps();
         });
     }

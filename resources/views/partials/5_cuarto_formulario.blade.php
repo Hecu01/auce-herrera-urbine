@@ -1,4 +1,4 @@
-<div class="register3 not-display en-comun">
+<div class="register3 active en-comun">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4 >
             Datos personales [5/5] 
@@ -52,12 +52,10 @@
             <h5>Seleccione la carrera a estudiar</h5>
             <div class="form-floating " >
                 <select class="form-select" id="carrera_a_estudiar" required aria-label="Floating label select example">
-                    <option value="Default" selected >Elija la carrera</option>
-                    <option value="Analista de sistemas">Tec. sup. en Analista de sistemas</option>
-                    <option value="RR. HH.">Tec. sup. en Administración de Recursos Humanos</option>
-                    <option value="SIC">Tec. sup. en Sistemas de información contable</option>
-                    <option value="Mantenimiento">Tec. sup. en Mantenimiento industrial</option>
-                    <option value="Logistica">Tec. sup. en Logistica</option>
+                    <option value="Default" selected hidden>Elija la carrera</option>
+                    @foreach( $carreras as $item)
+                        <option value="{{ $item->id }}">{{ $item->carrera }}</option>
+                    @endforeach
                 </select>
                 <label for="estado-civil">Carrrera elegida</label>
             </div>

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\carreraController;
+use App\Http\Controllers\isftController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +14,5 @@ use App\Http\Controllers\carreraController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::post('/crear_carrera', [carreraController::class, 'store'])->name('cargar_carrera');
+Route::get('/', [isftController::class, 'index'])->name('home');
+Route::post('/home', [isftController::class, 'cargar_carrera'])->name('cargar.carrera');
