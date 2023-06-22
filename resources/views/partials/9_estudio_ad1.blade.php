@@ -1,4 +1,4 @@
-<div class="otro-estudio1 en-comun active" >
+<div class="otro-estudio1 en-comun not-display" >
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4 >
             Ya casi terminamos 
