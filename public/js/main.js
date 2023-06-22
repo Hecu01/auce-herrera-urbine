@@ -18,12 +18,18 @@ $(document).ready(function() {
   $("#myButton5").prop("disabled", true);
   $("#myButton6").prop("disabled", true);
 
+  // No copiar y pegar
+  $('#confirm_email').on('paste', function(event) {
+    event.preventDefault();
+    alert('No se permite pegar en este campo.');
+  });
   // Agrega un evento 'input' a cada campo de entrada
   // Datos a validar
   $("#foto-aspirante, #nombres, #apellidos, #estado-civil, #sexo, #dni, #cuil").on("input", validar_form1);
   $("#ciudad_nac, #provincia_nac, #pais_nac, #fecha_nac").on("input", validar_form2);
-  $("#domicilio, #barrio, #ciudad, #provincia, #codigo_postal").on("input", validar_form3);
-  $("#correo, #correo_de_nuevo, #celular").on("input", validar_form4);
+
+  $("#domicilio, #ciudad, #provincia, #codigo_postal").on("input", validar_form3);
+  $("#correo, #confirm_email, #celular").on("input", validar_form4);
   $("#carrera_a_estudiar").on("input", validar_form5);
   $("#titulo_secundario, #escuela_egreso, #año_egreso, #ciudad_egreso").on("input", validar_form6);
 });
@@ -65,7 +71,7 @@ function validar_form3() {
   var provincia = $("#provincia").val();
   var codigo_postal = $("#codigo_postal").val();
   
-  if (domicilio.length >= 3 && barrio.length >= 3 &&  ciudad.length >= 3 &&  provincia.length >= 3 &&  codigo_postal.length >= 1) {
+  if (domicilio.length >= 3  &&  ciudad.length >= 3 &&  provincia.length >= 3 &&  codigo_postal.length >= 1) {
     $("#myButton3").prop("disabled", false); // Habilita el botón
   } else {
     $("#myButton3").prop("disabled", true); // Deshabilita el botón
@@ -74,7 +80,7 @@ function validar_form3() {
 }
 function validar_form4() {
   var correo = $("#correo").val();
-  var correo_de_nuevo = $("#correo_de_nuevo").val();
+  var correo_de_nuevo = $("#confirm_email").val();
   var celular = $("#celular").val();
   
   if (celular.length >= 9 && correo_de_nuevo === correo) {
