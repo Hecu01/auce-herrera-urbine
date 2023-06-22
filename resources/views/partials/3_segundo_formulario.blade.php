@@ -1,4 +1,3 @@
-
 <div class="register1 not-display en-comun">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4 >
@@ -9,41 +8,35 @@
         </div>
     </header>
 
-    <div class="progress" style="width: 90%; margin: auto; margin-bottom: 10px; height: 20px;">                        
+    <div class="progress" style="width: 90%; margin: auto; margin-bottom: 10px; height: 20px;">    
         <div class="progress-bar" style="width:20%; ">
             <span class="progress-bar-text">20%</span>
         </div>
     </div>
+    
     <div class="mx-4">
-
         <h5>Datos de nacimiento</h5>    
         
         
         <div class="mt-2">
             <div class="form-floating mb-2 mx-1" >
-                <input type="text" class="form-control" id="ciudad_nac"  placeholder="name@example.com">
+                <input type="text" class="form-control" name="ciudad_nac_aspirante" id="ciudad_nac"  placeholder="Ciudad en donde naciste">
                 <label for="ciudad_nac" >Ciudad donde naciste (*)</label>
             </div>
             <div class="form-floating mb-2 mx-1" >
-                <input type="text" class="form-control" id="provincia_nac" placeholder="name@example.com">
+                <input type="text" class="form-control"name="prov_nac_aspirante"  id="provincia_nac" placeholder="Provincia donde naciste">
                 <label for="provincia_nac" >Provincia donde naciste (*)</label>
             </div>
             <div class="form-floating mb-2 mx-1" >
-                <input type="text" class="form-control" id="pais_nac" placeholder="name@example.com">
+                <input type="text" class="form-control" name="pais_nac_aspirante" id="pais_nac" placeholder="País donde naciste">
                 <label for="pais_nac" >País donde naciste (*)</label>
             </div>
         </div>
 
         <div class="form-floating mb-2 mx-1" >
-            <input type="date" class="form-control" id="fecha_nac" placeholder="name@example.com">
+            <input type="date" class="form-control" name="fecha_nac_aspirante" id="fecha_nac" placeholder="Fecha_nac">
             <label for="fecha_nac" >Fecha de nacimiento (*)</label>
         </div>
-
-
-
-
-
-
     </div>
 
     <div class="bottom">

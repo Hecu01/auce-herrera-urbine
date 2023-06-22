@@ -1,4 +1,4 @@
-<div class="register2 not-display en-comun" >
+<div class="register2 active en-comun" >
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4>
             Datos personales [4/5] 
@@ -17,12 +17,12 @@
         <h4>Correo personal</h4>
         <div class="mt-2 ">
             <div class="form-floating mb-2 " >
-                <input type="email" class="form-control"  id="correo"  placeholder="name@example.com">
-                <label for="domicilio" >Correo electrónico (*)</label>
+                <input type="email" class="form-control" name="correo_aspirante"  id="correo"  placeholder="name@example.com">
+                <label for="correo" >Correo electrónico (*)</label>
             </div>
             <div class="form-floating mb-2 " >
-                <input type="email" class="form-control" id="correo_de_nuevo" placeholder="name@example.com">
-                <label for="barrio" >Correo electrónico nuevamente (*)</label>
+                <input  id="confirm_email" type="email" class="form-control" name="confirmar_correo_aspirante"  placeholder="name@example.com">
+                <label for="confirm_email" >Correo electrónico nuevamente (*)</label>
             </div>
         </div>
 

@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Carrera;
+use App\Models\Asignatura;
 use App;
 
 class isftController extends Controller
@@ -22,4 +23,13 @@ class isftController extends Controller
         $carreraNueva->save();
         return back()->with('mensaje', 'Carrera Agregada');
    	}
+    // Crear asignatura
+    public function cargar_asignatura(Request $request){
+        $asignaturaNueva = new Asignatura;
+        $asignaturaNueva->id_carrera = $request->id_carrera;
+        $asignaturaNueva->asignatura = $request->asignatura;
+        $asignaturaNueva->año = $request->año;
+        $asignaturaNueva->save();
+        return back()->with('mensaje_asignatura', 'Nueva Asignatura');
+    }
 }
