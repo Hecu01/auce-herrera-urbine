@@ -53,26 +53,18 @@
             <!-- Datos académicos [1/1] 7_quint...-->         
             @include('partials/7_quinto_formulario')
             
-            <!-- Ya casi terminamos... 8_preg_otr ...-->      
-            @include('partials/8_preg_otro_estudio1')
 
             <!-- Ya casi terminamos... 9_estudio_ad1...-->   
             @include('partials/9_estudio_ad1')
 
-            <!-- Ya casi terminamos... 10_preg_otr...-->      
-            @include('partials/10_preg_otro_estudio2')
-            
+
             <!-- Ya casi terminamos... 11_estudio_ad2...-->   
             @include('partials/11_estudio_ad2')
 
-            <!-- Ya casi terminamos... 12_datos_lab_con_2_estudios...-->   
-            @include('partials/12_datos_lab_con_2_estudios')
-            
+
             <!-- Ya casi terminamos... 13_datos_lab_sin_estudios...-->   
             @include('partials/13_datos_lab_sin_estudios')
             
-            <!-- Ya casi terminamos... 14_datos_lab_con_1_estudio [ACTIVE]...-->   
-            @include('partials/14_datos_lab_con_1_estudio')
 
             <!-- Ya casi terminamos... 15_datos_lab_sin_estudios...-->   
             @include('partials/15_finalizando_la_inscripcion')

@@ -1,4 +1,4 @@
-<div class="datos-laborales-sin-estudios-adicionales not-display en-comun">
+<div class="datos-laborales not-display en-comun">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative; padding: 20px 24px 20px 18px ">
         <h4 >
             Lo último... 
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="bottom">
-        <a href="#" rel="pregunta1" class="btn btn-primary linkform mx-2 my-4">
+        <a href="#" rel="otro-estudio2" class="btn btn-primary linkform mx-2 my-4">
             <i class="fa-solid fa-arrow-left"></i>
             Atras
         </a>

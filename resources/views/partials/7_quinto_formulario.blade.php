@@ -1,4 +1,3 @@
-
 <div class="register5 not-display en-comun">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative; padding: 20px 24px 20px 18px ">
         <h4 >
@@ -49,7 +48,7 @@
             <i class="fa-solid fa-arrow-left"></i>
             Atras
         </a>
-        <button id="myButton6" href="#" rel="pregunta1" class="btn btn-success linkform my-4">
+        <button id="myButton6" href="#" rel="otro-estudio1" class="btn btn-success linkform my-4">
             Siguiente
             <i class="fa-solid fa-arrow-right"></i>
         </button>
