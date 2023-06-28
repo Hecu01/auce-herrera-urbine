@@ -60,11 +60,9 @@
             @include('partials/11_estudio_ad2')
 
 
-            <!-- Ya casi terminamos... 13_datos_lab_sin_estudios...-->   
+            <!-- Lo ultimoo - datos laborales...-->   
             @include('partials/13_datos_laborales')
-            
-
-            <!-- Ya casi terminamos... 15_datos_lab_sin_estudios...-->   
+ 
             @include('partials/15_finalizando_la_inscripcion')
 
          </form>
