@@ -32,22 +32,22 @@
         <div class="mb-2">
             <div class="d-flex mt-2 ">
                 <div class="form-floating mb-0 mx-1" >
-                    <input type="text" class="form-control numeric-input" required id="celular"  placeholder="name@example.com">
+                    <input type="text" name="celular_aspirante" class="form-control numeric-input" required id="celular"  placeholder="3364-036241">
                     <label for="domicilio" >Celular (*)</label>
                 </div>
                 <div class="form-floating mb-0 mx-1" >
-                    <input type="text" class="form-control numeric-input" id="tel_fijo" placeholder="name@example.com">
+                    <input type="text" name="tel_fijo_aspirante" class="form-control numeric-input" id="tel_fijo" placeholder="name@example.com">
                     <label for="barrio" >Tel fijo</label>
                 </div>
             </div>
             <div class="d-flex mt-2 ">
                 <div class="form-floating mb-2 mx-1" >
-                    <input type="text" class="form-control numeric-input" required id="tel_alternativo"  placeholder="name@example.com">
+                    <input type="text" name="tel_alterno_aspirante" class="form-control numeric-input" required id="tel_alternativo"  placeholder="3364-610643">
                     <label for="domicilio" >Tel Alternativo</label>
                 </div>
                 <div class="form-floating mb-2 mx-1" >
-                    <input type="text" class="form-control" id="tel_altern_pert" placeholder="Ej: mamá, papá, abuela.">
-                    <label for="barrio" >Le pertenece a...</label>
+                    <input type="text" name="tel_alterno_aspirante_pertenece_a" class="form-control" id="pertenecea" placeholder="Ej: mamá, papá, abuela.">
+                    <label for="pertenecea" >Le pertenece a...</label>
                 </div>
             </div>
             <p style="font-size:0.75em; color:grey; line-height:16px; text-align:justify"> El télofono alternativo es para usar en casos de urgencia, se recomienda insertarlo, por ejemplo, que sea el número de un pariente en quien contar en dicha situación.</p>

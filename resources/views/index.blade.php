@@ -32,13 +32,11 @@
             @include('partials/2_primer_formulario')
 
             
-            
             <!-- Datos personales [2/5] 3_segund...-->
             @include('partials/3_segundo_formulario')
 
             <!-- Datos personales [3/5] 3_segund...-->
             @include("partials/3'_segundo_formulario")
-
 
 
             <!-- Datos personales [4/5] 4_terc...-->   
@@ -63,7 +61,7 @@
 
 
             <!-- Ya casi terminamos... 13_datos_lab_sin_estudios...-->   
-            @include('partials/13_datos_lab_sin_estudios')
+            @include('partials/13_datos_laborales')
             
 
             <!-- Ya casi terminamos... 15_datos_lab_sin_estudios...-->   

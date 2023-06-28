@@ -14,27 +14,30 @@
     <div class="mx-4">
         <div class="mt-10" style="width:100%;">
 
+
+
+
             <div class=" ">
                 <div class="form-floating mb-2 " >
-                    <input type="text" class="form-control"  id="titulo_secundario"  placeholder="name@example.com">
+                    <input type="text" class="form-control" name="titulo_otro_estudio2" id="titulo_secundario"  placeholder="name@example.com">
                     <label for="domicilio" >Titulo (*)</label>
                 </div>
             </div>
             <div class="">
                 <div class="form-floating mb-2 " >
-                    <input type="text" class="form-control" id="escuela_egreso" placeholder="name@example.com">
+                    <input type="text" class="form-control" name="instituto_otro_estudio2" id="escuela_egreso" placeholder="name@example.com">
                     <label for="barrio" >Instituto de egreso (*)</label>
                 </div>
             </div>
             <div class="">
                 <div class="form-floating mb-2 " >
-                    <input type="text" class="form-control numeric-input" id="año_egreso" placeholder="name@example.com">
+                    <input type="text" class="form-control numeric-input" name="año_egreso_otro_estudio2" id="año_egreso" placeholder="name@example.com">
                     <label for="barrio" >Año Egreso (*)</label>
                 </div>
             </div>
             <div class="">
                 <div class="form-floating mb-2 " >
-                    <input type="text" class="form-control" id="ciudad_egreso" placeholder="name@example.com">
+                    <input type="text" class="form-control" name="ciudad_egreso_otro_estudio2" id="ciudad_egreso" placeholder="name@example.com">
                     <label for="barrio" >En la ciudad de... (*)</label>
                 </div>
             </div>

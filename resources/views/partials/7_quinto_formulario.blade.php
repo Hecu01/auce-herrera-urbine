@@ -18,25 +18,25 @@
 
             <div class=" ">
                 <div class="form-floating mb-2 " >
-                    <input type="text" class="form-control"  id="titulo_secundario"  placeholder="name@example.com">
+                    <input type="text" class="form-control"  name="titulo_secundario" id="titulo_secundario"  placeholder="Bachiller, técnico">
                     <label for="domicilio" >Titulo secundario (*)</label>
                 </div>
             </div>
             <div class="">
                 <div class="form-floating mb-2 " >
-                    <input type="text" class="form-control" id="escuela_egreso" placeholder="name@example.com">
+                    <input type="text" class="form-control" name="escuela_egreso_secundaria" id="escuela_egreso" placeholder="Escuela secundaria, escuela técnica">
                     <label for="barrio" >Escuela de egreso (*)</label>
                 </div>
             </div>
             <div class="">
                 <div class="form-floating mb-2 " >
-                    <input type="text" class="form-control numeric-input" id="año_egreso" placeholder="name@example.com">
+                    <input type="text" name="año_egreso_secundaria"  class="form-control numeric-input" id="año_egreso" placeholder="1997-2005-2019">
                     <label for="barrio" >Año Egreso (*)</label>
                 </div>
             </div>
             <div class="">
                 <div class="form-floating mb-2 " >
-                    <input type="text" class="form-control" id="ciudad_egreso" placeholder="name@example.com">
+                    <input type="text" class="form-control" name="ciudad_egreso_secundaria" id="ciudad_egreso" placeholder="San nicolas, ramallo, rosario">
                     <label for="barrio" >Egresado en la ciudad de... (*)</label>
                 </div>
             </div>

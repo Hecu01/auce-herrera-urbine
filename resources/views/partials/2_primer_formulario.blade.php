@@ -22,15 +22,11 @@
             </label>
             <div class="container d-flex justify-content-center" style="height: 130px;width:130px;  display:flex; justify-content: center; box-shadow: 0px 0px 1px #000; background:#fff">
                 <a href="#" type="button">
-                    
                     <img id="imgPreview" style="height: 130px; width:130px;">
-                    
                 </a>
             </div>
             <span style="font-size: 0.67em;position: absolute; left:15.4em;top: 12.2em; color:grey;text-align:center" >Foto 4x4 de el/la aspirante</span>
-            
-            
-            
+                    
         </div>
 
 

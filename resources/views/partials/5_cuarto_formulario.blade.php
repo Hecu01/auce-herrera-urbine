@@ -16,16 +16,16 @@
 
         <h4>Algunas preguntas...</h4>
         
-        <h5 for="">¿Tenés hijos?</h5>
+        <h5  for="">¿Tenés hijos?</h5>
         <div class="form-check mb-2 d-flex" >
             <div class="">
-                <input class="form-check-input" type="radio" name="tiene_hijos" id="si_tiene_hijos">
+                <input class="form-check-input" type="radio" name="aspirante_tiene_hijos" id="si_tiene_hijos" value="Si">
                 <label class="form-check-label" for="si_tiene_hijos">
                     Si
                 </label>
             </div>
             <div class="form-check mx-3">
-                <input class="form-check-input" type="radio" name="tiene_hijos" id="no_tiene_hijos" checked>
+                <input class="form-check-input" type="radio" name="aspirante_tiene_hijos" id="no_tiene_hijos" checked value="No">
                 <label class="form-check-label" for="no_tiene_hijos">
                     No
                 </label>
@@ -35,13 +35,13 @@
         <h5 class="mt-3">¿Tenés familiares a cargo?</h5>
         <div class="form-check d-flex" >
             <div class="">
-                <input class="form-check-input" type="radio" name="fam_a_cargo" id="si_fam_a_cargo">
+                <input class="form-check-input" type="radio" value="Si" name="fam_a_cargo_aspirante" id="si_fam_a_cargo">
                 <label class="form-check-label" for="si_fam_a_cargo">
                     Sí
                 </label>
             </div>
             <div class="form-check mx-3">
-                <input class="form-check-input" type="radio" name="fam_a_cargo" id="no_fam_a_cargo" checked>
+                <input class="form-check-input" type="radio" value="No" name="fam_a_cargo_aspirante" id="no_fam_a_cargo" checked>
                 <label class="form-check-label" for="no_fam_a_cargo">
                     No
                 </label>
@@ -51,13 +51,13 @@
 
             <h5>Seleccione la carrera a estudiar</h5>
             <div class="form-floating " >
-                <select class="form-select" id="carrera_a_estudiar" required aria-label="Floating label select example">
+                <select class="form-select" id="carrera_a_estudiar" name="carrera_elejida_aspirante" required aria-label="Floating label select example">
                     <option value="Default" selected hidden>Elija la carrera</option>
                     @foreach( $carreras as $item)
-                        <option value="{{ $item->id }}">{{ $item->carrera }}</option>
+                        <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
                     @endforeach
                 </select>
-                <label for="estado-civil">Carrrera elegida</label>
+                <label for="carrera_a_estudiar">Carrrera elegida</label>
             </div>
 
         </div>

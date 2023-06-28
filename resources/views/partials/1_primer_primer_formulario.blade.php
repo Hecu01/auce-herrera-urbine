@@ -1,13 +1,10 @@
-<div class="login active not-display" >
+<div class="login en-comun active" >
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
-        <h4 >
-            Bienvenida 
-        </h4>
+        <h4>Bienvenida</h4>
         <div class="" style="position: relative;">
             <img src="img/logo1.png" alt="logo isft38"  draggable="false" style="position: absolute; right: -5px; width: 45px; bottom:-15px">
         </div>
     </header>
-
     <div class="mx-3">
         <blockquote>
             Le damos la bienvenida al formulario de inscripción del ISFT 38 barrio Somisa. 

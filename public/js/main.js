@@ -11,13 +11,14 @@ numericInputs.forEach(function(input) {
 
 $(document).ready(function() {
   // botones desactivados
+ /*
   $("#myButton").prop("disabled", true);
   $("#myButton2").prop("disabled", true);
   $("#myButton3").prop("disabled", true);
   $("#myButton4").prop("disabled", true);
   $("#myButton5").prop("disabled", true);
   $("#myButton6").prop("disabled", true);
-
+*/
   // No copiar y pegar
   $('#confirm_email').on('paste', function(event) {
     event.preventDefault();

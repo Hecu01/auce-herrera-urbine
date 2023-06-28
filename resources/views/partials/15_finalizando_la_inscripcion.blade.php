@@ -39,7 +39,7 @@
             Atras
         </a>
         <a href="#" rel="datos-laborales-con-1-estudios-adicionales" class="btn btn-success linkform my-4">
-            Verificar
+            Anotarme!
         </a>
         <div class="clear"></div>
 
