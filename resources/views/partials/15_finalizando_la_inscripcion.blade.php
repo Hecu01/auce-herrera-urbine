@@ -12,34 +12,27 @@
             <span class="progress-bar-text">0%</span>
         </div>
     </div>
+    <div  style="text-align: center">
+        <h3>Finalizacion completada</h3>
+    </div>
     <div class="mx-3 ">
         <h4 >
-           Atención
+           Verifique los datos
         </h4>
         
         <div class=" my-3">        
-
-            <blockquote>
-                Haz terminado la inscripción correctamente. Haz emitido tus 
-                <strong>
-                    Datos personales,
-                    Datos académicos,
-                    Datos de residencia,
-                    Datos laborales,
-                </strong>
-            </blockquote>
-            <ul >
-
-            </ul>
+            <label for="">Nombres</label><br>
+            <input type="text" id="myInput" class="form-control">
+            <button onclick="completarInput()" class="btn btn-primary mt-3">Completar</button>
         </div>
-    </div>
+    </div> 
     <div class="bottom">
-        <a href="#" rel="si-otro-estudio1" class="btn btn-primary linkform mx-2 my-4">
+        <a href="#" rel="datos-laborales" class="btn btn-primary linkform mx-2 my-4">
             <i class="fa-solid fa-arrow-left"></i>
             Atras
         </a>
         <a href="#" rel="datos-laborales-con-1-estudios-adicionales" class="btn btn-success linkform my-4">
-            Anotarme!
+            Preinscribirme!
         </a>
         <div class="clear"></div>
 

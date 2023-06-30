@@ -26,7 +26,7 @@ return new class extends Migration
 
             // Datos de residencia
             $table->string('domicilio',100);
-            $table->string('barrio',100);
+            $table->string('barrio',100)->nullable();
             $table->string('ciudad',100);
             $table->string('provincia',100);
             $table->integer('cod_postal');
@@ -73,16 +73,16 @@ return new class extends Migration
             $table->string('otro_estudio2',100)->nullable();
             $table->string('otro_estudio_inst2',100)->nullable();
             $table->date('otro_estudio_egreso2')->nullable();
-            $table->string('fotoc_dni',255);
-            $table->string('titulo',255);
+            $table->string('fotoc_dni',255)->nullable();
+            $table->string('titulo',255)->nullable();
             $table->string('certificado',255);
             $table->string('foto',255)->nullable();
-            $table->string('visado_por',100);
-            $table->boolean('fotoc_dni_ok');
-            $table->boolean('fotoc_titulo_ok');
-            $table->boolean('certificado_sec_ok');
-            $table->boolean('foto_ok');
-            $table->boolean('partida_nac_ok');
+            $table->string('visado_por',100)->nullable();
+            $table->boolean('fotoc_dni_ok')->nullable();
+            $table->boolean('fotoc_titulo_ok')->nullable();
+            $table->boolean('certificado_sec_ok')->nullable();
+            $table->boolean('foto_ok')->nullable();
+            $table->boolean('partida_nac_ok')->nullable();
 
             $table->timestamps();
 
