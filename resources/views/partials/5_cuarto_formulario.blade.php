@@ -54,7 +54,7 @@
                 <select class="form-select" id="carrera_a_estudiar" name="carrera_elejida_aspirante" required aria-label="Floating label select example">
                     <option value="Default" selected hidden>Elija la carrera</option>
                     @foreach( $carreras as $item)
-                        <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
+                        <option value="{{ $item->id }}">{{ $item->carrera }}</option>
                     @endforeach
                 </select>
                 <label for="carrera_a_estudiar">Carrrera elegida</label>

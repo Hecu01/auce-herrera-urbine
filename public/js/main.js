@@ -8,16 +8,26 @@ numericInputs.forEach(function(input) {
 
 
 
-
 $(document).ready(function() {
   // botones desactivados
 
-  // $("#myButton").prop("disabled", true);
-  // $("#myButton2").prop("disabled", true);
-  // $("#myButton3").prop("disabled", true);
-  // $("#myButton4").prop("disabled", true);
-  // $("#myButton5").prop("disabled", true);
-  // $("#myButton6").prop("disabled", true);
+  $("#myButton").prop("disabled", true);
+  $("#myButton2").prop("disabled", true);
+  $("#myButton3").prop("disabled", true);
+  $("#myButton4").prop("disabled", true);
+  $("#myButton5").prop("disabled", true);
+  $("#myButton6").prop("disabled", true);
+  $('input[name="aspirante_trabaja"]').on('change', function() {
+    var valor = $(this).val();
+    if (valor === "Si") {
+       $('#div_aspirante_si_trabaja').show();
+    } else if (valor === "No") {
+       $('#div_aspirante_si_trabaja').hide();
+    }
+ });
+
+
+
   // No copiar y pegar
   $('#confirm_email').on('paste', function(event) {
     event.preventDefault();
@@ -44,7 +54,7 @@ function validar_form1() {
   var dni = $("#dni").val();
   var cuil = $("#cuil").val();        
 
-  if (foto_aspirante !== "" && nombres.length >= 3 && apellidos.length >= 3 && estado_civil !== "" && sexo !== "" && dni.length >= 8 && cuil.length >= 11) {
+  if (foto_aspirante !== "" && nombres.length >= 3 && apellidos.length >= 3 && estado_civil !== "" && sexo !== "" && dni.length >= 7 && cuil.length >= 10) {
     $("#myButton").prop("disabled", false); // Habilita el botón
   } else {
     $("#myButton").prop("disabled", true); // Deshabilita el botón

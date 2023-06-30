@@ -33,7 +33,7 @@
         <h5 class="mt-3 mx-2">Datos personales</h5>
         <div class="d-flex mt-2 ">
             <div class="form-floating mb-2 mx-1" >
-                <input type="text" class="form-control" name="nombre_aspirante" id="nombres" required placeholder="nombre aspirante">
+                <input type="text" class="form-control"   name="nombre_aspirante" id="nombres" required placeholder="nombre aspirante">
                 <label for="nombres" >Nombres (*)</label>
             </div>
             <div class="form-floating mb-2 mx-1" >
