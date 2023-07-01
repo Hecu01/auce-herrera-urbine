@@ -4,7 +4,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <title>ISFT 38 - INSCRIPCION</title>
       <link rel="shortcut icon" type="image/png" href="{{ asset('/img/logo1.png') }}">
       <!-- Fonts -->
       <link rel="preconnect" href="https://fonts.bunny.net">
@@ -16,6 +15,7 @@
       <link rel="stylesheet" href="style/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <script src="js/main2.js"></script>     
+      <title>ISFT 38 - INSCRIPCION</title>
    </head>
    <body style="background: rgba(0, 0, 0, 0.363)">
       
@@ -64,7 +64,6 @@
             @include('partials/13_datos_laborales')
  
             @include('partials/15_finalizando_la_inscripcion')
-
          </form>
          {{--          <div class="container section-principal d-flex py-5 justify-content-center">
 
