@@ -128,10 +128,10 @@ class isftController extends Controller
         $registroNuevo->ciudad_egreso_secundaria = $request->distrito_egreso;
 
         // Titulo opcional - 1
-        $registroNuevo->titulo_otro_estudio1 = $request->;
-        $registroNuevo-> = $request->;
-        $registroNuevo-> = $request->;
-        $registroNuevo-> = $request->;
+        // $registroNuevo->titulo_otro_estudio1 = $request->;
+        // $registroNuevo-> = $request->;
+        // $registroNuevo-> = $request->;
+        // $registroNuevo-> = $request->;
 
         // Titulo opcional - 2
 
