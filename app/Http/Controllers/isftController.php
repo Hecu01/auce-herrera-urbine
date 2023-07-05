@@ -11,7 +11,8 @@ class isftController extends Controller
 {
     public function index(){
         $carreras = Carrera::all();
-        return view('index', compact('carreras'));		
+        $registros = Registro::all();
+        return view('index', compact('carreras', 'registros'));		
     }
     // Inscripción
     public function guardar(Request $request){
@@ -164,6 +165,11 @@ class isftController extends Controller
         return back()->with('mensaje', 'Te inscribiste con éxito.');
    	}
 
+    public function mostrar_datos($id){
+        $registro = Registro::find($id);
+        
+        return view('ver_aspirante')->with('registro', $registro);
+    }
 
 
 

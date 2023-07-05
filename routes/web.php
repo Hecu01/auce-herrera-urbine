@@ -15,6 +15,8 @@ use App\Http\Controllers\isftController;
 */
 
 Route::get('/', [isftController::class, 'index'])->name('home');
+Route::get('/registro/{id}', [isftController::class, 'mostrar_datos'])->name('mostrarDatosAspirante');
 Route::post('/guardar', [isftController::class, 'guardar'])->name('registrar');
+
 // Route::post('/home', [isftController::class, 'cargar_carrera'])->name('cargar.carrera');
 // Route::post('/home2', [isftController::class, 'cargar_asignatura'])->name('cargar.asignatura');
