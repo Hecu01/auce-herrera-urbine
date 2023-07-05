@@ -22,11 +22,16 @@
       <div class="container">
          <!-- <h1>formulario de Inscripcion</h1> -->
          <br>
-
-         <form id="form_wrapper" class="form_wrapper needs-validation" >
-
+         @if (session('mensaje'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+               <strong>Atención!</strong> {{ session('mensaje') }}
+               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+         @endif
+         <form id="form_wrapper" class="form_wrapper" enctype="multipart/form-data"  method="POST" action="{{ route('registrar') }}" >
+            @csrf
             <!-- Bienvenida 1_primer_primer [ACTIVE]...-->
-            @include('partials/1_primer_primer_formulario')
+            @include('partials/1_primer_primer_formulario') 
 
             <!-- Datos personales [1/5] 2_primer...-->
             @include('partials/2_primer_formulario')
@@ -65,16 +70,18 @@
  
             @include('partials/15_finalizando_la_inscripcion')
          </form>
-         {{--          <div class="container section-principal d-flex py-5 justify-content-center">
+         {{--          
+            <div class="container section-principal d-flex py-5 justify-content-center">
 
-	         Cargar Carrera 
-            @include('partials/cargar_carrera') --}}
-   
-           <!-- Cargar Asignatura -->
-            {{-- @include('partials/cargar_asignatura') 
+               Cargar Carrera 
+               @include('partials/cargar_carrera')
       
+               <!-- Cargar Asignatura -->
+               @include('partials/cargar_asignatura') 
+         
             
-         </div>  --}}
+            </div>  
+         --}}
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>      
       <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>

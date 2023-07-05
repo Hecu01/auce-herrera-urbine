@@ -32,7 +32,7 @@
         <div class="mb-2">
             <div class="d-flex mt-2 ">
                 <div class="form-floating mb-0 mx-1" >
-                    <input type="text" name="celular_aspirante" class="form-control numeric-input" required id="celular"  placeholder="3364-036241">
+                    <input type="text" name="celular_aspirante" class="form-control numeric-input"  id="celular"  placeholder="3364-036241">
                     <label for="domicilio" >Celular (*)</label>
                 </div>
                 <div class="form-floating mb-0 mx-1" >
@@ -42,7 +42,7 @@
             </div>
             <div class="d-flex mt-2 ">
                 <div class="form-floating mb-2 mx-1" >
-                    <input type="text" name="tel_alterno_aspirante" class="form-control numeric-input" required id="tel_alternativo"  placeholder="3364-610643">
+                    <input type="text" name="tel_alterno_aspirante" class="form-control numeric-input"  id="tel_alternativo"  placeholder="3364-610643">
                     <label for="domicilio" >Tel Alternativo</label>
                 </div>
                 <div class="form-floating mb-2 mx-1" >

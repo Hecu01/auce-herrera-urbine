@@ -1,4 +1,3 @@
-
 <div class="datos-laborales not-display en-comun">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative; padding: 20px 24px 20px 18px ">
         <h4 >
@@ -20,54 +19,68 @@
         
         <div class="mb-2">        
             <div class="" style="font-size: 0.9rem;">
-                <p class="d-inline mx-1" style="font-size: 1.0rem;">¿Vos tenés obra social?</p>
+                <p class="d-inline mx-1" style="font-size: 1.0rem;">- ¿Vos tenés obra social?</p>
+
                 <label for="si_aspirante_obra_social">Sí</label>
-                <input type="radio" value="Si" name="aspirante_obra_social" id="si_aspirante_obra_social">
+                <input type="radio" value="1" name="aspirante_obra_social" id="si_aspirante_obra_social">
 
                 <label for="no_aspirante_obra_social">No</label> 
-                <input type="radio" value="No" checked name="aspirante_obra_social" id="no_aspirante_obra_social">
+                <input type="radio" value="0"  name="aspirante_obra_social" id="no_aspirante_obra_social">
             </div>
+
             <div class="mb-2" style="font-size: 0.9rem;">
-                <p class="d-inline mx-1" style="font-size: 1.0rem;">¿Vos trabajás?</p>
-                <label for="si_aspirante_trabaja">Sí</label> <input type="radio" name="aspirante_trabaja" value="Si" onchange="si_trabaja()" id="si_aspirante_trabaja">
-                <label for="no_aspirante_trabaja">No</label> <input type="radio" name="aspirante_trabaja" value="No" checked onchange="no_trabaja()"  id="no_aspirante_trabaja">
+                <p class="d-inline mx-1" style="font-size: 1.0rem;">- ¿Vos trabajás?</p>
+
+                <label for="si_aspirante_trabaja">Sí</label>
+                <input type="radio" name="aspirante_trabaja" value="1" onchange="si_trabaja()" id="si_aspirante_trabaja">
+                 
+                <label for="no_aspirante_trabaja">No</label>
+                <input type="radio" value="0"  name="aspirante_trabaja"   onchange="no_trabaja()"  id="no_aspirante_trabaja">
             </div>
 
 
-            <div id="div_aspirante_si_trabaja" style="display: none" >
+            <div id="div_aspirante_si_trabaja" style="display: none" class="mt-2">
                 <div class="">
-                    <label for="">Actividad en el trabajo</label>
-                    <input type="text" class="form-control" name="rol_trabajo" id="">
+                    <div class="form-floating mb-2 mx-1" >
+                        <input type="text" class="form-control" name="rol_trabajo" id="act" placeholder="Rol en el trabajo">
+                        <label for="act" >Ingresá tu actividad en el trabajo</label>
+                    </div>
+
                 </div>
                 <div class="mt-2">
 
-                    <!-- Turnos rotativos -->
                     <div class="" style="font-size: 0.9rem;">
-                        <p class="d-inline mx-1" style="font-size: 1.0rem;">¿Tenés turnos rotativos?</p>
-                        <label for="si_turnos_rotativos">Sí</label> <input type="radio" name="aspirante_trabaja" value="Si_rotativos"  id="si_turnos_rotativos" onchange="si_rotativos()">
-                        <label for="no_turnos_rotativos">No</label> <input type="radio" name="aspirante_trabaja" value="No_rotativos" checked id="no_turnos_rotativos"onchange="no_rotativos()">
+                        <p class="d-inline mx-1" style="font-size: 1.0rem;">- ¿Tenés turnos rotativos?</p>
+                        <label for="si_turnos_rotativos">Sí</label>
+                        <input type="radio" name="turnos_rotativos" value="1"  id="si_turnos_rotativos" onchange="si_rotativos()">
+
+                        <label for="no_turnos_rotativos">No</label>
+                        <input type="radio" name="turnos_rotativos" value="0"  id="no_turnos_rotativos" onchange="no_rotativos()">
                     </div>
+                    
+                    <!-- Turnos rotativos -->
                     <div id="turnos-rotativos" style="display: none">                    
-                        <label for="">Horario de trabajo</label>
+                        <label for=""><strong class="mx-1">Horario de trabajo</strong></label>
 
                         <div class="mx-1">
-                            <textarea name="descripcion" class="my-2 form-control" id="descripcion_carr" rows="4" placeholder="Detallá tus horarios." style="height:100px"></textarea>
+                            <textarea name="horarios_rotativos_asp" class="my-2 form-control" id="descripcion_carr" rows="4" placeholder="Detallá tus horarios." style="height:100px"></textarea>
                         </div>
                     </div>
 
-                    <div id="turnos-fijos"style="display: none">
+                    <!-- Turnos fijos -->
+                    <div id="turnos-fijos"style="display: none " class="mt-2">
                         
-                        <label for="">Horario de trabajo</label>
+                        <label for=""><strong class="mx-1">Horario de trabajo</strong></label>
 
                         <div class="d-flex mt-1">
     
                             <div class="">
                                 <label for="">Entrada</label>
-                                <input type="time" name="" id="">
+                                <input type="time" name="entrada" id="">
                             </div>
                             <div class="mx-2">
                                 <label for="">Salida</label>
-                                <input type="time" name="" id="">
+                                <input type="time" name="salida" id="">
                             </div>
                         </div>
                     </div> 

@@ -10,7 +10,7 @@
 
             
             <div class="form-floating " >
-               <select class="form-select" id="carrera_a_estudiar" name="id_carrera" required aria-label="Floating label select example">
+               <select class="form-select" id="carrera_a_estudiar" name="id_carrera"  aria-label="Floating label select example">
                    
                   @foreach( $carreras as $item)
                      <option value="{{ $item->id }}">{{ $item->carrera }}</option>

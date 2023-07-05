@@ -5,7 +5,7 @@
    {{-- <div class="" style="display: flex; justify-content: space-between; align-items:center; position: relative;">
 
       <label class="custom-file-upload" style="text-align:center; margin:0px 30px; margin-right:20px;">
-         <input type="file" id="foto-aspirante" class="btn btn-secondary" name="gorra" onchange="previewImage(event, '#imgPreview')" required>
+         <input type="file" id="foto-aspirante" class="btn btn-secondary" name="gorra" onchange="previewImage(event, '#imgPreview')" >
          Subir foto
       </label>
       <div class="container d-flex justify-content-center" style="height: 130px;width:130px;  display:flex; justify-content: center; box-shadow: 0px 0px 1px #000; background:#fff">

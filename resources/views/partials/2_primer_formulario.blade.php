@@ -17,7 +17,7 @@
         <div class="" style="display: flex; justify-content: space-between; align-items:center; position: relative;">
             
             <label class="custom-file-upload" style="text-align:center; margin:0px 30px; margin-right:20px;">
-                <input type="file" id="foto-aspirante" class="btn btn-secondary" name="foto_aspirante" onchange="previewImage(event, '#imgPreview')" required>
+                <input type="file" id="foto-aspirante" class="btn btn-secondary" name="foto_aspirante" onchange="previewImage(event, '#imgPreview')" >
                 Subir foto
             </label>
             <div class="container d-flex justify-content-center" style="height: 130px;width:130px;  display:flex; justify-content: center; box-shadow: 0px 0px 1px #000; background:#fff">
@@ -33,11 +33,11 @@
         <h5 class="mt-3 mx-2">Datos personales</h5>
         <div class="d-flex mt-2 ">
             <div class="form-floating mb-2 mx-1" >
-                <input type="text" class="form-control"   name="nombre_aspirante" id="nombres" required placeholder="nombre aspirante">
+                <input type="text" class="form-control"   name="nombre_aspirante" id="nombres"  placeholder="nombre aspirante">
                 <label for="nombres" >Nombres (*)</label>
             </div>
             <div class="form-floating mb-2 mx-1" >
-                <input type="text" class="form-control" name="apellido_aspirante"  id="apellidos" required placeholder="Apellido Aspirante">
+                <input type="text" class="form-control" name="apellido_aspirante"  id="apellidos"  placeholder="Apellido Aspirante">
                 <label for="apellidos" >Apellidos (*)</label>
             </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="d-flex justify-content-center my-3 mt-1 " style="width:100%;">
 
             <div class="form-floating mx-1" style="width: 50%">
-                <select class="form-select" id="estado-civil" name="estado_civil_aspirante" required aria-label="Floating label select example">
+                <select class="form-select" id="estado-civil" name="estado_civil_aspirante"  aria-label="Floating label select example">
                     <option value="" selected hidden>Seleccione</option>
                     <option value="soltero/a">Soltero/a</option>
                     <option value="casado/a">Casado/a</option>>
@@ -57,7 +57,7 @@
 
 
             <div class="form-floating mx-1" style="width: 50%">
-                <select class="form-select" name="sexo_aspirante" id="sexo" required aria-label="Floating label select example">
+                <select class="form-select" name="sexo_aspirante" id="sexo"  aria-label="Floating label select example">
                     <option value="" selected hidden>Seleccione</option>
                     <option value="masculino">Masculino</option>
                     <option value="femenino">Femenino</option>
@@ -70,13 +70,13 @@
         <div class="mt-10 d-flex" style="width:100%;">
 
             <div class="form-floating mb-2 mx-1" >
-                <input type="text" name="dni_aspirante" class="form-control numeric-input" required id="dni" placeholder="DNI">
+                <input type="text" name="dni_aspirante" class="form-control numeric-input"  id="dni" placeholder="DNI">
                 <label for="dni" >DNI (*)</label>
             </div>
 
             
             <div class="form-floating mb-2 mx-1" >
-                <input type="text" name="cuil_aspirante" class="form-control numeric-input" required id="cuil" placeholder="Cuil">
+                <input type="text" name="cuil_aspirante" class="form-control numeric-input"  id="cuil" placeholder="Cuil">
                 <label for="cuil" >Cuil (*)</label>
             </div>
             

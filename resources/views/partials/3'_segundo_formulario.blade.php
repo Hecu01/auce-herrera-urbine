@@ -22,7 +22,7 @@
         
         <div class="d-flex mt-2 ">
             <div class="form-floating mb-2 mx-1" >
-                <input type="text" class="form-control" required id="domicilio" name="domicilio_aspirante"  placeholder="Su domicilio">
+                <input type="text" class="form-control"  id="domicilio" name="domicilio_aspirante"  placeholder="Su domicilio">
                 <label for="domicilio" >Domicilio (*)</label>
             </div>
             <div class="form-floating mb-2 mx-1" >
@@ -35,18 +35,18 @@
         <div class="d-flex mt-2 ">
             
             <div class="form-floating mb-2 mx-1" >
-                <input type="text" class="form-control" required name="ciudad_aspirante" id="ciudad"  placeholder="Su ciudad de residencia">
+                <input type="text" class="form-control"  name="ciudad_aspirante" id="ciudad"  placeholder="Su ciudad de residencia">
                 <label for="ciudad" >Ciudad (*)</label>
             </div>
             <div class="form-floating mb-2 mx-1" >
-                <input type="text" name="provincia_aspirante" required class="form-control" id="provincia" placeholder="Tu provincia de residencia">
+                <input type="text" name="provincia_aspirante"  class="form-control" id="provincia" placeholder="Tu provincia de residencia">
                 <label for="provincia" >Provincia (*)</label>
             </div>
         </div>
 
 
         <div class="form-floating mb-2 mx-1" >
-            <input type="text" name="cod_post_ciud_aspirante" class="form-control numeric-input" id="codigo_postal" required placeholder="Código Postal">
+            <input type="text" name="cod_post_ciud_aspirante" class="form-control numeric-input" id="codigo_postal"  placeholder="Código Postal">
             <label for="codigo_postal" >Codigo postal (*)</label>
         </div>
 
