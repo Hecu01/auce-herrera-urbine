@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('pruebas', function (Blueprint $table) {
+            $table->id();
+            // Datos Laborales
+            $table->boolean('trabaja');
+            $table->string('actividad_trabajo',100)->nullable();
+            $table->string('horario_trabajo',100)->nullable();
+            $table->boolean('obra_social');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('pruebas');
+    }
+};
