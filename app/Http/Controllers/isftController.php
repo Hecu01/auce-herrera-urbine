@@ -5,19 +5,44 @@ use Illuminate\Http\Request;
 use App\Models\Carrera;
 use App\Models\Asignatura;
 use App\Models\Registro;
+use App\Models\Prueba;
 use App;
+use App\Models\ConcatenatedData;
 
 class isftController extends Controller
 {
     public function index(){
         $carreras = Carrera::all();
         $registros = Registro::all();
-        return view('index', compact('carreras', 'registros'));		
+        return view('index', compact('carreras', 'registros'));     
+    }    
+    public function prueba(){
+
+        return view('partials.prueba');     
+    }
+    public function guardar_prueba(Request $request){
+        $pruebaNuevo = new Prueba;      
+        // Último - Datos laborales
+        $pruebaNuevo->obra_social = $request->aspirante_obra_social;
+        $pruebaNuevo->trabaja = $request->aspirante_trabaja;
+        $pruebaNuevo->actividad_trabajo = $request->rol_trabajo;
+
+        $turnos_rotativos = $request->input('turnos_rotativos');
+        if($turnos_rotativos === '1'){
+            $pruebaNuevo->horario_trabajo = $request->horarios_rotativos_asp;
+        } else{
+            $entrada = $request->input('entrada');
+            $salida = $request->input('salida');
+            $horarios_fijos =  'De ' . $entrada . ' a ' . $salida . ' hs.';
+            $pruebaNuevo->horario_trabajo = $horarios_fijos;
+        }
+        $pruebaNuevo->save();
+        return back()->with('mensaje', 'Prueba');
     }
     // Inscripción
     public function guardar(Request $request){
         $registroNuevo = new Registro;
-        /*
+        /*Todos las columnas
             id	X
             nombre	X
             apellido	X
@@ -80,8 +105,8 @@ class isftController extends Controller
             foto_ok	
             partida_nac_ok	
             created_at	
-            updated_at	
-        */
+            updated_at	*/ 
+            
         // Datos personales[1/5]
         if($request->hasFile('foto_aspirante')){
 			$file = $request->file('foto_aspirante');
@@ -152,14 +177,13 @@ class isftController extends Controller
         $registroNuevo->actividad_trabajo = $request->rol_trabajo;
 
         $turnos_rotativos = $request->input('turnos_rotativos');
-        if($turnos_rotativos === 1){
-            $horarios_rotativos = $request->input('horarios_rotativos_asp');
-            $registroNuevo->horario_trabajo = $request->$horarios_rotativos;
+        if($turnos_rotativos === '1'){
+            $registroNuevo->horario_trabajo = $request->horarios_rotativos_asp;
         } else{
             $entrada = $request->input('entrada');
             $salida = $request->input('salida');
             $horarios_fijos =  'De ' . $entrada . ' a ' . $salida . ' hs.';
-            $registroNuevo->horario_trabajo = $request->$horarios_fijos;
+            $registroNuevo->horario_trabajo = $horarios_fijos;
         }
         $registroNuevo->save();
         return back()->with('mensaje', 'Te inscribiste con éxito.');

@@ -1,9 +1,9 @@
 // inputs
 function completarInput() {
-  var input = document.getElementById("myInput");
-  var nombres = $("#nombres").val();
-  var datos = nombres;
-  input.value = datos;
+  var nombres = document.getElementById("myInput");
+  var nombress = $("#nombres").val();
+  var datos = nombress;
+  nombres.value = datos;
 }
 
 
