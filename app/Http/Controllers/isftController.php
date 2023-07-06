@@ -18,7 +18,7 @@ class isftController extends Controller
     }    
     public function prueba(){
 
-        return view('partials.prueba');     
+        return view('prueba');     
     }
     public function guardar_prueba(Request $request){
         $pruebaNuevo = new Prueba;      
