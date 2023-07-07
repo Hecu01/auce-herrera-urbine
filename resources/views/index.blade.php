@@ -22,6 +22,60 @@
       <div class="container">
          <!-- <h1>formulario de Inscripcion</h1> -->
          <br>
+        
+         <div class="tabla">
+      
+            <table class="table table-dark table-striped" style="width:auto">
+               <thead>
+                  <td>id</td>
+                  <td>Nombres</td>
+                  <td>Apellidos</td>
+                  <td>Foto</td>
+                  <td>DNI</td>
+                  <td>Acción</td>
+               </thead>
+               <tbody>
+                  @foreach($registros as $registro)
+                  <tr>
+                     <td> {{ $registro->id }} </td>
+                     <td> {{ $registro->nombre }} </td>
+                     <td> {{ $registro->apellido }} </td>
+                     <td> <img src="{{ storage_path($registro->foto) }}" alt="Foto aspirante" width="70px" height="70px"> </td>
+                     <td> {{ $registro->dni }} </td>
+                     <td>
+      
+                        <a href="{{ route('registro.editar', $registro->id) }}" class="btn btn-success btn-sm"  title="Editar">
+                           Editar
+                           <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+
+                       <form action="{{ route('registro.eliminar', $registro->id) }}" class="d-inline" method="POST">
+                           @method('DELETE')
+                           @csrf
+
+                           <button type="submit" class="btn btn-danger btn-sm"title="Eliminar">
+                              Eliminar
+                              <i class="fa-solid fa-trash"></i>
+                           </button>
+                        </form>
+                        <a href="{{ route('mostrarDatosAspirante', $registro->id) }} " class="btn btn-secondary btn-sm">
+                           Ver <i class="fa-solid fa-eye"></i>
+                        </a>
+      
+      
+                     </td>
+                  </tr>
+                  @endforeach
+      
+               </tbody>
+            </table>
+         </div> 
+         @if (session('mensaje2'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+               <strong>Atención!</strong> {{ session('mensaje2') }}
+               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+         @endif
          @if (session('mensaje'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                <strong>Atención!</strong> {{ session('mensaje') }}
@@ -82,46 +136,6 @@
             
             </div>  
          --}}
-         <div class="tabla">
-
-            <table class="table table-dark table-striped" style="width:auto">
-               <thead>
-                  <td>id</td>
-                  <td>Nombres</td>
-                  <td>Apellidos</td>
-                  <td>Foto</td>
-                  <td>DNI</td>
-                  <td>Acción</td>
-               </thead>
-               <tbody>
-                  @foreach($registros as $registro)
-                  <tr>
-                     <td> {{ $registro->id }} </td>
-                     <td> {{ $registro->nombre }} </td>
-                     <td> {{ $registro->apellido }} </td>
-                     <td> <img src="{{ $registro->foto }}" alt="Foto aspirante" width="70px" height="70px"> </td>
-                     <td> {{ $registro->dni }} </td>
-                     <td>
-                        <form action="" class="d-inline">
-                           @csrf
-                           <button type="submit" class="btn btn-success btn-sm">
-                              Editar
-                              <i class="fa-solid fa-pencil"></i>
-                           </button>
-                       </form>
-                        <button class="btn btn-danger btn-sm">Eliminar <i class="fa-solid fa-trash"></i></button>
-                        <a href="{{ route('mostrarDatosAspirante', $registro->id) }} " class="btn btn-secondary btn-sm">
-                           Ver <i class="fa-solid fa-eye"></i>
-                        </a>
-
-
-                     </td>
-                  </tr>
-                  @endforeach
-
-               </tbody>
-            </table>
-         </div>
          
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>      

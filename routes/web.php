@@ -20,5 +20,9 @@ Route::get('/registro/{id}', [isftController::class, 'mostrar_datos'])->name('mo
 Route::post('/guardar', [isftController::class, 'guardar'])->name('registrar');
 Route::post('/probar', [isftController::class, 'guardar_prueba'])->name('probar');
 
+Route::delete('/eliminar-registro/{id}', [isftController::class, 'eliminar'])->name('registro.eliminar');
+
+Route::get('/editar-registro/{id}', [isftController::class, 'editar'])->name('registro.editar');
+Route::put('/editar-registro/{id}', [isftController::class, 'update'])->name('registro.actualizar');
 // Route::post('/home', [isftController::class, 'cargar_carrera'])->name('cargar.carrera');
 // Route::post('/home2', [isftController::class, 'cargar_asignatura'])->name('cargar.asignatura');

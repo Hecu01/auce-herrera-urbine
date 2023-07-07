@@ -110,7 +110,7 @@ class isftController extends Controller
         // Datos personales[1/5]
         if($request->hasFile('foto_aspirante')){
 			$file = $request->file('foto_aspirante');
-			$carpetaDestino = 'img/fotos/';
+			$carpetaDestino = storage_path('img/fotos/');
 			$filename = time() . '-' . $file->getClientOriginalName();
 			$uploadSuccess = $request->file('foto_aspirante')->move($carpetaDestino, $filename);
 			$registroNuevo->foto = $carpetaDestino . $filename;
@@ -194,9 +194,32 @@ class isftController extends Controller
         
         return view('ver_aspirante')->with('registro', $registro);
     }
+	// Eliminar
+	public function eliminar($id){
+		$registroEliminar = Registro::findOrFail($id);
+		$registroEliminar->delete();
+		return back()->with('mensaje2', 'Registro eliminado');
+	}
+	// editar
+	public function editar ($id){
+        $carreras = Carrera::all();
+		$registro = Registro::findOrFail($id);
+    	return view('editar_aspirante',compact('registro', 'carreras'));
 
+	}
 
+    public function update(Request $request, $id){
+		$registro = Registro::findOrFail($id);
+		$registro-> nombre = $request->nombres;
+		$registro-> apellido = $request->apellidos;
+        $registro-> est_civil = $request->estado_civil;
+		$registro-> sexo = $request->sexo;
+		$registro-> dni = $request->dni;
+		$registro-> cuil = $request->cuil;
 
+		$registro->save();
+		return back()->with('mensaje', 'registro actualizada');
+	}
 
 
 
