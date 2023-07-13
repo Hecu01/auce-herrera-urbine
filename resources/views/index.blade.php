@@ -39,7 +39,7 @@
                   <tr>
                      <td> {{ $registro->id }} </td>
                      <td> {{ $registro->nombre }} </td>
-                     <td> {{ $registro->apellido }} </td>
+         $            <td> {{ $registro->apellido }} </td>
                      <td> <img src="{{ storage_path($registro->foto) }}" alt="Foto aspirante" width="70px" height="70px"> </td>
                      <td> {{ $registro->dni }} </td>
                      <td>

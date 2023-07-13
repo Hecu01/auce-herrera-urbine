@@ -15,12 +15,12 @@ use App\Http\Controllers\isftController;
 */
 
 Route::get('/', [isftController::class, 'index'])->name('home');
-Route::get('/prueba', [isftController::class, 'prueba'])->name('prueba');
+Route::get('/pregistro.eliminarrueba', [isftController::class, 'prueba'])->name('prueba');
 Route::get('/registro/{id}', [isftController::class, 'mostrar_datos'])->name('mostrarDatosAspirante');
 Route::post('/guardar', [isftController::class, 'guardar'])->name('registrar');
 Route::post('/probar', [isftController::class, 'guardar_prueba'])->name('probar');
 
-Route::delete('/eliminar-registro/{id}', [isftController::class, 'eliminar'])->name('registro.eliminar');
+Route::delete('/eliminar-registro/{id}', [isftController::class, 'eliminar'])->name('');
 
 Route::get('/editar-registro/{id}', [isftController::class, 'editar'])->name('registro.editar');
 Route::put('/editar-registro/{id}', [isftController::class, 'update'])->name('registro.actualizar');
