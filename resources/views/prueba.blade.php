@@ -58,7 +58,7 @@
 			        </div>
 
 
-			        <h5 class="mt-3 mx-2">Datos personales</h5>
+			        {{-- <h5 class="mt-3 mx-2">Datos personales</h5>
 			        <div class="d-flex mt-2 ">
 			            <div class="form-floating mb-2 mx-1" >
 			                <input type="text" class="form-control"   name="nombre_aspirante" id="nombres"  placeholder="nombre aspirante">
@@ -108,11 +108,11 @@
 			                <label for="cuil" >Cuil (*)</label>
 			            </div>
 			            
-			        </div>
+			        </div> --}}
 			        
 			    </div>
 			    <div class="bottom">
-			        <button href="#" id="myButton" rel="finalizando-inscripcion" class="btn btn-success linkform m-4" >
+			        <button href="#" id="my Button" rel="finalizando-inscripcion" class="btn btn-success linkform m-4" >
 			            Siguiente
 			            <i class="fa-solid fa-arrow-right"></i>
 			        </button>
@@ -152,7 +152,7 @@
 			            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt sequi alias quas fuga quaerat ab tenetur consectetur sapiente officia voluptates laboriosam iste dolorum, quod at repudiandae accusamus facilis quasi nesciunt!
 			        </blockquote>
 			    </div>
-			   <div class="mx-3 ">
+			   	{{-- <div class="mx-3 ">
 			        <h4 >
 			           Verifique los datos
 			        </h4>
@@ -173,7 +173,7 @@
 			            <input type="text" id="myInput" class="form-control">			            
 			            <button type="button" onclick="completarInput()" class="btn btn-primary mt-3">Completar</button>
 			        </div>
-			    </div>  
+			    </div>   --}}
 
 
 
@@ -182,7 +182,7 @@
 			            <i class="fa-solid fa-arrow-left"></i>
 			            Atras
 			        </a>
-			        <button class="btn btn-success my-4" type="submit">
+			        <button class="btn btn-success my-4" type="submit" >
 			            Preinscribirme!
 			        </button>
 			        <div class="clear"></div>
@@ -190,6 +190,10 @@
 			    </div>
 			</div>
 		</form>
+		@foreach ($pruebas as $prueba)
+			<img src="{{ $prueba->foto }}" alt="{{ $prueba->id }}">
+			
+		@endforeach
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>      
       <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
       <script src="js/main.js"></script>     

@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('pruebas', function (Blueprint $table) {
             $table->id();
             // Datos Laborales
-            $table->boolean('trabaja');
-            $table->string('actividad_trabajo',100)->nullable();
-            $table->string('horario_trabajo',100)->nullable();
-            $table->boolean('obra_social');
+
+            $table->string('foto',1000)->nullable();
             $table->timestamps();
         });
     }

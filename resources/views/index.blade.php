@@ -23,7 +23,7 @@
          <!-- <h1>formulario de Inscripcion</h1> -->
          <br>
         
-         <div class="tabla">
+          <div class="tabla">
       
             <table class="table table-dark table-striped" style="width:auto">
                <thead>
@@ -124,18 +124,18 @@
  
             @include('partials/15_finalizando_la_inscripcion')
          </form>
-         {{--          
+ 
             <div class="container section-principal d-flex py-5 justify-content-center">
 
-               Cargar Carrera 
-               @include('partials/cargar_carrera')
+               
+               {{-- @include('partials/cargar_carrera') --}}
       
                <!-- Cargar Asignatura -->
-               @include('partials/cargar_asignatura') 
+               {{-- @include('partials/cargar_asignatura')  --}}
          
             
             </div>  
-         --}}
+
          
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>      

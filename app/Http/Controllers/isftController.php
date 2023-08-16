@@ -18,24 +18,21 @@ class isftController extends Controller
     }    
     public function prueba(){
 
-        return view('prueba');     
+        $pruebas = Prueba::all();
+        return view('prueba', compact('pruebas'));     
     }
     public function guardar_prueba(Request $request){
-        $pruebaNuevo = new Prueba;      
+        $pruebaNuevo = new Prueba;
         // Último - Datos laborales
-        $pruebaNuevo->obra_social = $request->aspirante_obra_social;
-        $pruebaNuevo->trabaja = $request->aspirante_trabaja;
-        $pruebaNuevo->actividad_trabajo = $request->rol_trabajo;
-
-        $turnos_rotativos = $request->input('turnos_rotativos');
-        if($turnos_rotativos === '1'){
-            $pruebaNuevo->horario_trabajo = $request->horarios_rotativos_asp;
-        } else{
-            $entrada = $request->input('entrada');
-            $salida = $request->input('salida');
-            $horarios_fijos =  'De ' . $entrada . ' a ' . $salida . ' hs.';
-            $pruebaNuevo->horario_trabajo = $horarios_fijos;
-        }
+        if($request->hasFile('foto_aspirante')){
+			$file = $request->file('foto_aspirante');
+			$carpetaDestino = storage_path('app/public/img/fotos/');
+			$filename = time() . '-' . $file->getClientOriginalName();
+			$uploadSuccess = $request->file('foto_aspirante')->move($carpetaDestino, $filename);
+			$pruebaNuevo->foto = $carpetaDestino . $filename;
+		}
+    
+    
         $pruebaNuevo->save();
         return back()->with('mensaje', 'Prueba');
     }
@@ -191,7 +188,6 @@ class isftController extends Controller
 
     public function mostrar_datos($id){
         $registro = Registro::find($id);
-        
         return view('ver_aspirante')->with('registro', $registro);
     }
 	// Eliminar
