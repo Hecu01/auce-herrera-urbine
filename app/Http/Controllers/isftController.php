@@ -18,12 +18,20 @@ class isftController extends Controller
         $carreras = Carrera::all();
         $registros = Registro::all();
         return view('index', compact('carreras', 'registros'));     
+    }        
+    public function admin(){
+        return view('admin');     
     }    
     public function prueba(){
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4c7ceecb6b62d5a87f627413336c94347ffcde7b
         $pruebas = Prueba::all();
         return view('prueba', compact('pruebas'));     
     }
     public function guardar_prueba(Request $request){
+<<<<<<< HEAD
         $pruebaNuevo = new Prueba;      
         //$path = $request->file('foto_aspirante')->store('public/imagenes');
 
@@ -32,6 +40,19 @@ class isftController extends Controller
         Image::make($request->file('foto_aspirante'));
 
         $pruebaNuevo->foto = $path;
+=======
+        $pruebaNuevo = new Prueba;
+        // Último - Datos laborales
+        if($request->hasFile('foto_aspirante')){
+			$file = $request->file('foto_aspirante');
+			$carpetaDestino = storage_path('app/public/img/fotos/');
+			$filename = time() . '-' . $file->getClientOriginalName();
+			$uploadSuccess = $request->file('foto_aspirante')->move($carpetaDestino, $filename);
+			$pruebaNuevo->foto = $carpetaDestino . $filename;
+		}
+    
+    
+>>>>>>> 4c7ceecb6b62d5a87f627413336c94347ffcde7b
         $pruebaNuevo->save();
         
 
@@ -197,7 +218,6 @@ class isftController extends Controller
 
     public function mostrar_datos($id){
         $registro = Registro::find($id);
-        
         return view('ver_aspirante')->with('registro', $registro);
     }
 	// Eliminar

@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('pruebas', function (Blueprint $table) {
             $table->id();
             // Datos Laborales
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4c7ceecb6b62d5a87f627413336c94347ffcde7b
             $table->string('foto',1000)->nullable();
             $table->timestamps();
         });
