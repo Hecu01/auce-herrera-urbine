@@ -6,6 +6,9 @@ use App\Models\Carrera;
 use App\Models\Asignatura;
 use App\Models\Registro;
 use App\Models\Prueba;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+
 use App;
 use App\Models\ConcatenatedData;
 
@@ -17,28 +20,30 @@ class isftController extends Controller
         return view('index', compact('carreras', 'registros'));     
     }    
     public function prueba(){
-
-        return view('prueba');     
+        $pruebas = Prueba::all();
+        return view('prueba', compact('pruebas'));     
     }
     public function guardar_prueba(Request $request){
         $pruebaNuevo = new Prueba;      
-        // Último - Datos laborales
-        $pruebaNuevo->obra_social = $request->aspirante_obra_social;
-        $pruebaNuevo->trabaja = $request->aspirante_trabaja;
-        $pruebaNuevo->actividad_trabajo = $request->rol_trabajo;
+        //$path = $request->file('foto_aspirante')->store('public/imagenes');
 
-        $turnos_rotativos = $request->input('turnos_rotativos');
-        if($turnos_rotativos === '1'){
-            $pruebaNuevo->horario_trabajo = $request->horarios_rotativos_asp;
-        } else{
-            $entrada = $request->input('entrada');
-            $salida = $request->input('salida');
-            $horarios_fijos =  'De ' . $entrada . ' a ' . $salida . ' hs.';
-            $pruebaNuevo->horario_trabajo = $horarios_fijos;
-        }
+        $path = $request->file('foto_aspirante')->getClientOriginalName();
+        $ruta = storage_path() . '\app\public\imagenes/' . $path;
+        Image::make($request->file('foto_aspirante'));
+
+        $pruebaNuevo->foto = $path;
         $pruebaNuevo->save();
+        
+
+
+        // Obtener la URL pública de la imagen
+        $url = Storage::url($path);
         return back()->with('mensaje', 'Prueba');
     }
+
+
+
+
     // Inscripción
     public function guardar(Request $request){
         $registroNuevo = new Registro;
@@ -115,6 +120,7 @@ class isftController extends Controller
 			$uploadSuccess = $request->file('foto_aspirante')->move($carpetaDestino, $filename);
 			$registroNuevo->foto = $carpetaDestino . $filename;
 		}
+        $request->file('foto_aspirante')->store('img/fotos/', 'local');
         $registroNuevo->nombre = $request->nombre_aspirante;
         $registroNuevo->apellido = $request->apellido_aspirante;        
         $registroNuevo->est_civil = $request->estado_civil_aspirante;   

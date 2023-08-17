@@ -24,6 +24,16 @@
 	           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 	        </div>
     	@endif
+
+
+
+		@foreach( $pruebas as $prueba)
+			<p>{{ $prueba->foto }}</p>
+			<img src="{{ asset($prueba->foto) }}" alt="Imagen">
+		@endforeach
+
+
+
 		<form id="form_wrapper" class="form_wrapper" enctype="multipart/form-data"  method="POST" action="{{ route('probar') }}">
 			@csrf
 			<div class="register0 active en-comun ">
@@ -57,7 +67,7 @@
 			                    
 			        </div>
 
-
+					{{-- 
 			        <h5 class="mt-3 mx-2">Datos personales</h5>
 			        <div class="d-flex mt-2 ">
 			            <div class="form-floating mb-2 mx-1" >
@@ -108,11 +118,11 @@
 			                <label for="cuil" >Cuil (*)</label>
 			            </div>
 			            
-			        </div>
+			        </div> --}}
 			        
 			    </div>
 			    <div class="bottom">
-			        <button href="#" id="myButton" rel="finalizando-inscripcion" class="btn btn-success linkform m-4" >
+			        <button href="#" id="my Button" rel="finalizando-inscripcion" class="btn btn-success linkform m-4" >
 			            Siguiente
 			            <i class="fa-solid fa-arrow-right"></i>
 			        </button>
@@ -152,7 +162,7 @@
 			            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt sequi alias quas fuga quaerat ab tenetur consectetur sapiente officia voluptates laboriosam iste dolorum, quod at repudiandae accusamus facilis quasi nesciunt!
 			        </blockquote>
 			    </div>
-			   <div class="mx-3 ">
+			   	{{-- <div class="mx-3 ">
 			        <h4 >
 			           Verifique los datos
 			        </h4>
@@ -173,7 +183,7 @@
 			            <input type="text" id="myInput" class="form-control">			            
 			            <button type="button" onclick="completarInput()" class="btn btn-primary mt-3">Completar</button>
 			        </div>
-			    </div>  
+			    </div>   --}}
 
 
 
