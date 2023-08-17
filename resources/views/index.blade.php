@@ -8,9 +8,11 @@
       <!-- Fonts -->
       <link rel="preconnect" href="https://fonts.bunny.net">
       <meta name="author" content="3° Año Análisis de Sistemas">
+      <meta name="description" content="Realizado por Herrera, Urbine y Auce, es un prediseño de formulario de inscripcion a la facultad.">
 
       <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      
       <!-- Styles -->
       <link rel="stylesheet" href="style/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,58 +20,45 @@
       <title>ISFT 38 - INSCRIPCION</title>
    </head>
    <body style="background: rgba(0, 0, 0, 0.363)">
-      
       <div class="container">
-         <!-- <h1>formulario de Inscripcion</h1> -->
-         <br>
-        
-          <div class="tabla">
-      
-            <table class="table table-dark table-striped" style="width:auto">
-               <thead>
-                  <td>id</td>
-                  <td>Nombres</td>
-                  <td>Apellidos</td>
-                  <td>Foto</td>
-                  <td>DNI</td>
-                  <td>Acción</td>
-               </thead>
-               <tbody>
-                  @foreach($registros as $registro)
-                  <tr>
-                     <td> {{ $registro->id }} </td>
-                     <td> {{ $registro->nombre }} </td>
-                     <td> {{ $registro->apellido }} </td>
-                     <td> <img src="{{ storage_path($registro->foto) }}" alt="Foto aspirante" width="70px" height="70px"> </td>
-                     <td> {{ $registro->dni }} </td>
-                     <td>
-      
-                        <a href="{{ route('registro.editar', $registro->id) }}" class="btn btn-success btn-sm"  title="Editar">
-                           Editar
-                           <i class="fa-solid fa-pen-to-square"></i>
+         <!-- Right Side Of Navbar -->
+         <ul class="navbar-nav ms-auto">
+            <!-- Authentication Links -->
+            @guest
+                  @if (Route::has('login'))
+                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                     </li>
+                  @endif
+
+                  @if (Route::has('register'))
+                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                     </li>
+                  @endif
+            @else
+                  <li class="nav-item dropdown">
+                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                     </a>
+
+                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                              {{ __('Logout') }}
                         </a>
 
-                       <form action="{{ route('registro.eliminar', $registro->id) }}" class="d-inline" method="POST">
-                           @method('DELETE')
-                           @csrf
-
-                           <button type="submit" class="btn btn-danger btn-sm"title="Eliminar">
-                              Eliminar
-                              <i class="fa-solid fa-trash"></i>
-                           </button>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                              @csrf
                         </form>
-                        <a href="{{ route('mostrarDatosAspirante', $registro->id) }} " class="btn btn-secondary btn-sm">
-                           Ver <i class="fa-solid fa-eye"></i>
-                        </a>
-      
-      
-                     </td>
-                  </tr>
-                  @endforeach
-      
-               </tbody>
-            </table>
-         </div> 
+                     </div>
+                  </li>
+            @endguest
+         </ul>
+         {{-- @include('partials/tabla_registros') --}} 
+
+         
          @if (session('mensaje2'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                <strong>Atención!</strong> {{ session('mensaje2') }}
@@ -81,7 +70,7 @@
                <strong>Atención!</strong> {{ session('mensaje') }}
                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-         @endif
+         @endif 
          <form id="form_wrapper" class="form_wrapper" enctype="multipart/form-data"  method="POST" action="{{ route('registrar') }}" >
             @csrf
             <!-- Bienvenida 1_primer_primer [ACTIVE]...-->

@@ -15,6 +15,9 @@ class isftController extends Controller
         $carreras = Carrera::all();
         $registros = Registro::all();
         return view('index', compact('carreras', 'registros'));     
+    }        
+    public function admin(){
+        return view('admin');     
     }    
     public function prueba(){
 
