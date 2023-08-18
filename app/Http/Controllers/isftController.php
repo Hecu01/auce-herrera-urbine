@@ -18,7 +18,7 @@ class isftController extends Controller
         $carreras = Carrera::all();
         $registros = Registro::all();
         return view('index', compact('carreras', 'registros'));     
-    }        
+    }
     public function admin(){
         $carreras = Carrera::all();
         $registros = Registro::all();
@@ -136,9 +136,9 @@ class isftController extends Controller
         if($request->hasFile('foto_aspirante')){
 			$file = $request->file('foto_aspirante');
 			$carpetaDestino = storage_path('fotos');
-			$filename = time() . '-' . $file->getClientOriginalName();
+			$filename = $file->getClientOriginalName();
 			$uploadSuccess = $request->file('foto_aspirante')->move($carpetaDestino, $filename);
-			$registroNuevo->foto = $carpetaDestino . $filename;
+			$registroNuevo->foto = $filename;
 		}
         $registroNuevo->nombre = $request->nombre_aspirante;
         $registroNuevo->apellido = $request->apellido_aspirante;        
