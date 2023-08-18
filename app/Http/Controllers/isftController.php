@@ -20,47 +20,46 @@ class isftController extends Controller
         return view('index', compact('carreras', 'registros'));     
     }        
     public function admin(){
-        return view('admin');     
+        $carreras = Carrera::all();
+        $registros = Registro::all();
+        return view('admin/admin', compact('carreras', 'registros'));     
     }    
     public function prueba(){
-<<<<<<< HEAD
-=======
 
->>>>>>> 4c7ceecb6b62d5a87f627413336c94347ffcde7b
         $pruebas = Prueba::all();
         return view('prueba', compact('pruebas'));     
     }
-    public function guardar_prueba(Request $request){
-<<<<<<< HEAD
-        $pruebaNuevo = new Prueba;      
-        //$path = $request->file('foto_aspirante')->store('public/imagenes');
+    // public function guardar_prueba(Request $request){
 
-        $path = $request->file('foto_aspirante')->getClientOriginalName();
-        $ruta = storage_path() . '\app\public\imagenes/' . $path;
-        Image::make($request->file('foto_aspirante'));
+    //     $pruebaNuevo = new Prueba;      
+    //     //$path = $request->file('foto_aspirante')->store('public/imagenes');
 
-        $pruebaNuevo->foto = $path;
-=======
-        $pruebaNuevo = new Prueba;
-        // Último - Datos laborales
-        if($request->hasFile('foto_aspirante')){
-			$file = $request->file('foto_aspirante');
-			$carpetaDestino = storage_path('app/public/img/fotos/');
-			$filename = time() . '-' . $file->getClientOriginalName();
-			$uploadSuccess = $request->file('foto_aspirante')->move($carpetaDestino, $filename);
-			$pruebaNuevo->foto = $carpetaDestino . $filename;
-		}
+    //     $path = $request->file('foto_aspirante')->getClientOriginalName();
+    //     $ruta = storage_path() . '\app\public\imagenes/' . $path;
+    //     // Image::make($request->file('foto_aspirante'));
+
+    //     $pruebaNuevo->foto = $path;
+
+    //     $pruebaNuevo = new Prueba;
+    //     // Último - Datos laborales
+    //     if($request->hasFile('foto_aspirante')){
+	// 		$file = $request->file('foto_aspirante');
+	// 		$carpetaDestino = storage_path('app/public/img/fotos/');
+	// 		$filename = time() . '-' . $file->getClientOriginalName();
+	// 		$uploadSuccess = $request->file('foto_aspirante')->move($carpetaDestino, $filename);
+	// 		$pruebaNuevo->foto = $carpetaDestino . $filename;
+	// 	}
+
     
-    
->>>>>>> 4c7ceecb6b62d5a87f627413336c94347ffcde7b
-        $pruebaNuevo->save();
+
+    //     $pruebaNuevo->save();
         
 
 
-        // Obtener la URL pública de la imagen
-        $url = Storage::url($path);
-        return back()->with('mensaje', 'Prueba');
-    }
+    //     // Obtener la URL pública de la imagen
+    //     $url = Storage::url($path);
+    //     return back()->with('mensaje', 'Prueba');
+    // }
 
 
 
@@ -136,12 +135,11 @@ class isftController extends Controller
         // Datos personales[1/5]
         if($request->hasFile('foto_aspirante')){
 			$file = $request->file('foto_aspirante');
-			$carpetaDestino = storage_path('img/fotos/');
+			$carpetaDestino = 'img/fotos/';
 			$filename = time() . '-' . $file->getClientOriginalName();
 			$uploadSuccess = $request->file('foto_aspirante')->move($carpetaDestino, $filename);
 			$registroNuevo->foto = $carpetaDestino . $filename;
 		}
-        $request->file('foto_aspirante')->store('img/fotos/', 'local');
         $registroNuevo->nombre = $request->nombre_aspirante;
         $registroNuevo->apellido = $request->apellido_aspirante;        
         $registroNuevo->est_civil = $request->estado_civil_aspirante;   
@@ -218,7 +216,7 @@ class isftController extends Controller
 
     public function mostrar_datos($id){
         $registro = Registro::find($id);
-        return view('ver_aspirante')->with('registro', $registro);
+        return view('admin/ver_aspirante')->with('registro', $registro);
     }
 	// Eliminar
 	public function eliminar($id){
@@ -230,19 +228,46 @@ class isftController extends Controller
 	public function editar ($id){
         $carreras = Carrera::all();
 		$registro = Registro::findOrFail($id);
-    	return view('editar_aspirante',compact('registro', 'carreras'));
+    	return view('admin/editar_aspirante',compact('registro', 'carreras'));
 
 	}
 
     public function update(Request $request, $id){
+        // Datos Nacimiento [1/5]
 		$registro = Registro::findOrFail($id);
-		$registro-> nombre = $request->nombres;
-		$registro-> apellido = $request->apellidos;
-        $registro-> est_civil = $request->estado_civil;
-		$registro-> sexo = $request->sexo;
-		$registro-> dni = $request->dni;
-		$registro-> cuil = $request->cuil;
+		$registro->nombre = $request->nombre_aspirante;
+		$registro-> apellido = $request->apellido_aspirante;
+        $registro-> est_civil = $request->estado_civil_aspirante;
+		$registro-> sexo = $request->sexo_aspirante;
+		$registro-> dni = $request->dni_aspirante;
+		$registro-> cuil = $request->cuil_aspirante;
 
+        // Datos Nacimiento [2/5]
+        $registro->lug_nac = $request->ciudad_nac_aspirante;
+        $registro->prov_nac = $request->prov_nac_aspirante;
+        $registro->nacionalidad = $request->pais_nac_aspirante; 
+        $registro->fec_nac = $request->fecha_nac_aspirante;         
+        
+        // Datos de residencia [3/5]
+        $registro->domicilio = $request->domicilio_aspirante;
+        $registro->barrio = $request->barrio_aspirante;
+        $registro->ciudad = $request->ciudad_aspirante; 
+        $registro->provincia = $request->provincia_aspirante;  
+        $registro->cod_postal = $request->cod_post_ciud_aspirante;         
+        
+        // Datos de contactos [4/5]
+        $registro->email = $request->correo_aspirante;
+        $registro->celular = $request->celular_aspirante;
+        $registro->tel_fijo = $request->tel_fijo_aspirante;
+        $registro->tel_alternativo = $request->tel_alterno_aspirante;
+        $registro->pertenece_a = $request->tel_alterno_aspirante_pertenece_a;
+        
+
+        // Datos académicos [1/1]
+        $registro->titulo_intermedio = $request->titulo_secundario;
+        $registro->escuela_egreso = $request->escuela_egreso_secundaria;
+        $registro->año_egreso = $request->año_egreso_secundaria;
+        $registro->distrito_egreso = $request->ciudad_egreso_secundaria;
 		$registro->save();
 		return back()->with('mensaje', 'registro actualizada');
 	}

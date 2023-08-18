@@ -18,12 +18,38 @@
       <title>ISFT 38 - REGISTRADO</title>
    </head>
    <body style="">
-        <div class="container">
-            <p>Nombre: {{ $registro->nombre }}</p>  
-            <p>Apellido: {{ $registro->apellido }}</p>
-            <p>Apellido: {{ $registro->dni }}</p>
-            <img src="../{{ $registro->foto }}" alt="Foto aspirante" width="70px" height="70px">
-        </div>
+      <style>
+         li{
+            list-style: none;
+         }
+      </style>
+         <div class="container">
+            <nav class="d-flex " style="justify-content: flex-end">
+               <a href="{{ route('ir_admin') }}" class="btn btn-secondary">Regresar</a>
+               <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle btn btn-success" style=" display:flex; justify-content: flex-end; color:#fff;"  href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                     Admin: {{ Auth::user()->name }}
+                  </a>
+
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                          {{ __('Logout') }}
+                      </a>
+
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                          @csrf
+                      </form>
+                  </div>
+              </li>
+
+            </nav>
+            <article>
+               <img src="../{{ $registro->foto }}" alt="Foto aspirante" width="150px" height="150px">
+               <p>Nombre: {{ $registro->nombre }}</p>  
+            </article>
+         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>      
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <script src="js/main.js"></script>     

@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <a href="{{route('ir_admin') }}">ENTRAR</a>
                 </div>
             </div>
         </div>

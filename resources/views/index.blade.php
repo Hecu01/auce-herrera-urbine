@@ -21,35 +21,8 @@
    </head>
    <body style="background: rgba(0, 0, 0, 0.363)">
       <div class="container">
-<<<<<<< HEAD
-         <!-- <h1>formulario de Inscripcion</h1> -->
-         <br>
-        
-         <div class="tabla">
-      
-            <table class="table table-dark table-striped" style="width:auto">
-               <thead>
-                  <td>id</td>
-                  <td>Nombres</td>
-                  <td>Apellidos</td>
-                  <td>Foto</td>
-                  <td>DNI</td>
-                  <td>Acción</td>
-               </thead>
-               <tbody>
-                  @foreach($registros as $registro)
-                  <tr>
-                     <td> {{ $registro->id }} </td>
-                     <td> {{ $registro->nombre }} </td>
-         $            <td> {{ $registro->apellido }} </td>
-                     <td> <img src="{{ storage_path($registro->foto) }}" alt="Foto aspirante" width="70px" height="70px"> </td>
-                     <td> {{ $registro->dni }} </td>
-                     <td>
-      
-                        <a href="{{ route('registro.editar', $registro->id) }}" class="btn btn-success btn-sm"  title="Editar">
-                           Editar
-                           <i class="fa-solid fa-pen-to-square"></i>
-=======
+
+ 
          <!-- Right Side Of Navbar -->
          <ul class="navbar-nav ms-auto">
             <!-- Authentication Links -->
@@ -76,7 +49,6 @@
                            onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">
                               {{ __('Logout') }}
->>>>>>> 4c7ceecb6b62d5a87f627413336c94347ffcde7b
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -86,7 +58,6 @@
                   </li>
             @endguest
          </ul>
-         {{-- @include('partials/tabla_registros') --}} 
 
          
          @if (session('mensaje2'))
@@ -101,6 +72,8 @@
                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
          @endif 
+         
+         {{-- @include('partials/tabla_registros')  --}}
          <form id="form_wrapper" class="form_wrapper" enctype="multipart/form-data"  method="POST" action="{{ route('registrar') }}" >
             @csrf
             <!-- Bienvenida 1_primer_primer [ACTIVE]...-->
@@ -147,10 +120,7 @@
             <div class="container section-principal d-flex py-5 justify-content-center">
 
                
-               {{-- @include('partials/cargar_carrera') --}}
-      
-               <!-- Cargar Asignatura -->
-               {{-- @include('partials/cargar_asignatura')  --}}
+               
          
             
             </div>  

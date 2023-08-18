@@ -1,4 +1,4 @@
-<div class="register3 active en-comun">
+<div class="register3 not-display en-comun">
     <header class="mb-3 d-flex" style="justify-content: space-between; position: relative;">
         <h4 >
             Datos personales [5/5] 
