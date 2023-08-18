@@ -135,7 +135,7 @@ class isftController extends Controller
         // Datos personales[1/5]
         if($request->hasFile('foto_aspirante')){
 			$file = $request->file('foto_aspirante');
-			$carpetaDestino = 'img/fotos/';
+			$carpetaDestino = storage_path('fotos');
 			$filename = time() . '-' . $file->getClientOriginalName();
 			$uploadSuccess = $request->file('foto_aspirante')->move($carpetaDestino, $filename);
 			$registroNuevo->foto = $carpetaDestino . $filename;
