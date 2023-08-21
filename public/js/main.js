@@ -6,11 +6,13 @@ numericInputs.forEach(function(input) {
   });
 });
 
-
-
 $(document).ready(function() {
-  // botones desactivados
 
+
+
+
+  // botones de siguiente en la inscripcion
+  // botones desactivados
   $("#myButton").prop("disabled", true);
   $("#myButton2").prop("disabled", true);
   $("#myButton3").prop("disabled", true);
