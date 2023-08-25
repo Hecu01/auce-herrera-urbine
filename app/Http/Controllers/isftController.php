@@ -242,6 +242,7 @@ class isftController extends Controller
 		$registro-> dni = $request->dni_aspirante;
 		$registro-> cuil = $request->cuil_aspirante;
 
+
         // Datos Nacimiento [2/5]
         $registro->lug_nac = $request->ciudad_nac_aspirante;
         $registro->prov_nac = $request->prov_nac_aspirante;
@@ -268,6 +269,47 @@ class isftController extends Controller
         $registro->escuela_egreso = $request->escuela_egreso_secundaria;
         $registro->año_egreso = $request->año_egreso_secundaria;
         $registro->distrito_egreso = $request->ciudad_egreso_secundaria;
+
+
+        // Preguntas
+        $tiene_fam_cargo = $request->has('fam_a_cargo');
+        if ($tiene_fam_cargo) {
+            $fam_cargo = 1;
+            $registro->fam_a_cargo = $fam_cargo;
+        } else {
+            $fam_cargo = 0;
+            $registro->fam_a_cargo = $fam_cargo;
+        }
+        $tiene_hijos_update = $request->has('tiene_hijos');
+        if ($tiene_hijos_update) {
+            $hijos = 1;
+            $registro->hijos = $hijos;
+        } else {
+            $hijos = 0;
+            $registro->hijos = $hijos;
+        }
+
+        $tiene_obra_social = $request->has('obra_social');
+        if ($tiene_obra_social) {
+            $obraSocial = 1;
+            $registro->obra_social = $obraSocial;
+        } else {
+            $obraSocial = 0;
+            $registro->obra_social = $obraSocial;
+        }
+        $trabaja_update = $request->has('trabaja');
+        if ($trabaja_update) {
+            $trabaja = 1;
+            $registro->trabaja = $trabaja;
+            $registro->trabaja = $trabaja;
+            
+        } else {
+            $trabaja = 0;
+            $registro->trabaja = $trabaja;
+        }
+
+
+
 		$registro->save();
 		return back()->with('mensaje', 'registro actualizada');
 	}

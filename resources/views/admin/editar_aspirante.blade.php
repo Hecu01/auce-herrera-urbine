@@ -253,12 +253,12 @@
                                     <label for="estado-civil">Tiene familiares a cargo: </label>
                                     <div class="form-check form-switch" style="margin: 2px 0px 0px 4px">
                                         @if($registro->fam_a_cargo == true)
-                                            <input class="form-check-input" type="checkbox" id="familia_a_cargo" checked>
+                                            <input class="form-check-input" name="fam_a_cargo" type="checkbox" id="familia_a_cargo" checked>
                                             <label for="" class="switches"  id="si_familia_a_cargo">SÍ (original)</label>
                                             <label for="" class="switches"  id="no_familia_a_cargo" style="display: none">NO</label>
 
                                         @else
-                                            <input class="form-check-input" type="checkbox" id="familia_a_cargo" checked="false">
+                                            <input class="form-check-input" name="fam_a_cargo" type="checkbox" id="familia_a_cargo" >
                                             <label for="" class="switches"  id="si_familia_a_cargo" style="display: none">SÍ </label>
                                             <label for="" class="switches" id="no_familia_a_cargo">NO (original)</label>
                                         @endif
@@ -268,12 +268,12 @@
                                     <label for="estado-civil">Tiene hijos: </label>
                                     <div class="form-check form-switch" style="margin: 2px 0px 0px 4px">
                                         @if($registro->hijos == true)
-                                            <input class="form-check-input" type="checkbox" id="tiene_hijos" checked>
+                                            <input class="form-check-input" name="tiene_hijos" type="checkbox" id="tiene_hijos" checked>
                                             <label for="" class="switches"  id="si_tiene_hijos">SÍ (original)</label>
                                             <label for="" class="switches"  id="no_tiene_hijos" style="display: none">NO</label>
 
                                         @else
-                                            <input class="form-check-input" type="checkbox" id="tiene_hijos" checked="false">
+                                            <input class="form-check-input" name="tiene_hijos" type="checkbox" id="tiene_hijos" >
                                             <label for="" class="switches"  id="si_tiene_hijos" style="display: none">SÍ </label>
                                             <label for="" class="switches" id="no_tiene_hijos">NO (original)</label>
                                         @endif
@@ -284,12 +284,12 @@
                                     <label for="estado-civil">Obra social: </label>
                                     <div class="form-check form-switch" style="margin: 2px 0px 0px 4px">
                                         @if($registro->obra_social == true)
-                                            <input class="form-check-input" type="checkbox" id="obraSocial" checked>
+                                            <input class="form-check-input" name="obra_social" type="checkbox" id="obraSocial" checked>
                                             <label for="" class="switches"  id="si_obraSocial">SÍ (original)</label>
                                             <label for="" class="switches"  id="no_obraSocial" style="display: none">NO</label>
 
                                         @else
-                                            <input class="form-check-input" type="checkbox" id="obraSocial" checked="false">
+                                            <input class="form-check-input" name="obra_social" type="checkbox" id="obraSocial" >
                                             <label for="" class="switches"  id="si_obraSocial" style="display: none">SÍ </label>
                                             <label for="" class="switches" id="no_obraSocial">NO (original)</label>
                                         @endif
@@ -300,12 +300,12 @@
                                     <label for="estado-civil">Trabaja: </label>
                                     <div class="form-check form-switch" style="margin: 2px 0px 0px 4px;  ">
                                         @if($registro->trabaja == true)
-                                            <input class="form-check-input" type="checkbox" id="trabaja" checked>
+                                            <input class="form-check-input" name="trabaja" type="checkbox" id="trabaja" checked>
                                             <label for="" class="switches"  class="switches"  id="si_trabaja">SÍ (original)</label>
                                             <label for="" class="switches"  id="no_trabaja" style="display: none">NO</label>
 
                                         @else
-                                            <input class="form-check-input" type="checkbox" id="trabaja" checked="false">
+                                            <input class="form-check-input" name="trabaja" type="checkbox" id="trabaja" >
                                             <label for="" class="switches"  id="si_trabaja" style="display: none">SÍ </label>
                                             <label for="" class="switches" id="no_trabaja">NO (original)</label>
                                         @endif
@@ -314,16 +314,23 @@
                                     
                                 </div>
 
+                                @if($registro->trabaja == true)
+                                    <div id="horarios_trabajo" class="mx-1" >
+                                        <div >
+                                            <label for="act" >Actividad en el trabajo</label>
+                                            <input type="text" class="form-control" name="rol_trabajo" id="act" >
+                                        </div>
+                                        <div class="">
+                                            <label for="act" >Horarios de trabajo</label>
+                                            <textarea name="horarios_rotativos_asp" class="mb-2 form-control form-control-sm" id="descripcion_carr"  placeholder='Detallá los horarios de trabajo. Si son horarios fijos, basta con ingresar "De (horario de entrada) a (horario de salida)". (Por Ejemplo: de 8 a 16hs)' style="height:75px"></textarea>
+                                        </div>
+                                    </div>
 
-                                <div id="horarios_trabajo" class="mx-2" style="display: none">
-                                    
-                                    <textarea name="horarios_rotativos_asp" class="my-2 form-control form-control-sm" id="descripcion_carr" rows="4" placeholder="Detallá los horarios de trabajo." style="height:50px"></textarea>
-                                </div>
-
+                                @endif
                             </div>
                                
 
-                            <div class="" style="border: none; border-top: 2px solid #c9c9c9; border-radius: 0px; margin-bottom:10px;">
+                            {{-- <div class="" style="border: none; border-top: 2px solid #c9c9c9; border-radius: 0px; margin-bottom:10px;">
                                 <div class="left ml-4 col-12 mb-3">
                                     <h4 class="mt-1 p-1">Estudios Adicionales (1)</h4>
                     
@@ -386,117 +393,10 @@
                                     </div>           
             
                                 </div>
-                            </div> 
+                            </div>  --}}
                         </div>
                     </div>
-                    {{-- <div class="" style="width:350px">
-        
-                        <div class="left ml-4 col-12 mb-3 article">
-                            <div class="left ml-4 col-12 mb-3">
-                                <h4 class="mt-1 p-1">Datos académicos</h4>
-                
-                                <div>
-                                    <div class="mx-1">
-                                        <label for="">Titulo secundario</label><br>
-                                        <input type="text" class="form-control form-control-sm" name="titulo_secundario" value="{{ $registro->titulo_intermedio }}">
-                                    </div>
-           
-                                </div>
-                                <div>
-                                    <div class="mx-1">
-                                        <label for="estado-civil">Escuela de egreso</label>
-                                        <input type="text" class="form-control form-control-sm" name="escuela_egreso_secundaria" value="{{ $registro->escuela_egreso }}">
-                                    </div>
-                                    
-                                </div>
-                                <div class="d-flex" >
-                                    <div class="mx-1">
-                                        <label for="">Año Egreso</label><br>
-                                        <input type="text" class="form-control form-control-sm" name="año_egreso_secundaria" value="{{ $registro->año_egreso }}">
-                                    </div>
-                                    <div class="mx-1">
-                                        <label for="estado-civil">Ciudad</label>
-                                        <input type="text" class="form-control form-control-sm" name="ciudad_egreso_secundaria" value="{{ $registro->distrito_egreso }}">
-                                    </div>
-                                    
-                                </div>           
-        
-                            </div>
-                        </div>
-        
-                        <div class="left ml-4 col-12 mb-3 article">
-                            <div class="left ml-4 col-12 mb-3">
-                                <h4 class="mt-1 p-1">Estudios Adicionales (1)</h4>
-                
-                                <div>
-                                    <div class="mx-1">
-                                        <label for="">Titulo</label><br>
-                                        <input type="text" class="form-control form-control-sm" name="titulo_otro_estudio1" value="{{ $registro->otro_estudio}}">
-                                    </div>
-           
-                                </div>
-                                <div>
-                                    <div class="mx-1">
-                                        <label for="estado-civil">Instituto de egreso</label>
-                                        <input type="text" class="form-control form-control-sm" name="instituto_otro_estudio1" value="{{ $registro->otro_estudio_inst }}">
-                                    </div>
-                                    
-                                </div>
-                                <div class="d-flex" >
-                                    <div class="mx-1">
-                                        <label for="">Año Egreso</label><br>
-                                        <input type="text" class="form-control form-control-sm" name="ciudad_egreso_otro_estudio1" value="{{ $registro->otro_estudio_egreso }}">
-                                    </div>
-                                    <div class="mx-1">
-                                        <label for="estado-civil">Ciudad</label>
-                                        <input type="text" class="form-control form-control-sm" name="año_egreso_otro_estudio1" value="{{ $registro->otro_estudio_egreso_dist }}">
-                                    </div>
-                                    
-                                </div>           
-        
-                            </div>
-                        </div>
-                        <div class="left ml-4 col-12 mb-3 article">
-                            <div class="left ml-4 col-12 mb-3">
-                                <h4 class="mt-1 p-1">Estudios Adicionales (2)</h4>
-                
-                                <div>
-                                    <div class="mx-1">
-                                        <label for="">Titulo</label><br>
-                                        <input type="text" class="form-control form-control-sm" name="titulo_otro_estudio2" value="{{ $registro->otro_estudio2 }}">
-                                    </div>
-           
-                                </div>
-                                <div>
-                                    <div class="mx-1">
-                                        <label for="estado-civil">Instituto de egreso</label>
-                                        <input type="text" class="form-control form-control-sm" name="instituto_otro_estudio2" value="{{ $registro->otro_estudio_inst2 }}">
-                                    </div>
-                                    
-                                </div>
-                                <div class="d-flex" >
-                                    <div class="mx-1">
-                                        <label for="">Año Egreso</label><br>
-                                        <input type="text" class="form-control form-control-sm" name="año_egreso_otro_estudio2" value="{{ $registro->otro_estudio_egreso2 }}">
-                                    </div>
-                                    <div class="mx-1">
-                                        <label for="estado-civil">Ciudad</label>
-                                        <input type="text" class="form-control form-control-sm" name="ciudad_egreso_otro_estudio2" value="{{ $registro->otro_estudio_egreso_dist2 }}">
-                                    </div>
-                                    
-                                </div>           
-        
-                            </div>
-                        </div>
-        
-                    </div> --}}
 
-                    
-                    {{-- <div style="text-align:center; margin:auto; margin-bottom:10px;">
-                        <h2  >Editar registro: {{ $registro->id }}</h2>
-                        <button type="submit" class="btn btn-success">Guardar</button>
-                        <a href="{{ route('ir_admin') }}" class="btn btn-secondary">Regresar</a>
-                    </div> --}}
                 </div>
                 <div >
                     <nav class="d-flex " style="justify-content: flex-end">
