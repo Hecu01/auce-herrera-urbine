@@ -322,11 +322,22 @@
                                         </div>
                                         <div class="">
                                             <label for="act" >Horarios de trabajo</label>
+                                            <textarea name="horarios_rotativos_asp" class="mb-2 form-control form-control-sm" id="descripcion_carr"  placeholder='Detallá los horarios de trabajo. Si son horarios fijos, basta con ingresar "De (horario de entrada) a (horario de salida)". (Por Ejemplo: de 8 a 16hs)' style="height:75px">{{ $registro }}</textarea>
+                                        </div>
+                                    </div>
+                                @else
+                                    <div id="horarios_trabajo" class="mx-1" >
+                                        <div >
+                                            <label for="act" >Actividad en el trabajo</label>
+                                            <input type="text" class="form-control" name="rol_trabajo" id="act" >
+                                        </div>
+                                        <div class="">
+                                            <label for="act" >Horarios de trabajo</label>
                                             <textarea name="horarios_rotativos_asp" class="mb-2 form-control form-control-sm" id="descripcion_carr"  placeholder='Detallá los horarios de trabajo. Si son horarios fijos, basta con ingresar "De (horario de entrada) a (horario de salida)". (Por Ejemplo: de 8 a 16hs)' style="height:75px"></textarea>
                                         </div>
                                     </div>
-
                                 @endif
+                                
                             </div>
                                
 
