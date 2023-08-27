@@ -229,6 +229,11 @@ class isftController extends Controller
         $carreras = Carrera::all();
 		$registro = Registro::findOrFail($id);
     	return view('admin/editar_aspirante',compact('registro', 'carreras'));
+        
+        $registro = TuModelo::find($id);
+        $opcionesSelect = ['opcion1', 'opcion2', 'opcion3']; // Aquí debes obtener las opciones disponibles desde tu base de datos
+        return view('tu_vista_de_edicion', compact('registro', 'opcionesSelect'));
+
 
 	}
 
@@ -269,6 +274,7 @@ class isftController extends Controller
         $registro->escuela_egreso = $request->escuela_egreso_secundaria;
         $registro->año_egreso = $request->año_egreso_secundaria;
         $registro->distrito_egreso = $request->ciudad_egreso_secundaria;
+        $registro->carrera_id = $request->carrera_elegida_aspirante;
 
 
         // Preguntas
@@ -301,11 +307,16 @@ class isftController extends Controller
         if ($trabaja_update) {
             $trabaja = 1;
             $registro->trabaja = $trabaja;
-            $registro->trabaja = $trabaja;
+            $registro->actividad_trabajo = $request->rol_trabajo;
+            $registro->horario_trabajo = $request->horarios;
             
         } else {
             $trabaja = 0;
+            $rol = '';
+            $horarios = '';
             $registro->trabaja = $trabaja;
+            $registro->actividad_trabajo = $rol;
+            $registro->horario_trabajo = $horarios;
         }
 
 
