@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -62,10 +64,15 @@
                                 <div style="border: none; border-top: 2px solid #c9c9c9; "  >
                                     <div class="form-floating " >
 
-                                        <select class="form-select form-select-sm  btn-danger   id="carrera_a_estudiar" name="carrera_elegida_aspirante" >
-                                            <option value="Default" selected hidden>Elija la carrera</option>
-                                            @foreach( $carreras as $item)
+                                        <select class="form-select form-select-sm  btn-danger"   id="carrera_a_estudiar" name="carrera_elegida_aspirante" >
+                                            {{-- @foreach( $carreras as $item)
                                                 <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
+                                            @endforeach  --}}
+
+                                            @foreach ($carreras as $carrera)
+                                                <option value="{{ $carrera->id }}" {{ $registro->carrera_id == $carrera->id ? 'selected' : '' }}>
+                                                    {{ $carrera->descripcion }}   {{ $registro->carrera_id == $carrera->id ? '(original)' : '' }}
+                                                </option>
                                             @endforeach
                                         </select>
                                         <label for="" style="font-size: 1.1em; padding-left: 6px; color:#fff; opacity: 100;">Carrrera elegida del instituto</label>
@@ -315,6 +322,19 @@
                                 </div>
 
                                 @if($registro->trabaja == true)
+
+                                    <div id="horarios_trabajo" class="mx-1" style="display: block">
+                                        <div >
+                                            <label for="act" >Actividad en el trabajo</label>
+                                            <input type="text" class="form-control" name="rol_trabajo" id="act" value="{{ $registro->actividad_trabajo}}">
+                                        </div>
+                                        <div class="">
+                                            <label for="act" >Horarios de trabajo</label>
+                                            <textarea name="horarios" class="mb-2 form-control form-control-sm" id="descripcion_carr"  placeholder='Detallá los horarios de trabajo. Si son horarios fijos, basta con ingresar "De (horario de entrada) a (horario de salida)". (Por Ejemplo: de 8 a 16hs)' style="height:75px">{{ $registro->horario_trabajo}}</textarea>
+                                        </div>
+                                    </div>
+                                @else
+                                    <div id="horarios_trabajo" class="mx-1" style="display: none">
                                     <div id="horarios_trabajo" class="mx-1" >
                                         <div >
                                             <label for="act" >Actividad en el trabajo</label>
@@ -329,11 +349,11 @@
                                     <div id="horarios_trabajo" class="mx-1" >
                                         <div >
                                             <label for="act" >Actividad en el trabajo</label>
-                                            <input type="text" class="form-control" name="rol_trabajo" id="act" >
+                                            <input type="text" class="form-control" name="rol_trabajo" id="act" value="{{ $registro->actividad_trabajo}}">
                                         </div>
                                         <div class="">
                                             <label for="act" >Horarios de trabajo</label>
-                                            <textarea name="horarios_rotativos_asp" class="mb-2 form-control form-control-sm" id="descripcion_carr"  placeholder='Detallá los horarios de trabajo. Si son horarios fijos, basta con ingresar "De (horario de entrada) a (horario de salida)". (Por Ejemplo: de 8 a 16hs)' style="height:75px"></textarea>
+                                            <textarea name="horarios" class="mb-2 form-control form-control-sm" id="descripcion_carr"  placeholder='Detallá los horarios de trabajo. Si son horarios fijos, basta con ingresar "De (horario de entrada) a (horario de salida)". (Por Ejemplo: de 8 a 16hs)' style="height:75px">{{ $registro->horario_trabajo}}</textarea>
                                         </div>
                                     </div>
                                 @endif
@@ -440,9 +460,11 @@
         </div>
 
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     
     <script src="js/main.js"></script>     
     <script src="https://unpkg.com/scrollreveal"></script>
