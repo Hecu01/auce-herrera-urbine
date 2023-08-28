@@ -1,24 +1,41 @@
 
 
 <div class="tabla">
-    <table class="table table-dark table-striped" style="width:auto">
-       <thead>
-          <td>id</td>
-          <td>Nombres</td>
-          <td>Apellidos</td>
-          <td>Foto</td>
-          <td>DNI</td>
-          <td>Acción</td>
-       </thead>
-       <tbody>
+      <table class="table table-dark table-striped" style="width:100%;">
+         <thead>
+         <td>ID</td>
+         <td>FOTO</td>
+         <td>NOMBRES</td>
+         <td>APELLIDOS</td>
+         <td>DNI</td>
+         <td>CELULAR</td>
+         <td>CARRERA ELEGIDA</td>
+         <td>ACCION</td>
+         </thead>
+         <tbody>
             @foreach($registros as $registro)
                <tr>
                   <td> {{ $registro->id }} </td>
+                  <td> <img src="{{url('foto/'. $registro->foto) }}" alt="Foto aspirante" width="70px" height="70px"> </td>
                   <td> {{ $registro->nombre }} </td>
                   <td> {{ $registro->apellido }} </td>
-                  <td> <img src="{{url('foto/'. $registro->foto) }}" alt="Foto aspirante" width="70px" height="70px"> </td>
                   <td> {{ number_format($registro->dni, 0, ',', '.') }} </td>
-                  <td>
+                  <td> {{ $registro->celular }} </td>
+                  <select style="display: none" disabled class="form-select form-select-sm  btn-danger" style="cursor: pointer"   id="carrera_a_estudiar" name="carrera_elegida_aspirante" >
+
+
+                     @foreach ($carreras as $carrera)
+                        <option value="{{ $carrera->id }}" {{ $registro->carrera_id == $carrera->id ? 'selected' : '' }} >
+                           {{ $carrera->descripcion }}   
+                           {{ $registro->carrera_id == $carrera->id ? $variable=$carrera->descripcion : '' }}
+                        </option>
+                     @endforeach
+                     
+                     
+                  </select>
+                  <td> {{$variable}}</td>
+
+                  <td style="width:240px">
 
                      <a href="{{ route('registro.editar', $registro->id) }}" class="btn btn-success btn-sm"  title="Editar">
                         Editar

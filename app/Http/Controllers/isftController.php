@@ -29,109 +29,10 @@ class isftController extends Controller
         $pruebas = Prueba::all();
         return view('prueba', compact('pruebas'));     
     }
-    // public function guardar_prueba(Request $request){
-
-    //     $pruebaNuevo = new Prueba;      
-    //     //$path = $request->file('foto_aspirante')->store('public/imagenes');
-
-    //     $path = $request->file('foto_aspirante')->getClientOriginalName();
-    //     $ruta = storage_path() . '\app\public\imagenes/' . $path;
-    //     // Image::make($request->file('foto_aspirante'));
-
-    //     $pruebaNuevo->foto = $path;
-
-    //     $pruebaNuevo = new Prueba;
-    //     // Último - Datos laborales
-    //     if($request->hasFile('foto_aspirante')){
-	// 		$file = $request->file('foto_aspirante');
-	// 		$carpetaDestino = storage_path('app/public/img/fotos/');
-	// 		$filename = time() . '-' . $file->getClientOriginalName();
-	// 		$uploadSuccess = $request->file('foto_aspirante')->move($carpetaDestino, $filename);
-	// 		$pruebaNuevo->foto = $carpetaDestino . $filename;
-	// 	}
-
-    
-
-    //     $pruebaNuevo->save();
-        
-
-
-    //     // Obtener la URL pública de la imagen
-    //     $url = Storage::url($path);
-    //     return back()->with('mensaje', 'Prueba');
-    // }
-
-
-
 
     // Inscripción
     public function guardar(Request $request){
         $registroNuevo = new Registro;
-        /*Todos las columnas
-            id	X
-            nombre	X
-            apellido	X
-            sexo	X
-            dni	X
-            cuil	X
-            email	X
-            est_civil	X
-
-            domicilio	X
-            barrio	X
-            ciudad	X
-            provincia	X
-            cod_postal	X
-
-            fec_nac	X
-            lug_nac	X
-            prov_nac X
-            nacionalidad X
-
-            celular	X
-            tel_fijo X	
-            tel_alternativo	X
-            pertenece_a	X
-
-            titulo_intermedio X
-            año_egreso	X
-            escuela_egreso X
-            distrito_egreso	X
-
-            hijos X
-            fam_a_cargo	X
-            carrera_id	X
-
-            trabaja	X
-            actividad_trabajo	X
-            horario_trabajo	
-            obra_social	X
-
-            otro_estudio	X
-            otro_estudio_inst	X
-            otro_estudio_egreso_dist X
-            otro_estudio_egreso X
-
-            otro_estudio2	X
-            otro_estudio_inst2	X
-            otro_estudio_egreso_dist2 X
-            otro_estudio_egreso2	X
-            
-            fotoc_dni	
-            titulo	
-            certificado
-
-            foto X
-            
-            visado_por	
-            fotoc_dni_ok	
-            fotoc_titulo_ok	
-            certificado_sec_ok	
-            foto_ok	
-            partida_nac_ok	
-            created_at	
-            updated_at	*/ 
-            
         // Datos personales[1/5]
         if($request->hasFile('foto_aspirante')){
 			$file = $request->file('foto_aspirante');
@@ -177,13 +78,7 @@ class isftController extends Controller
         $registroNuevo->escuela_egreso = $request->escuela_egreso_secundaria;
         $registroNuevo->año_egreso = $request->año_egreso_secundaria;
         $registroNuevo->distrito_egreso = $request->ciudad_egreso_secundaria;
-        /*
-        $tit_op1 = $request->input('titulo_otro_estudio1');
-        $inst_tit_op1 = $request->input('instituto_otro_estudio1');
-        $ciudad_tit_op1 = $request->input('ciudad_egreso_otro_estudio1');
-        $año_tit_op1 = $request->input('titulo_otro_estudio1');
-        if(strlen($tit_op1) > 2 && strlen())
-        */
+
         // Titulo opcional - 1
         $registroNuevo->otro_estudio = $request->titulo_otro_estudio1;
         $registroNuevo->otro_estudio_inst = $request->instituto_otro_estudio1;
@@ -216,7 +111,8 @@ class isftController extends Controller
 
     public function mostrar_datos($id){
         $registro = Registro::find($id);
-        return view('admin/ver_aspirante')->with('registro', $registro);
+        $carreras = Carrera::all();
+        return view('admin/ver_aspirante', compact('carreras'))->with('registro', $registro);
     }
 	// Eliminar
 	public function eliminar($id){
@@ -318,29 +214,10 @@ class isftController extends Controller
             $registro->actividad_trabajo = $rol;
             $registro->horario_trabajo = $horarios;
         }
-
-
-
 		$registro->save();
-		return back()->with('mensaje', 'registro actualizada');
+
+        return back()->with('mensaje', 'registro actualizado');
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // Crear carrera
     public function cargar_carrera(Request $request){
