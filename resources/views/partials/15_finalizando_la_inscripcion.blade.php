@@ -8,8 +8,8 @@
         </div>
     </header>
     <div class="progress" style="width: 90%; margin: auto; margin-bottom: 10px; height: 20px;">                        
-        <div class="progress-bar" style="width:10%; ">
-            <span class="progress-bar-text">0%</span>
+        <div class="progress-bar" style="width:100%; ">
+            <span class="progress-bar-text">100%</span>
         </div>
     </div>
     <div  style="text-align: center">
@@ -17,20 +17,12 @@
     </div>
     <div class="mx-4">
         <blockquote style="text-align: justify">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt sequi alias quas fuga quaerat ab tenetur consectetur sapiente officia voluptates laboriosam iste dolorum, quod at repudiandae accusamus facilis quasi nesciunt!
+            Recomendamos que verifiques tus datos, para poder completar la inscripción correctamente, en caso de ser necesario, retrocede en el formulario y verifica que no te olvidaste de nada.
+            <br> <br>
+            Si quieres empezar desde el principio,<br> <a href="#" rel="register0" class="linkform">haz click aquí</a>
         </blockquote>
     </div>
-    {{-- <div class="mx-3 ">
-        <h4 >
-           Verifique los datos
-        </h4>
-        
-        <div class=" my-3">        
-            <label for="">Nombres</label><br>
-            <input type="text" id="myInput" class="form-control">
-            <button onclick="completarInput()" class="btn btn-primary mt-3">Completar</button>
-        </div>
-    </div>  --}}
+ 
     <div class="bottom">
         <a href="#" rel="datos-laborales" class="btn btn-primary linkform mx-2 my-4">
             <i class="fa-solid fa-arrow-left"></i>

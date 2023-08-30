@@ -29,7 +29,7 @@
          <div class="row">
             <article class="" style="width: 290px">
                <div class="d-flex" style="height: 200px ;">
-                  <img src="{{url('foto/'. $registro->foto) }}" style="width: auto;" draggable="false">
+                  <img src="{{url('foto/'. $registro->foto) }}" style="width: 100%;" draggable="false">
                </div>
 
                

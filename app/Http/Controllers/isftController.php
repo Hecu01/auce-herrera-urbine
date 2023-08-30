@@ -2,14 +2,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Carrera;
 use App\Models\Asignatura;
 use App\Models\Registro;
 use App\Models\Prueba;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-
 use App;
+
+use DataTables; 
 use App\Models\ConcatenatedData;
 
 class isftController extends Controller
@@ -19,7 +21,20 @@ class isftController extends Controller
         $registros = Registro::all();
         return view('index', compact('carreras', 'registros'));     
     }
-    public function admin(){
+    public function admin(Request $request){
+        // if($request->ajax()){
+        //     $registros_ajax = DB::select('select * from registros');
+        //     return DataTables::of($registros_ajax)
+        //             ->addColumn('action', function($registros_ajax){
+        //                 $acciones = '<a href="#" class="btn btn-success btn-sm"  title="Editar"> Editar <i class="fa-solid fa-pen-to-square"></i> </a>;'
+        //                 $acciones .= '<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal{{$registro->id}}">Eliminar <i class="fa-solid fa-trash"></i></button>'
+        //                 return $acciones;
+        //             })
+        //             ->rawColumns(['actions'])
+        //             ->make(true);
+        // }
+
+
         $carreras = Carrera::all();
         $registros = Registro::all();
         return view('admin/admin', compact('carreras', 'registros'));     

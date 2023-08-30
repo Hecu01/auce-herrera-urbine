@@ -4,21 +4,24 @@
          text-align: center
       }
    </style>
-   <table class="table table-dark table-striped" style="width:100%;">
-      <thead>
-      <td>ID</td>
-      <td>FOTO</td>
-      <td >NOMBRES Y  APELLIDOS</td>
 
-      <td>CARRERA ELEGIDA</td>
-      <td>ACCION</td>
+   <table id="tabla-registros" class="table table-dark table-striped " >
+       
+      <thead>
+         <td>ID</td>
+         <td>FOTO</td>
+         <td >NOMBRES Y  APELLIDOS</td>
+         <td >DNI</td>
+         <td>CARRERA ELEGIDA</td>
+         <td>ACCION</td>
       </thead>
       <tbody>
          @foreach($registros as $registro)
             <tr>
                <td> {{ $registro->id }} </td>
                <td> <img src="{{url('foto/'. $registro->foto) }}" alt="Foto aspirante" width="70px" height="70px"> </td>
-               <td style="width:170px"> {{ $registro->nombre }}  {{ $registro->apellido }}</td>
+               <td > {{ $registro->nombre }}  {{ $registro->apellido }}</td>
+               <td > {{ $registro->dni }} </td>
 
                <select style="display: none" disabled class="form-select form-select-sm  btn-danger" style="cursor: pointer"   id="carrera_a_estudiar" name="carrera_elegida_aspirante" >
 

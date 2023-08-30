@@ -42,7 +42,7 @@
             <div id="div_aspirante_si_trabaja" style="display: none" class="mt-2">
                 <div class="">
                     <div class="form-floating mb-2 mx-1" >
-                        <input type="text" class="form-control" name="rol_trabajo" id="act" placeholder="Rol en el trabajo">
+                        <input type="text" class="form-control" name="rol_trabajo" id="rol-trabajo" placeholder="Rol en el trabajo">
                         <label for="act" >Ingresá tu actividad en el trabajo</label>
                     </div>
 
