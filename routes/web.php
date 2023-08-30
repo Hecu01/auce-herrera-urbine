@@ -36,7 +36,7 @@ Route::middleware(['auth'])->group(function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::middleware(['auth'])->group(function(){
 Route::get('foto/{filename}', function ($filename){
     $path = storage_path('fotos/' . $filename);
     if (!File::exists($path)) {
@@ -47,4 +47,5 @@ Route::get('foto/{filename}', function ($filename){
     $response = Response::make($file, 200);
     $response->header("Content-Type", $type);
     return $response;
+});
 });
