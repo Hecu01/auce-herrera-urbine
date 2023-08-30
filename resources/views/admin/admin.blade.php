@@ -21,7 +21,7 @@
         <title>ISFT 38 - INSCRIPCION</title>
    </head>
    <body style="background: rgba(0, 0, 0, 0.363)">
-        <div class="container">
+        <div class="container-fluid">
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
@@ -37,27 +37,40 @@
                         </li>
                     @endif
                 @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle "style=" display:flex; justify-content: flex-end"  href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                    <div class="d-flex justify-content-center mb-2" >
+                        <nav >
+                            <li class="nav-item dropdown" style="list-style: none">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle btn btn-success" style="display:flex; justify-content: flex-end; color:#fff;"  href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Admin: {{ Auth::user()->name }}
                             </a>
-                            <a href="#" id="eliminar-usuario" data-usuario-id="1">Eliminar Usuario</a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
+            
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('inscripcion') }}">
+                                    {{ __('Inscripción') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('ir_admin') }}">
+                                    {{ __('Administración') }}
+                                </a>
+                                <hr style="margin: 3px 0px; padding: 0;">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    {{ __('Cerrar sesión') }}
+                                </a>
+            
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                    @csrf
+                                    </form>
+                                </div>
+                            </li>
+            
+                        </nav>
+        
+                    </div>
+     
                 @endguest
             </ul>
-            <h1>Section del admin</h1>
+            <h1>Inscripciones</h1>
             @if (session('mensaje2'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Atención!</strong> {{ session('mensaje2') }}

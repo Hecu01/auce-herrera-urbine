@@ -4,7 +4,11 @@
 | Proyecto realizado por: 
 | - Herrera Guillermo
 | - Auce Ailen
-| - Valentin Urbine
+| - Urbine Valentin 
+fotoc_dni_ok
+fotoc_titulo_op
+certificado_sec_ok
+foto_ok
 |--------------------------------------------------------------------------
 */
 use Illuminate\Support\Facades\Route;
@@ -12,7 +16,7 @@ use App\Http\Controllers\isftController;
 
 
 // Rutas principales
-Route::get('/', [isftController::class, 'index'])->name('home');
+Route::get('/', [isftController::class, 'index'])->name('inscripcion');
 Route::get('/prueba', [isftController::class, 'prueba'])->name('prueba');
 Route::get('/registro/{id}', [isftController::class, 'mostrar_datos'])->name('mostrarDatosAspirante');
 Route::post('/guardar', [isftController::class, 'guardar'])->name('registrar');

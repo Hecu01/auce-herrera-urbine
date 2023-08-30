@@ -1,5 +1,76 @@
+<div class="tabla">
+   <style>
+      tr td{
+         text-align: center
+      }
+   </style>
+   <table class="table table-dark table-striped" style="width:100%;">
+      <thead>
+      <td>ID</td>
+      <td>FOTO</td>
+      <td >NOMBRES Y  APELLIDOS</td>
+
+      <td>CARRERA ELEGIDA</td>
+      <td>ACCION</td>
+      </thead>
+      <tbody>
+         @foreach($registros as $registro)
+            <tr>
+               <td> {{ $registro->id }} </td>
+               <td> <img src="{{url('foto/'. $registro->foto) }}" alt="Foto aspirante" width="70px" height="70px"> </td>
+               <td style="width:170px"> {{ $registro->nombre }}  {{ $registro->apellido }}</td>
+
+               <select style="display: none" disabled class="form-select form-select-sm  btn-danger" style="cursor: pointer"   id="carrera_a_estudiar" name="carrera_elegida_aspirante" >
 
 
+                  @foreach ($carreras as $carrera)
+                     <option value="{{ $carrera->id }}" {{ $registro->carrera_id == $carrera->id ? 'selected' : '' }} >
+                        {{ $carrera->descripcion }}   
+                        {{ $registro->carrera_id == $carrera->id ? $variable=$carrera->descripcion : '' }}
+                     </option>
+                  @endforeach
+                  
+                  
+               </select>
+               <td> {{$variable}}</td>
+
+               <td style="width:240px">
+
+                  <a href="{{ route('registro.editar', $registro->id) }}" class="btn btn-success btn-sm"  title="Editar">
+                     Editar
+                     <i class="fa-solid fa-pen-to-square"></i>
+                  </a>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal{{$registro->id}}">
+                     Eliminar
+                     <i class="fa-solid fa-trash"></i>
+                  </button>
+
+
+
+                  {{-- <a href="#" id="eliminar-usuario" data-usuario-id="1" data-toggle="modal" data-target="#confirmar-modal">Eliminar Usuario</a>  --}}
+                  {{-- <form action="{{ route('registro.eliminar', $registro->id) }}" class="d-inline" method="POST">
+                     @method('DELETE')
+                     @csrf
+                     <button type="submit" class="btn btn-danger btn-sm"title="Eliminar">
+                        Eliminar
+                        <i class="fa-solid fa-trash"></i>
+                     </button>
+                  </form>  --}}
+                  <a href="{{ route('mostrarDatosAspirante', $registro->id) }} " class="btn btn-secondary btn-sm">
+                     Ver <i class="fa-solid fa-eye"></i>
+                  </a>
+
+                  
+               </td>
+            </tr>
+         @endforeach
+
+    </tbody>
+    
+ </table>
+</div> 
+{{-- 
 <div class="tabla">
       <table class="table table-dark table-striped" style="width:100%;">
          <thead>
@@ -57,7 +128,7 @@
                            Eliminar
                            <i class="fa-solid fa-trash"></i>
                         </button>
-                     </form>  --}}
+                     </form>  
                      <a href="{{ route('mostrarDatosAspirante', $registro->id) }} " class="btn btn-secondary btn-sm">
                         Ver <i class="fa-solid fa-eye"></i>
                      </a>
@@ -68,8 +139,9 @@
             @endforeach
 
        </tbody>
+       
     </table>
-</div> 
+</div>  --}}
 @foreach($registros as $registro)
    <!-- Modal -->
    <div class="modal fade" id="modal{{$registro->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
