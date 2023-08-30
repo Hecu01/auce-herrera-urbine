@@ -1,10 +1,3 @@
-// inputs
-function completarInput() {
-  var nombres = document.getElementById("myInput");
-  var nombress = $("#nombres").val();
-  var datos = nombress;
-  nombres.value = datos;
-}
 
 
 

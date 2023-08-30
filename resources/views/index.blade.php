@@ -16,7 +16,7 @@
       <!-- Styles -->
       <link rel="stylesheet" href="style/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <script src="js/main2.js"></script>     
+ 
       <title>ISFT 38 - INSCRIPCION</title>
    </head>
    <body style="background: rgba(0, 0, 0, 0.363)">
@@ -27,8 +27,10 @@
          <ul class="navbar-nav ms-auto">
             <!-- Authentication Links -->
             @guest
+               <div class="d-flex mb-2" style="background: #fff">
+
                   @if (Route::has('login'))
-                     <li class="nav-item">
+                     <li class="nav-item mx-2">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                      </li>
                   @endif
@@ -38,34 +40,43 @@
                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                      </li>
                   @endif
+               </div>
             @else
-                  <li class="nav-item dropdown">
-                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                     </a>
-
-                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
+            <div class="d-flex justify-content-center mb-2" >
+               <nav >
+                   <li class="nav-item dropdown" style="list-style: none">
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle btn btn-success" style="display:flex; justify-content: flex-end; color:#fff;"  href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                         Admin: {{ Auth::user()->name }}
+                      </a>
+    
+                       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{ route('inscripcion') }}">
+                              {{ __('Inscripción') }}
+                          </a>
+                          <a class="dropdown-item" href="{{ route('ir_admin') }}">
+                              {{ __('Administración') }}
+                           </a>
+                          <a class="dropdown-item" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">
-                              {{ __('Logout') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                              {{ __('Cerrar sesión') }}
+                          </a>
+    
+                           <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                               @csrf
-                        </form>
-                     </div>
-                  </li>
+                           </form>
+                       </div>
+                   </li>
+    
+               </nav>
+
+            </div>
+
             @endguest
          </ul>
 
          
-         @if (session('mensaje2'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-               <strong>Atención!</strong> {{ session('mensaje2') }}
-               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-         @endif
+
          @if (session('mensaje'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                <strong>Atención!</strong> {{ session('mensaje') }}
@@ -116,20 +127,21 @@
  
             @include('partials/15_finalizando_la_inscripcion')
          </form>
- 
-            <div class="container section-principal d-flex py-5 justify-content-center">
 
-               
-               
-         
+         <div class="container section-principal d-flex py-5 justify-content-center">
+
             
-            </div>  
+            
+      
+         
+         </div>  
 
          
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>      
       <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-      <script src="js/main.js"></script>     
+      <script src="js/main.js"></script>  
+      <script src="js/main2.js"></script>       
       <script src="https://unpkg.com/scrollreveal"></script>
 
    </body>
