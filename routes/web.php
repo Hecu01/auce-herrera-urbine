@@ -29,8 +29,15 @@ Route::delete('/eliminar-registro/{id}', [isftController::class, 'eliminar'])->n
 Route::middleware(['auth'])->group(function(){
     Route::get('/administrador', [isftController::class, 'admin'])->name('ir_admin');
     Route::delete('/eliminar-registro/{id}', [isftController::class, 'eliminar'])->name('registro.eliminar');
+
     Route::get('/editar-registro/{id}', [isftController::class, 'editar'])->name('registro.editar');
     Route::put('/editar-registro/{id}', [isftController::class, 'update'])->name('registro.actualizar');
+
+    Route::put('/agregar_cambio/{id}', [isftController::class, 'check_fotoc_dni'] )->name('check.fotoc.dni');
+    Route::put('/agregar_cambio2/{id}', [isftController::class, 'check_fotoc_titulo'] )->name('check.fotoc.titulo');
+    Route::put('/agregar_cambio3/{id}', [isftController::class, 'check_certif_secund'] )->name('check.certif.secund');
+    Route::put('/agregar_cambio4/{id}', [isftController::class, 'check_foto'] )->name('check.foto');
+    
 });
 
 

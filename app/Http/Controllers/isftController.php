@@ -39,6 +39,76 @@ class isftController extends Controller
         $registros = Registro::all();
         return view('admin/admin', compact('carreras', 'registros'));     
     }    
+
+    public function check_fotoc_dni(Request $request, $id){
+        
+        $registro = Registro::find($id);
+        if (!$registro){
+            abort(404); 
+        }// ISO 1207: ESTANDAR PARA LOS PROCESOS DE CICLO DE VIDA DEL SOFTWARE (NO ESPECIFICA QUE SEA LO UNICO O LO NECESARIO)
+        $entrega = $request->has('valor_booleano');
+        if ($entrega) {
+            $entrega_fotocopia = 1;
+            $registro->fotoc_dni_ok =  $entrega_fotocopia;
+        } else {
+            $entrega_fotocopia = 0;
+            $registro->fotoc_dni_ok = $entrega_fotocopia;
+        }
+        $registro->save();
+
+        return redirect()->back(); // Redirige de vuelta a la página anterior
+    }
+    public function check_fotoc_titulo(Request $request, $id){
+        
+        $registro = Registro::find($id);
+        if (!$registro){
+            abort(404); 
+        }// ISO 1207: ESTANDAR PARA LOS PROCESOS DE CICLO DE VIDA DEL SOFTWARE (NO ESPECIFICA QUE SEA LO UNICO O LO NECESARIO)
+        $entrega2 = $request->has('valor_booleano2');
+        if ($entrega2) {
+            $entrega_fotocopia2 = 1;
+            $registro->fotoc_titulo_ok =  $entrega_fotocopia2;
+        } else {
+            $entrega_fotocopia2 = 0;
+            $registro->fotoc_titulo_ok = $entrega_fotocopia2;
+        }
+        $registro->save();
+
+        return redirect()->back(); // Redirige de vuelta a la página anterior
+    }
+    public function check_certif_secund(Request $request, $id){
+        $registro = Registro::find($id);
+        if (!$registro){
+            abort(404); 
+        }
+        $entrega3 = $request->has('valor_booleano3');
+        if ($entrega3) {
+            $entrega_fotocopia3 = 1;
+            $registro->certificado_sec_ok =  $entrega_fotocopia3;
+        } else {
+            $entrega_fotocopia3 = 0;
+            $registro->certificado_sec_ok = $entrega_fotocopia3;
+        }
+        $registro->save();
+        return redirect()->back(); // Redirige de vuelta a la página anterior
+    }
+    public function check_foto(Request $request, $id){
+        $registro = Registro::find($id);
+        if (!$registro){
+            abort(404); 
+        }
+        $entrega4 = $request->has('valor_booleano4');
+        if ($entrega4) {
+            $entrega_fotocopia4 = 1;
+            $registro->certificado_sec_ok =  $entrega_fotocopia4;
+        } else {
+            $entrega_fotocopia4 = 0;
+            $registro->certificado_sec_ok = $entrega_fotocopia4;
+        }
+        $registro->save();
+        return redirect()->back(); // Redirige de vuelta a la página anterior
+    }
+
     public function prueba(){
 
         $pruebas = Prueba::all();
@@ -157,7 +227,6 @@ class isftController extends Controller
 		$registro-> sexo = $request->sexo_aspirante;
 		$registro-> dni = $request->dni_aspirante;
 		$registro-> cuil = $request->cuil_aspirante;
-
 
         // Datos Nacimiento [2/5]
         $registro->lug_nac = $request->ciudad_nac_aspirante;
