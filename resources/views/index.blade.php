@@ -128,13 +128,7 @@
             @include('partials/15_finalizando_la_inscripcion')
          </form>
 
-         <div class="container section-principal d-flex py-5 justify-content-center">
-
-            
-            
-      
-         
-         </div>  
+ 
 
          
       </div>

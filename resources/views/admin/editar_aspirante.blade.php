@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/js/main.js"></script>    
 
     <title>Document</title>
 </head>
@@ -51,6 +52,9 @@
                         font-weight: 100; 
                         margin:0; 
                         padding:0;
+                    }
+                    .comunacho{
+                        max-height: fit-content;
                     }
                 </style>
   
@@ -93,7 +97,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div  style="width:350px" >
+                        <div class="comunacho" style="width:350px" >
                             <div class="article">
         
                                 <div class="container-fluid d-flex justify-content-center" style="height: 200px ;border-radius: 0px; display:flex; justify-content: center;  background:#ffffff">
@@ -145,11 +149,11 @@
                                     <div class="d-flex" >
                                         <div class="mx-1">
                                             <label for="">DNI</label><br>
-                                            <input type="text" class="form-control form-control-sm" name="dni_aspirante" value="{{ $registro->dni }}">
+                                            <input type="text" class="form-control form-control-sm numeric-input" name="dni_aspirante" value="{{ $registro->dni }}">
                                         </div>
                                         <div class="mx-1">
                                             <label for="">Cuil</label><br>
-                                            <input type="text" class="form-control form-control-sm" name="cuil_aspirante" value="{{ $registro->cuil }}">
+                                            <input type="text" class="form-control form-control-sm numeric-input" name="cuil_aspirante" value="{{ $registro->cuil }}">
                                         </div>
                                     </div>
         
@@ -184,7 +188,7 @@
                             </div>
             
                         </div>
-                        <div class="article" style="width:350px">
+                        <div class="article comunacho" style="width:350px; max-height:680px">
             
                             <div class="  ">
     
@@ -213,11 +217,44 @@
                                     </div>
                                     <div class="mx-1">
                                         <label for="">Código Postal</label><br>
-                                        <input type="text" class="form-control form-control-sm" name="cod_post_ciud_aspirante" value="{{ $registro->cod_postal }}">
+                                        <input type="text" class="form-control form-control-sm numeric-input" name="cod_post_ciud_aspirante" value="{{ $registro->cod_postal }}">
                                     </div>
                                 </div>
-            
-                                
+                                <div style="border: none; border-top: 2px solid #c9c9c9; border-radius: 0px">
+                                    <div class="left ml-4 col-12 mb-3">
+                                        <h4 >Datos de contacto</h4>
+                        
+                                        <div class="">
+                                            <div class="mx-1">
+                                                <label for="">Correo electrónico</label><br>
+                                                <input type="text" class="form-control form-control-sm" name="correo_aspirante" value="{{ $registro->email }}">
+                                            </div>
+                   
+                                        </div>
+                                        <div class="d-flex" >
+                                            <div class="mx-1">
+                                                <label for="">Celular</label>
+                                                <input type="text" class="form-control form-control-sm numeric-input" name="celular_aspirante" value="{{ $registro->celular }}">
+                                            </div>
+                                            <div class="mx-1">
+                                                <label for="">Tel fijo </label><br>
+                                                <input type="text" class="form-control form-control-sm numeric-input" name="tel_fijo_aspirante" value="{{ $registro->tel_fijo }}">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex" >
+                                            <div class="mx-1">
+                                                <label for="">Tel alternativo</label>
+                                                <input type="text" class="form-control form-control-sm numeric-input" name="tel_alterno_aspirante" value="{{ $registro->tel_alternativo }}">
+                                            </div>
+                                            <div class="mx-1">
+                                                <label for="">Pertenece a</label><br>
+                                                <input type="text" class="form-control form-control-sm" name="tel_alterno_aspirante_pertenece_a" value="{{ $registro->pertenece_a }}">
+                                            </div>
+                                        </div>           
+                
+                                    </div>
+                                </div>           
+
                                 <div style="border: none; border-top: 2px solid #c9c9c9; border-radius: 0px">
                                     <div class="left ml-4 col-12 mb-3">
                                         <h4 >Datos académicos</h4>
@@ -239,7 +276,7 @@
                                         <div class="d-flex" >
                                             <div class="mx-1">
                                                 <label for="">Año Egreso</label><br>
-                                                <input type="text" class="form-control form-control-sm" name="año_egreso_secundaria" value="{{ $registro->año_egreso }}">
+                                                <input type="text" class="form-control form-control-sm numeric-input" name="año_egreso_secundaria" value="{{ $registro->año_egreso }}">
                                             </div>
                                             <div class="mx-1">
                                                 <label for="estado-civil">Ciudad</label>
@@ -250,46 +287,13 @@
                 
                                     </div>
                                 </div>
-                                <div style="border: none; border-top: 2px solid #c9c9c9; border-radius: 0px">
-                                    <div class="left ml-4 col-12 mb-3">
-                                        <h4 >Datos de contacto</h4>
-                        
-                                        <div class="">
-                                            <div class="mx-1">
-                                                <label for="">Correo electrónico</label><br>
-                                                <input type="text" class="form-control form-control-sm" name="correo_aspirante" value="{{ $registro->email }}">
-                                            </div>
-                   
-                                        </div>
-                                        <div class="d-flex" >
-                                            <div class="mx-1">
-                                                <label for="">Celular</label>
-                                                <input type="text" class="form-control form-control-sm" name="celular_aspirante" value="{{ $registro->celular }}">
-                                            </div>
-                                            <div class="mx-1">
-                                                <label for="">Tel fijo </label><br>
-                                                <input type="text" class="form-control form-control-sm" name="tel_fijo_aspirante" value="{{ $registro->tel_fijo }}">
-                                            </div>
-                                        </div>
-                                        <div class="d-flex" >
-                                            <div class="mx-1">
-                                                <label for="">Tel alternativo</label>
-                                                <input type="text" class="form-control form-control-sm" name="tel_alterno_aspirante" value="{{ $registro->tel_alternativo }}">
-                                            </div>
-                                            <div class="mx-1">
-                                                <label for="">Pertenece a</label><br>
-                                                <input type="text" class="form-control form-control-sm" name="tel_alterno_aspirante_pertenece_a" value="{{ $registro->pertenece_a }}">
-                                            </div>
-                                        </div>           
-                
-                                    </div>
-                                </div>
+
                             </div>
             
                             
                             
                         </div>
-                        <div class="" style="width:350px">       
+                        <div class="comunacho" style="width:350px; margin-bottom: 20px;">       
                             <div class="left ml-4 col-12 mb-3 article">
                                 <div class="left ml-4 col-12 mb-3">
                                     <h4 class="">Preguntas</h4>
@@ -373,87 +377,100 @@
                                             </div>
                                         </div>
                                     @else
-                                        <div id="horarios_trabajo" class="mx-1" style="display: none">
-                                        <div id="horarios_trabajo" class="mx-1" >
-                                            <div >
-                                                <label for="act" >Actividad en el trabajo</label>
-                                                <input type="text" class="form-control" name="rol_trabajo" id="act" >
-                                            </div>
-                                            <div class="">
-                                                <label for="act" >Horarios de trabajo</label>
-                                                <textarea name="horarios" class="mb-2 form-control form-control-sm" id="descripcion_carr"  placeholder='Detallá los horarios de trabajo. Si son horarios fijos, basta con ingresar "De (horario de entrada) a (horario de salida)". (Por Ejemplo: de 8 a 16hs)' style="height:75px"></textarea>
+                                        <div id="horarios_trabajo" class="mx-1" style="display: none"> 
+                                            <div id="horarios_trabajo" class="mx-1" >
+                                                <div >
+                                                    <label for="act" >Actividad en el trabajo</label>
+                                                    <input type="text" class="form-control" name="rol_trabajo" id="act" >
+                                                </div>
+                                                <div class="">
+                                                    <label for="act" >Horarios de trabajo</label>
+                                                    <textarea name="horarios" class="mb-2 form-control form-control-sm" id="descripcion_carr"  placeholder='Detallá los horarios de trabajo. Si son horarios fijos, basta con ingresar "De (horario de entrada) a (horario de salida)". (Por Ejemplo: de 8 a 16hs)' style="height:75px"></textarea>
+                                                </div>
                                             </div>
                                         </div>
-    
                                     @endif
                                     
                                 </div>
                                    
     
-                                {{-- <div class="" style="border: none; border-top: 2px solid #c9c9c9; border-radius: 0px; margin-bottom:10px;">
-                                    <div class="left ml-4 col-12 mb-3">
-                                        <h4 class="mt-1 p-1">Estudios Adicionales (1)</h4>
-                        
-                                        <div>
-                                            <div class="mx-1">
-                                                <label for="">Titulo</label><br>
-                                                <input type="text" class="form-control form-control-sm" name="titulo_otro_estudio1" value="{{ $registro->otro_estudio}}">
+
+                            </div>
+                            <div class="accordion accordion-flush " id="accordionFlushExample" style="margin-left: 5px;margin-right: -5px;border:1px solid rgb(0,0,0,0.3)">
+    
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                      ESTUDIOS ADICIONALES
+                                    </button>
+                                  </h2>
+                                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="" style="border: none; border-top: 2px solid #c9c9c9; border-radius: 0px; margin-bottom:10px;">
+                                        <div class="left ml-4 col-12 mb-3">
+                                            <h4 class="mt-1 p-1">Estudios Adicionales (1)</h4>
+                            
+                                            <div>
+                                                <div class="mx-1">
+                                                    <label for="">Titulo</label><br>
+                                                    <input type="text" class="form-control form-control-sm" name="titulo_otro_estudio1" value="{{ $registro->otro_estudio}}">
+                                                </div>
+                       
                                             </div>
-                   
+                                            <div>
+                                                <div class="mx-1">
+                                                    <label for="estado-civil">Instituto de egreso</label>
+                                                    <input type="text" class="form-control form-control-sm" name="instituto_otro_estudio1" value="{{ $registro->otro_estudio_inst }}">
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="d-flex" >
+                                                <div class="mx-1">
+                                                    <label for="">Año Egreso</label><br>
+                                                    <input type="text" class="form-control form-control-sm numeric-input" name="año_egreso_otro_estudio1" value="{{ $registro->otro_estudio_egreso }}">
+                                                </div>
+                                                <div class="mx-1">
+                                                    <label for="estado-civil">Ciudad</label>
+                                                    <input type="text" class="form-control form-control-sm" name=" ciudad_egreso_otro_estudio1" value="{{ $registro->otro_estudio_egreso_dist }}">
+                                                </div>
+                                                
+                                            </div>           
+                    
                                         </div>
-                                        <div>
-                                            <div class="mx-1">
-                                                <label for="estado-civil">Instituto de egreso</label>
-                                                <input type="text" class="form-control form-control-sm" name="instituto_otro_estudio1" value="{{ $registro->otro_estudio_inst }}">
-                                            </div>
-                                            
-                                        </div>
-                                        <div class="d-flex" >
-                                            <div class="mx-1">
-                                                <label for="">Año Egreso</label><br>
-                                                <input type="text" class="form-control form-control-sm " name="ciudad_egreso_otro_estudio1" value="{{ $registro->otro_estudio_egreso }}">
-                                            </div>
-                                            <div class="mx-1">
-                                                <label for="estado-civil">Ciudad</label>
-                                                <input type="text" class="form-control form-control-sm" name="año_egreso_otro_estudio1" value="{{ $registro->otro_estudio_egreso_dist }}">
-                                            </div>
-                                            
-                                        </div>           
-                
                                     </div>
+                                    <div class="" style="border: none; border-top: 2px solid #c9c9c9; border-radius: 0px; margin-bottom:10px;">
+                                        <div class="left ml-4 col-12 mb-3">
+                                            <h4 class="mt-1 p-1">Estudios Adicionales (2)</h4>
+                            
+                                            <div>
+                                                <div class="mx-1">
+                                                    <label for="">Titulo</label><br>
+                                                    <input type="text" class="form-control form-control-sm" name="titulo_otro_estudio2" value="{{ $registro->otro_estudio2 }}">
+                                                </div>
+                       
+                                            </div>
+                                            <div>
+                                                <div class="mx-1">
+                                                    <label for="estado-civil">Instituto de egreso</label>
+                                                    <input type="text" class="form-control form-control-sm" name="instituto_otro_estudio2" value="{{ $registro->otro_estudio_inst2 }}">
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="d-flex" >
+                                                <div class="mx-1">
+                                                    <label for="">Año Egreso</label><br>
+                                                    <input type="text" class="form-control form-control-sm numeric-input" name="año_egreso_otro_estudio2" value="{{ $registro->otro_estudio_egreso2 }}">
+                                                </div>
+                                                <div class="mx-1">
+                                                    <label for="estado-civil">Ciudad</label>
+                                                    <input type="text" class="form-control form-control-sm " name="ciudad_egreso_otro_estudio2" value="{{ $registro->otro_estudio_egreso_dist2 }}">
+                                                </div>
+                                                
+                                            </div>           
+                    
+                                        </div>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="" style="border: none; border-top: 2px solid #c9c9c9; border-radius: 0px; margin-bottom:10px;">
-                                    <div class="left ml-4 col-12 mb-3">
-                                        <h4 class="mt-1 p-1">Estudios Adicionales (2)</h4>
-                        
-                                        <div>
-                                            <div class="mx-1">
-                                                <label for="">Titulo</label><br>
-                                                <input type="text" class="form-control form-control-sm" name="titulo_otro_estudio2" value="{{ $registro->otro_estudio2 }}">
-                                            </div>
-                   
-                                        </div>
-                                        <div>
-                                            <div class="mx-1">
-                                                <label for="estado-civil">Instituto de egreso</label>
-                                                <input type="text" class="form-control form-control-sm" name="instituto_otro_estudio2" value="{{ $registro->otro_estudio_inst2 }}">
-                                            </div>
-                                            
-                                        </div>
-                                        <div class="d-flex" >
-                                            <div class="mx-1">
-                                                <label for="">Año Egreso</label><br>
-                                                <input type="text" class="form-control form-control-sm" name="año_egreso_otro_estudio2" value="{{ $registro->otro_estudio_egreso2 }}">
-                                            </div>
-                                            <div class="mx-1">
-                                                <label for="estado-civil">Ciudad</label>
-                                                <input type="text" class="form-control form-control-sm" name="ciudad_egreso_otro_estudio2" value="{{ $registro->otro_estudio_egreso_dist2 }}">
-                                            </div>
-                                            
-                                        </div>           
-                
-                                    </div>
-                                </div>  --}}
                             </div>
                         </div>
                     </div>
@@ -469,10 +486,15 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="js/main.js"></script>     
+ 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-        
+        var numericInputs = document.querySelectorAll('.numeric-input');
+        numericInputs.forEach(function(input) {
+        input.addEventListener('input', function() {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+        });
         $(document).ready(function() {
             // Después de recibir una respuesta exitosa del servidor
             $.ajax({

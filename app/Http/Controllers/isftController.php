@@ -100,15 +100,30 @@ class isftController extends Controller
         $entrega4 = $request->has('valor_booleano4');
         if ($entrega4) {
             $entrega_fotocopia4 = 1;
-            $registro->certificado_sec_ok =  $entrega_fotocopia4;
+            $registro->foto_ok =  $entrega_fotocopia4;
         } else {
             $entrega_fotocopia4 = 0;
-            $registro->certificado_sec_ok = $entrega_fotocopia4;
+            $registro->foto_ok = $entrega_fotocopia4;
         }
         $registro->save();
         return redirect()->back(); // Redirige de vuelta a la página anterior
     }
-
+    public function check_part_nac(Request $request, $id){
+        $registro = Registro::find($id);
+        if (!$registro){
+            abort(404); 
+        }
+        $entrega5 = $request->has('valor_booleano5');
+        if ($entrega5) {
+            $entrega_fotocopia5 = 1;
+            $registro->partida_nac_ok =  $entrega_fotocopia5;
+        } else {
+            $entrega_fotocopia5 = 0;
+            $registro->partida_nac_ok = $entrega_fotocopia5;
+        }
+        $registro->save();
+        return redirect()->back(); // Redirige de vuelta a la página anterior
+    }
     public function prueba(){
 
         $pruebas = Prueba::all();
@@ -211,7 +226,7 @@ class isftController extends Controller
 		$registro = Registro::findOrFail($id);
     	return view('admin/editar_aspirante',compact('registro', 'carreras'));
         
-        $registro = TuModelo::find($id);
+        // $registro = TuModelo::find($id);
         $opcionesSelect = ['opcion1', 'opcion2', 'opcion3']; // Aquí debes obtener las opciones disponibles desde tu base de datos
         return view('tu_vista_de_edicion', compact('registro', 'opcionesSelect'));
 
@@ -257,6 +272,17 @@ class isftController extends Controller
         $registro->carrera_id = $request->carrera_elegida_aspirante;
 
 
+        // Titulo opcional - 1
+        $registro->otro_estudio = $request->titulo_otro_estudio1;
+        $registro->otro_estudio_inst = $request->instituto_otro_estudio1;
+        $registro->otro_estudio_egreso_dist = $request->ciudad_egreso_otro_estudio1;
+        $registro->otro_estudio_egreso = $request->año_egreso_otro_estudio1;
+
+        // Titulo opcional - 2
+        $registro->otro_estudio2 = $request->titulo_otro_estudio2;
+        $registro->otro_estudio_inst2 = $request->instituto_otro_estudio2;
+        $registro->otro_estudio_egreso_dist2 = $request->ciudad_egreso_otro_estudio2;
+        $registro->otro_estudio_egreso2 = $request->año_egreso_otro_estudio2;
         // Preguntas
         $tiene_fam_cargo = $request->has('fam_a_cargo');
         if ($tiene_fam_cargo) {

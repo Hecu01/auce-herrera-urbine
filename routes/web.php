@@ -34,10 +34,11 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/editar-registro/{id}', [isftController::class, 'update'])->name('registro.actualizar');
 
     Route::put('/agregar_cambio/{id}', [isftController::class, 'check_fotoc_dni'] )->name('check.fotoc.dni');
+    
     Route::put('/agregar_cambio2/{id}', [isftController::class, 'check_fotoc_titulo'] )->name('check.fotoc.titulo');
     Route::put('/agregar_cambio3/{id}', [isftController::class, 'check_certif_secund'] )->name('check.certif.secund');
     Route::put('/agregar_cambio4/{id}', [isftController::class, 'check_foto'] )->name('check.foto');
-    
+    Route::put('/agregar_cambio5/{id}', [isftController::class, 'check_part_nac'] )->name('check.part.nac');
 });
 
 
@@ -48,15 +49,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function(){
-Route::get('foto/{filename}', function ($filename){
-    $path = storage_path('fotos/' . $filename);
-    if (!File::exists($path)) {
-        abort(404);
-    }
-    $file = File::get($path);
-    $type = File::mimeType($path);
-    $response = Response::make($file, 200);
-    $response->header("Content-Type", $type);
-    return $response;
-});
+    Route::get('foto/{filename}', function ($filename){
+        $path = storage_path('fotos/' . $filename);
+        if (!File::exists($path)) {
+            abort(404);
+        }
+        $file = File::get($path);
+        $type = File::mimeType($path);
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+        return $response;
+    });
 });

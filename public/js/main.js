@@ -1,5 +1,5 @@
-var numericInputs = document.querySelectorAll('.numeric-input');
 
+var numericInputs = document.querySelectorAll('.numeric-input');
 numericInputs.forEach(function(input) {
   input.addEventListener('input', function() {
     this.value = this.value.replace(/[^0-9]/g, '');
