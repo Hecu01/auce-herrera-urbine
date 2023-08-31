@@ -54,7 +54,44 @@
                     }
                 </style>
   
-                <div class="d-flex" style="flex-direction: column-reverse;">
+                <div class="d-flex" style="flex-direction: column;">
+                    @if (session('mensaje'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Alerta:</strong> Cambios realizados exitosamente.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif  
+                    <div class="d-flex justify-content-center" >
+                        <nav >
+                            <li class="nav-item dropdown" style="list-style: none">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle btn btn-success" style="display:flex; justify-content: flex-end; color:#fff;"  href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Admin: {{ Auth::user()->name }}
+                            </a>
+            
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('inscripcion') }}">
+                                    {{ __('Inscripción') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    {{ __('Cerrar sesión') }}
+                                </a>
+            
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                    @csrf
+                                    </form>
+                                </div>
+                            </li>
+            
+                        </nav>
+        
+                        <h2 class="mx-2">Editar registro: {{ $registro->id }}</h2>
+                        <div style="height: 100%">
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                            <a href="{{ route('ir_admin') }}" class="btn btn-secondary">Regresar</a>
+                        </div>
+                    </div>
                     <div class="row">
                         <div  style="width:350px" >
                             <div class="article">
@@ -421,43 +458,7 @@
                         </div>
                     </div>
 
-                    @if (session('mensaje'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>Alerta:</strong> Cambios realizados exitosamente.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @endif  
-                    <div class="d-flex justify-content-center" >
-                        <nav >
-                            <li class="nav-item dropdown" style="list-style: none">
-                               <a id="navbarDropdown" class="nav-link dropdown-toggle btn btn-success" style="display:flex; justify-content: flex-end; color:#fff;"  href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                  Admin: {{ Auth::user()->name }}
-                               </a>
-             
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                   <a class="dropdown-item" href="{{ route('inscripcion') }}">
-                                       {{ __('Inscripción') }}
-                                   </a>
-                                   <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                   document.getElementById('logout-form').submit();">
-                                       {{ __('Cerrar sesión') }}
-                                   </a>
-             
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                       @csrf
-                                    </form>
-                                </div>
-                            </li>
-             
-                        </nav>
-        
-                        <h2 class="mx-2">Editar registro: {{ $registro->id }}</h2>
-                        <div style="height: 100%">
-                            <button type="submit" class="btn btn-success">Guardar</button>
-                            <a href="{{ route('ir_admin') }}" class="btn btn-secondary">Regresar</a>
-                        </div>
-                    </div>
+
 
                 </div>
             </form>
