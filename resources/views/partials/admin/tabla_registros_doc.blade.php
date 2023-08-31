@@ -4,40 +4,93 @@
          text-align: center
       }
    </style>
-
+fotoc_dni_ok 	fotoc_titulo_ok 	certificado_sec_ok 	foto_ok 	partida_nac_ok
    <table id="tabla-registros" class="table table-dark table-striped " >
        
       <thead>
          <td>ID</td>
          <td>FOTO</td>
-         <td>NOMBRES </td>
-         <td>APELLIDOS</td>
-         <td >DNI</td>
-         <td>CARRERA ELEGIDA</td>
-         <td>ACCION</td>
+         <td>Fotocopia de <br> dni </td>
+         <td>Fotocopia de <br> titulo</td>
+         <td >Certificado de <br> secundaria</td>
+         <td>Foto</td>
+         <td>Partida de <br> nacimiento</td>
+         <td>Acciones</td>
       </thead>
       <tbody>
          @foreach($registros as $registro)
             <tr>
                <td> {{ $registro->id }} </td>
                <td> <img src="{{url('foto/'. $registro->foto) }}" alt="Foto aspirante" width="70px" height="70px"> </td>
-               <td >{{ $registro->nombre }} </td>
-               <td >{{ $registro->apellido }}</td>
-               <td > {{ $registro->dni }} </td>
+               <td >
 
-               <select style="display: none" disabled class="form-select form-select-sm  btn-danger" style="cursor: pointer"   id="carrera_a_estudiar" name="carrera_elegida_aspirante" >
+                  <form class="cambiar-booleano-form" action="{{ route('check.fotoc.dni', ['id' => $registro->id]) }}" method="POST">
+                     @csrf
+                     @method('PUT')
 
+                     <div class="form-check form-switch">
+                        <label for="valor_booleano">
 
-                  @foreach ($carreras as $carrera)
-                     <option value="{{ $carrera->id }}" {{ $registro->carrera_id == $carrera->id ? 'selected' : '' }} >
-                        {{ $carrera->descripcion }}   
-                        {{ $registro->carrera_id == $carrera->id ? $variable=$carrera->descripcion : '' }}
-                     </option>
-                  @endforeach
+                           <input type="checkbox" name="valor_booleano" class="valor_booleano form-check-input" {{ $registro->fotoc_dni_ok ? 'checked' : '' }}>
+                           
+
+                        </label>
+                     </div>
+                  </form>
                   
-                  
-               </select>
-               <td> {{$variable}}</td>
+
+                 
+               </td>
+               <td >
+                  <form class="cambiar-booleano-form2" action="{{ route('check.fotoc.titulo', ['id' => $registro->id]) }}" method="POST">
+                     @csrf
+                     @method('PUT')
+
+                     <div class="form-check form-switch">
+                        <label for="">
+
+                           <input type="checkbox" name="valor_booleano3" class="valor_booleano2 form-check-input" {{ $registro->certificado_sec_ok ? 'checked' : '' }}>
+
+
+                        </label>
+                     </div>
+                  </form>
+
+               </td>
+               <td > 
+                  <form class="cambiar-booleano-form3" action="{{ route('check.certif.secund', ['id' => $registro->id]) }}" method="POST">
+                     @csrf
+                     @method('PUT')
+
+                     <div class="form-check form-switch">
+                        <label for="">
+
+                           <input type="checkbox" name="valor_booleano3" class="valor_booleano3 form-check-input" {{ $registro->fotoc_titulo_ok ? 'checked' : '' }}>
+
+
+                        </label>
+                     </div>
+                  </form>
+                  {{-- {{ $registro->certificado_sec_ok }}  --}}
+               </td>
+               <td > 
+                  <form class="cambiar-booleano-form4" action="{{ route('check.foto', ['id' => $registro->id]) }}" method="POST">
+                     @csrf
+                     @method('PUT')
+
+                     <div class="form-check form-switch">
+                        <label for="">
+
+                           <input type="checkbox" name="valor_booleano4" class="valor_booleano4 form-check-input" {{ $registro->fotoc_titulo_ok ? 'checked' : '' }}>
+
+
+                        </label>
+                     </div>
+                  </form>
+                  {{-- {{ $registro->foto_ok }}  --}}
+               </td>
+               <td> {{$registro->partida_nac_ok}}</td>
+
 
                <td style="width:240px">
 
@@ -184,3 +237,92 @@
 
    </div>
 @endforeach
+
+<div id="mensaje" style="display:none; color:#000">Cambio guardado con éxito</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   $(document).ready(function () {
+      // Fotocopia dni
+      $('.valor_booleano').change(function () {
+         $('.cambiar-booleano-form').submit();
+      });
+
+      $('.cambiar-booleano-form').submit(function (e) {
+         e.preventDefault();
+
+         $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function () {
+                  $('#mensaje').show();
+                  setTimeout(function () {
+                     $('#mensaje').fadeOut();
+                  }, 2000); // Ocultar el mensaje después de 2 segundos
+            },
+         });
+      });
+
+      // Fotocopia de titulo
+      $('.valor_booleano2').change(function () {
+         $('.cambiar-booleano-form2').submit();
+      });
+
+      $('.cambiar-booleano-form2').submit(function (e) {
+         e.preventDefault();
+
+         $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function () {
+                  $('#mensaje').show();
+                  setTimeout(function () {
+                     $('#mensaje').fadeOut();
+                  }, 2000); // Ocultar el mensaje después de 2 segundos
+            },
+         });
+      });
+
+      // Fotocopia de certificado secund
+      $('.valor_booleano3').change(function () {
+         $('.cambiar-booleano-form3').submit();
+      });
+
+      $('.cambiar-booleano-form3').submit(function (e) {
+         e.preventDefault();
+
+         $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function () {
+                  $('#mensaje').show();
+                  setTimeout(function () {
+                     $('#mensaje').fadeOut();
+                  }, 2000); // Ocultar el mensaje después de 2 segundos
+            },
+         });
+      });
+      // Fotocopia de certificado secund
+      $('.valor_booleano4').change(function () {
+         $('.cambiar-booleano-form4').submit();
+      });
+
+      $('.cambiar-booleano-form4').submit(function (e) {
+         e.preventDefault();
+
+         $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function () {
+                  $('#mensaje').show();
+                  setTimeout(function () {
+                     $('#mensaje').fadeOut();
+                  }, 2000); // Ocultar el mensaje después de 2 segundos
+            },
+         });
+      });
+   });
+</script>
