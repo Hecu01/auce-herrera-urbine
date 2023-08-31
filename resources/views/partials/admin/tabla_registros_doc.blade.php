@@ -4,7 +4,7 @@
          text-align: center
       }
    </style>
-fotoc_dni_ok 	fotoc_titulo_ok 	certificado_sec_ok 	foto_ok 	partida_nac_ok
+{{-- fotoc_dni_ok 	fotoc_titulo_ok 	certificado_sec_ok 	foto_ok 	partida_nac_ok --}}
    <table id="tabla-registros" class="table table-dark table-striped " >
        
       <thead>

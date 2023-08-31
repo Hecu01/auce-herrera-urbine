@@ -63,7 +63,7 @@
                         <label for=""><strong class="mx-1">Horario de trabajo</strong></label>
 
                         <div class="mx-1">
-                            <textarea name="horarios_rotativos_asp" class="my-2 form-control" id="descripcion_carr" rows="4" placeholder="Detallá tus horarios." style="height:100px"></textarea>
+                            <textarea name="horarios_rotativos_asp" class="form-control" id="descripcion_carr" rows="4" placeholder="Detallá tus horarios." style="height:100px"></textarea>
                         </div>
                     </div>
 
